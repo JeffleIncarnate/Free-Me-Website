@@ -1,0 +1,119 @@
+.FRE__Navbar {
+  width: 90%;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 3rem;
+  right: 5%;
+}
+
+.FRE__Navbar > .FRE__Navbar__Img {
+  width: 200px;
+}
+
+.FRE__Navbar > .FRE__Navbar__Img img {
+  width: 100px;
+  aspect-ratio: 1/1;
+  margin-left: 1rem;
+}
+
+.FRE__Navbar > ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Navbar > ul li {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.FRE__Navbar a {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__Navbar a:hover {
+  color: var(--accent);
+}
+
+.FRE__Navbar > ul li a {
+  text-decoration: none;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+.FRE__Navbar > ul li a::after {
+  content: "";
+  width: 0;
+  transition: all 0.3s ease-in-out;
+  height: 0.2rem;
+}
+
+.FRE__Navbar > ul li a:hover {
+  color: var(--accent);
+}
+
+.FRE__Navbar > ul li a:hover::after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--accent);
+}
+
+.FRE__Navbar > div {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.FRE__Navbar > div > * {
+  margin: 1rem;
+}
+
+.FRE__Navbar > div > .fa-magnifying-glass {
+  font-size: 1.7rem;
+}
+
+.FRE__Navbar > div > button {
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-size: 1.3rem;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.FRE__Navbar > div > button::after {
+  content: "";
+  width: 0;
+  transition: all 0.3s ease-in-out;
+  height: 0.2rem;
+}
+
+.FRE__Navbar > div > button:hover::after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  background-color: var(--accent);
+}
+
+.FRE__Navbar > div > button:hover {
+  color: var(--accent);
+}

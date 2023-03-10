@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+:root {
+  --accent: #fac898;
+  --black: #181818;
+  --white: #faf9f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}

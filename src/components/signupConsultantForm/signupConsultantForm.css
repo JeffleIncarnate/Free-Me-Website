@@ -1,0 +1,172 @@
+#FRE__Main__Signup-Cons {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../assets/Splash.jpg");
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#FRE__Main__Signup-Cons p {
+  position: absolute;
+  bottom: 2rem;
+}
+
+#FRE__Main__Signup-Cons > form {
+  background-color: white;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 25%;
+  height: 50vh;
+  border-radius: 0.5rem;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#FRE__Main__Signup-Cons > form span {
+  color: red;
+}
+
+#FRE__Main__Signup-Cons h2 {
+  font-size: 4rem;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#FRE__Main__Signup-Cons h2::after {
+  content: "";
+  width: 100%;
+  height: 0.4rem;
+  background-color: var(--accent);
+}
+
+#FRE__Main__Signup-Cons label {
+  font-weight: bold;
+  margin: 0.2rem;
+}
+
+#FRE__Main__Signup-Cons > form:nth-child(3) {
+  margin-top: 1rem;
+}
+
+#FRE__Main__Signup-Cons > form input {
+  width: 80%;
+  padding: 0.5rem;
+  border: 0.15rem solid white;
+  border-radius: 0.3rem;
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+#FRE__Main__Signup-Cons > form input:hover {
+  border: 0.15rem solid var(--accent);
+}
+
+#FRE__Main__Signup-Cons > form label:nth-child(5) {
+  margin-top: 1rem;
+}
+
+#FRE__Main__Signup-Cons .FRE__Signup-Cons-Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#FRE__Main__Signup-Cons button {
+  padding: 0.5rem 1.5rem;
+  margin: 0 1rem;
+  border: 0.2rem solid var(--black);
+  background: var(--white);
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+#FRE__Main__Signup-Cons button:hover {
+  border: 0.2rem solid var(--accent);
+  color: var(--accent);
+}
+
+.FRE__Main__Signup-Cons__Out {
+  animation-name: SlideOut;
+  animation-duration: 1.5s;
+}
+
+.FRE__Main__Signup-Cons__In {
+  animation-name: SlideIn;
+  animation-duration: 1.5s;
+}
+
+.FRE__Main__Signup-Cons__OutRev {
+  animation-name: SlideOutRev;
+  animation-duration: 1.5s;
+}
+
+.FRE__Main__Signup-Cons__InRev {
+  animation-name: SlideInRev;
+  animation-duration: 1.5s;
+}
+
+.FRE__Main__Signup-Cirlces {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.FRE__Main__Signup-Cirlces > div {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgba(250, 249, 246, 0.2);
+  margin: 0.2rem;
+  border-radius: 50%;
+}
+
+@keyframes SlideOut {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-260%, 0);
+  }
+}
+
+@keyframes SlideIn {
+  from {
+    transform: translate(260%, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes SlideOutRev {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(260%, 0);
+  }
+}
+
+@keyframes SlideInRev {
+  from {
+    transform: translate(-260%, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
