@@ -26,8 +26,7 @@
   justify-content: space-evenly;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis {
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp {
   width: 47%;
   display: flex;
   align-items: center;
@@ -39,30 +38,16 @@
   border-radius: 0.5rem;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons:hover,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis:hover {
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons:hover > *,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis:hover > * {
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp:hover > * {
   visibility: visible;
+  opacity: 1;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons h2,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis h2 {
-  font-size: 4rem;
-  margin: 0.5rem;
-}
-
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons p,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis p {
-  font-size: 1.4rem;
-  margin: 0.5rem;
-}
-
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons button,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis button {
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button {
   border: none;
   background: transparent;
   font-size: 2rem;
@@ -75,23 +60,39 @@
   justify-content: center;
   transition: all 0.3s ease-in-out;
   flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons button::after,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis button::after {
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp:hover > button {
+  visibility: visible;
+}
+
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp h2 {
+  font-size: 4rem;
+  margin: 0.5rem;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp p {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button::after {
   content: "";
   width: 0;
-  transition: all 0.3s ease-in-out;
   height: 0.2rem;
+  transition: all 0.3s ease-in-out;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons button:hover,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis button:hover {
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button:hover {
   color: var(--accent);
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Cons button:hover::after,
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__Clis button:hover::after {
+.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button:hover::after {
   content: "";
   width: 100%;
   background-color: var(--accent);

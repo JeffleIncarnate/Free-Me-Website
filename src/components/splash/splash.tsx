@@ -14,7 +14,7 @@ export default function Splash() {
         <div className="FRE__Splash">
           <h1>FreeMe</h1>
           <div className="FRE__Splash__Cons-Clis-Wrapper">
-            <div className="FRE__Splash__Cons">
+            <div className="FRE__Splash__SignUp">
               <h2>Consultant</h2>
               <p>Have Skills?</p>
               <button
@@ -26,7 +26,7 @@ export default function Splash() {
               </button>
             </div>
 
-            <div className="FRE__Splash__Clis">
+            <div className="FRE__Splash__SignUp">
               <h2>Client</h2>
               <p>Need skills?</p>
               <button>Join Us!</button>
