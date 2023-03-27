@@ -3,6 +3,7 @@ body {
   padding: 0;
   color: var(--white);
   overflow-x: hidden;
+  background-color: var(--black);
 }
 
 :root {
