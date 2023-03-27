@@ -1,17 +1,17 @@
 import Navbar from "../components/navbar/navbar";
-import LoginForm from "../components/login/loginForm";
+import OAuth from "../components/oauth/oauth";
 
 import { useEffect } from "react";
 
-export default function LoginPage() {
+export default function OauthPage() {
   useEffect(() => {
-    document.title = "Login | Free Me";
+    document.title = "OAuth | Free Me";
   }, []);
 
   return (
     <>
       <Navbar />
-      <LoginForm />
+      <OAuth />
     </>
   );
 }
