@@ -1,18 +1,36 @@
 import "./oauth.css";
 
-import { useRef } from "react";
-
 import Loader from "../loader/loader";
+
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function OAuth() {
   const code = useRef(null);
+
+  let [error, setError] = useState(true);
+  let [count, setCount] = useState(0);
+
+  let navigate = useNavigate();
+
+  const onCodeEnter = async () => {
+    let codeVal: any = parseInt((code.current! as any).value);
+
+    if (codeVal !== 1) {
+      setError(false);
+      setCount((count += 1));
+      return;
+    }
+
+    navigate("/dashboard");
+  };
 
   return (
     <main id="FRE__Main__OAuth">
       <form
         onSubmit={(e: any) => {
           e.preventDefault();
-          console.log("e");
+          onCodeEnter();
         }}
       >
         <h2>OAuth</h2>
@@ -23,8 +41,12 @@ export default function OAuth() {
           <input type="number" placeholder="Enter Code" required ref={code} />
         </div>
         <button type="submit" className="btn btn-success">
-          Login <i className="fa-solid fa-right-to-bracket"></i>
+          Submit <i className="fa-solid fa-right-to-bracket"></i>
         </button>
+
+        {error == false ? (
+          <p style={{ color: "red" }}>Incorrect code. (x{count})</p>
+        ) : null}
       </form>
     </main>
   );
