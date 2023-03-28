@@ -7,6 +7,7 @@ import SignupConsultantPage from "./layouts/signupConsultant";
 import LoginPage from "./layouts/login";
 import OauthPage from "./layouts/oauth";
 import OpportunitiesPage from "./layouts/opportunities";
+import DashboardPage from "./layouts/dashboard";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/signUpConsultant" element={<SignupConsultantPage />} />
       <Route path="/oauth" element={<OauthPage />} />
       <Route path="/opportunities" element={<OpportunitiesPage />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
     </Routes>
   );
 }
