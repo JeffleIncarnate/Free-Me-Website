@@ -29,7 +29,7 @@ export default function OAuth() {
 
     fetch(
       `http://localhost:3000/freeme/getUser?username=${sessionStorage.getItem(
-        "username"
+        "email"
       )}`,
       requestOptions
     )
