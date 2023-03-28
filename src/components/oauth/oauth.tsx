@@ -3,7 +3,7 @@ import "./oauth.css";
 import Loader from "../loader/loader";
 
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 
 export default function OAuth() {
   const code = useRef(null);
@@ -21,6 +21,32 @@ export default function OAuth() {
       setCount((count += 1));
       return;
     }
+
+    var requestOptions: any = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch(
+      `http://localhost:3000/freeme/getUser?username=${sessionStorage.getItem(
+        "username"
+      )}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        sessionStorage.setItem("uuid", result.uuid);
+        sessionStorage.setItem("address", result.address);
+        sessionStorage.setItem("firstname", result.firstname);
+        sessionStorage.setItem("lastname", result.lastname);
+        sessionStorage.setItem("gst", result.gst);
+        sessionStorage.setItem("nzbn", result.nzbn);
+        sessionStorage.setItem("socials", JSON.stringify(result.socials));
+        sessionStorage.setItem("email", result.email);
+        sessionStorage.setItem("type", result.type);
+        sessionStorage.setItem("dateOfBirth", result.dateofbirth);
+      })
+      .catch((error) => console.log("error", error));
 
     navigate("/dashboard");
   };

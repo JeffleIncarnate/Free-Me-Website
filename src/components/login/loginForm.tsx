@@ -48,6 +48,7 @@ export default function LoginForm() {
         setShowLoader(false);
         if (result.accessToken) {
           sessionStorage.setItem("token", result.accessToken);
+          sessionStorage.setItem("username", user.username);
           navigate("/oauth");
         } else {
           setError(false);
