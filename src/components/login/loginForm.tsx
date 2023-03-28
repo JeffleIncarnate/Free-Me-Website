@@ -48,7 +48,7 @@ export default function LoginForm() {
         setShowLoader(false);
         if (result.accessToken) {
           sessionStorage.setItem("token", result.accessToken);
-          sessionStorage.setItem("username", user.username);
+          sessionStorage.setItem("email", user.username);
           navigate("/oauth");
         } else {
           setError(false);
@@ -71,7 +71,7 @@ export default function LoginForm() {
         <h2>Welcome Back</h2>
         <div>
           <label>
-            Username<span>*</span>
+            Email<span>*</span>
           </label>
           <input
             type="text"
@@ -86,7 +86,7 @@ export default function LoginForm() {
             Password<span>*</span>
           </label>
           <input
-            type="text"
+            type="password"
             placeholder="Enter Password"
             required
             ref={password}
