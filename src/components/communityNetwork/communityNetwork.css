@@ -1,11 +1,20 @@
 .FRE__CommunityNetwork {
-  height: 85vh;
+  height: 75vh;
   width: 100%;
-  margin-top: 15vh;
-  background-color: red;
+  margin-top: 18vh;
   display: grid;
+  gap: 1rem;
   grid-template-rows: [row1] 25% [row2] 25% [row3] 25% [row4] 25% [end];
   grid-template-columns: [col1] 15% [col2] 20% [col3] 15% [col4] auto [col5] auto [end];
+}
+
+.FRE__CommunityNetwork > * {
+  border: 0.3rem solid var(--accent);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .FRE__CommunityNetwork-hard_software {
@@ -13,7 +22,6 @@
   grid-column-end: span col3;
   grid-row-start: row1;
   grid-row-end: span row3;
-  background-color: purple;
 }
 
 .FRE__CommunityNetwork-utility {
@@ -21,7 +29,6 @@
   grid-column-end: span col5;
   grid-row-start: row1;
   grid-row-end: span row2;
-  background-color: green;
 }
 
 .FRE__CommunityNetwork-insurance {
@@ -29,7 +36,6 @@
   grid-column-end: span col5;
   grid-row-start: row2;
   grid-row-end: span row3;
-  background-color: cyan;
 }
 
 .FRE__CommunityNetwork-balances {
@@ -37,7 +43,6 @@
   grid-column-end: span col5;
   grid-row-start: row1;
   grid-row-end: span row4;
-  background-color: antiquewhite;
 }
 
 .FRE__CommunityNetwork-accomodation {
@@ -45,7 +50,6 @@
   grid-column-end: span col2;
   grid-row-start: row3;
   grid-row-end: span row4;
-  background-color: orange;
 }
 
 .FRE__CommunityNetwork-energy {
@@ -53,7 +57,6 @@
   grid-column-end: span col5;
   grid-row-start: row3;
   grid-row-end: span row4;
-  background-color: azure;
 }
 
 .FRE__CommunityNetwork-banking {
@@ -61,7 +64,6 @@
   grid-column-end: span col4;
   grid-row-start: row4;
   grid-row-end: span row4;
-  background-color: black;
 }
 
 .FRE__CommunityNetwork-education {
@@ -69,5 +71,4 @@
   grid-column-end: span col4;
   grid-row-start: row4;
   grid-row-end: span row4;
-  background-color: blue;
 }
