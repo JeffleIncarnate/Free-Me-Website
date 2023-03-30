@@ -73,7 +73,7 @@
 
 .FRE__Navbar > div {
   display: flex;
-  width: 200px;
+
   align-items: center;
   justify-content: space-evenly;
 }
@@ -82,11 +82,7 @@
   margin: 1rem;
 }
 
-.FRE__Navbar > div > .fa-magnifying-glass {
-  font-size: 1.7rem;
-}
-
-.FRE__Navbar > div > button {
+.FRE__Navbar > div button {
   border: none;
   padding: 0.5rem 1rem;
   background-color: transparent;
@@ -100,14 +96,14 @@
   flex-direction: column;
 }
 
-.FRE__Navbar > div > button::after {
+.FRE__Navbar > div button::after {
   content: "";
   width: 0;
   transition: all 0.3s ease-in-out;
   height: 0.2rem;
 }
 
-.FRE__Navbar > div > button:hover::after {
+.FRE__Navbar > div button:hover::after {
   content: "";
   width: 100%;
   height: 0.2rem;

@@ -18,13 +18,34 @@ export default function Navbar() {
       </ul>
 
       <div>
-        <button>
-          <div>
-            <Link to="/login">
-              Login <i className="fa-solid fa-right-to-bracket"></i>
-            </Link>
-          </div>
-        </button>
+        {sessionStorage.getItem("token") === null ? (
+          <>
+            <button>
+              <Link to="/login">
+                Login <i className="fa-solid fa-right-to-bracket"></i>
+              </Link>
+            </button>
+          </>
+        ) : (
+          <>
+            <button>
+              <div>
+                <Link to="/dashboard">
+                  Dashboard <i className="fa-solid fa-table-columns"></i>
+                </Link>
+              </div>
+            </button>
+            <button
+              onClick={() => {
+                sessionStorage.clear();
+              }}
+            >
+              <Link to="/">
+                Logout <i className="fa-solid fa-right-from-bracket"></i>
+              </Link>
+            </button>
+          </>
+        )}
       </div>
     </nav>
   );
