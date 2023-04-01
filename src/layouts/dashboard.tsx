@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 export default function DashboardPage() {
   let navigate = useNavigate();
 
-  let reload = false;
-
   useEffect(() => {
     document.title = "Dashboard | Free me";
 
