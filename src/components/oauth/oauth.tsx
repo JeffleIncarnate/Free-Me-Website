@@ -45,10 +45,9 @@ export default function OAuth() {
         sessionStorage.setItem("email", result.email);
         sessionStorage.setItem("type", result.type);
         sessionStorage.setItem("dateOfBirth", result.dateofbirth);
+        navigate("/dashboard");
       })
       .catch((error) => console.log("error", error));
-
-    navigate("/dashboard");
   };
 
   return (
