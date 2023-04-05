@@ -9,12 +9,19 @@
 }
 
 .FRE__CommunityNetwork > * {
-  border: 0.3rem solid var(--accent);
+  border: 0.2rem solid var(--white);
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--black);
+  border-radius: 0.7rem;
+}
+
+.FRE__CommunityNetwork > *:hover {
+  border: 0.6rem solid var(--accent);
 }
 
 .FRE__CommunityNetwork-hard_software {

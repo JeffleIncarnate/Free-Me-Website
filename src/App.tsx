@@ -9,6 +9,7 @@ import OauthPage from "./layouts/oauth";
 import OpportunitiesPage from "./layouts/opportunities";
 import DashboardPage from "./layouts/dashboard";
 import CommunityNetworkPage from "./layouts/communityNetwork";
+import ProfilePage from "./layouts/profile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/opportunities" element={<OpportunitiesPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/communityNetwork" element={<CommunityNetworkPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
     </Routes>
   );
 }

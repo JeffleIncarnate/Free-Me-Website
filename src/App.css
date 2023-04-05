@@ -21,3 +21,15 @@ body {
 button {
   cursor: pointer;
 }
+
+noscript {
+  width: 80%;
+  margin-left: 10%;
+  height: 100vh;
+  font-size: 2rem;
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
