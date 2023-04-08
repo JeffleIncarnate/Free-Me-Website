@@ -1,0 +1,36 @@
+.FRE__Chat__Small {
+  width: 100%;
+  margin: 2rem 0;
+  border-top: solid rgba(250, 200, 152, 0.1) 0.1rem;
+  border-bottom: solid rgba(250, 200, 152, 0.1) 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.FRE__Chat__Small div:nth-child(2) {
+  width: 75%;
+}
+
+.FRE__Chat__Small > .FRE__Chat__Small-Image_Circle {
+  width: 20%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.FRE__Chat__Small > .FRE__Chat__Small-Image_Circle > img {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  left: 20%;
+  top: 150%;
+  scale: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

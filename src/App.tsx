@@ -10,6 +10,7 @@ import OpportunitiesPage from "./layouts/opportunities";
 import DashboardPage from "./layouts/dashboard";
 import CommunityNetworkPage from "./layouts/communityNetwork";
 import ProfilePage from "./layouts/profile";
+import ChatPage from "./layouts/chat";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/communityNetwork" element={<CommunityNetworkPage />} />
       <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/chat" element={<ChatPage />} />
     </Routes>
   );
 }

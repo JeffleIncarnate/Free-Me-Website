@@ -1,0 +1,89 @@
+.FRE__Chat {
+  height: 85vh;
+  width: 100%;
+  margin-top: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -- LEFT -- */
+.FRE__Chat > .FRE__Chat__Left {
+  height: 100%;
+  width: 30%;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+.FRE__Chat > .FRE__Chat__Left::-webkit-scrollbar {
+  display: none;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Top h2 {
+  font-size: 2.4rem;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Top i {
+  padding: 1rem;
+  background-color: rgb(20, 20, 20);
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Search {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Search > input {
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  background-color: rgb(20, 20, 20);
+  color: var(--white);
+  border: solid 0.1rem var(--black);
+  transition: border 0.3s ease-in-out;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Search > input:hover {
+  border: solid 0.1rem var(--accent);
+}
+
+.FRE__Chat__Left-Chips {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Chips > .FRE__Chat__Left-Chips__Active {
+  background-color: rgba(250, 200, 152, 0.3);
+  margin: 0 1rem;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.FRE__Chat__Left > .FRE__Chat__Left-Chips > .FRE__Chat__Left-Chips__Not_Active {
+  margin: 0 1rem;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* -- CHAT -- */
+.FRE__Chat > .FRE__Chat__Centre {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

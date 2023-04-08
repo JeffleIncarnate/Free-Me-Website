@@ -1,0 +1,103 @@
+.FRE__Chat__Big {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* -- Top -- */
+.FRE__Chat__Big-Top {
+  height: 10%;
+  width: 100%;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid rgba(250, 200, 152, 0.1) 0.1rem;
+}
+
+.FRE__Chat__Big-Top > div > i {
+  padding: 1rem;
+  background-color: rgb(20, 20, 20);
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.FRE__Chat__Big-Top > .FRE__Chat__Big-Top__Image_Cricle {
+  width: 5%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.FRE__Chat__Big-Top > .FRE__Chat__Big-Top__Image_Cricle > img {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  left: -60%;
+  top: 160%;
+  scale: 0.9;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.FRE__Chat__Big-Top > h2 {
+  margin-right: auto;
+  margin-left: 2rem;
+}
+
+/* -- Middle -- */
+.FRE__Chat__Big-Middle {
+  height: 80%;
+  width: 100%;
+}
+
+/* -- Bottom -- */
+.FRE__Chat__Big-Bottom {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Icons {
+  width: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Icons > i {
+  padding: 0.5rem;
+  background-color: rgb(20, 20, 20);
+  margin: 0 0.1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Message {
+  width: 95%;
+  position: relative;
+}
+
+.FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Message > input {
+  width: 96%;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  background-color: rgb(20, 20, 20);
+  color: var(--white);
+  border: solid 0.1rem var(--black);
+  transition: border 0.3s ease-in-out;
+}
+
+.FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Message > input:hover {
+  border: solid 0.1rem var(--accent);
+}
