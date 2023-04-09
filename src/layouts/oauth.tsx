@@ -8,7 +8,7 @@ export default function OauthPage() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "OAuth | Free Me";
+    document.title = "OAuth | FreeMe";
 
     if (sessionStorage.getItem("token") === null) {
       navigate("/");

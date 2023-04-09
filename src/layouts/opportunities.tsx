@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export default function OpportunitiesPage() {
   useEffect(() => {
-    document.title = "Opportunities | Free Me";
+    document.title = "Opportunities | FreeMe";
   }, []);
 
   return (

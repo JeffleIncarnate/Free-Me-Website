@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function CommunityNetworkPage() {
   useEffect(() => {
-    document.title = "Community Network | Free Me";
+    document.title = "Community Network | FreeMe";
   }, []);
 
   return (

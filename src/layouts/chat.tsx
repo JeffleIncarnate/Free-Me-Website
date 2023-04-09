@@ -8,7 +8,7 @@ export default function ChatPage() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Chat | Free me";
+    document.title = "Chat | FreeMe";
 
     if (sessionStorage.getItem("token") === null) {
       navigate("/");

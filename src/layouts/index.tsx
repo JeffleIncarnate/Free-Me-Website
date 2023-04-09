@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function HomePage() {
   useEffect(() => {
-    document.title = "Home | Free Me";
+    document.title = "Home | FreeMe";
   }, []);
 
   return <Splash />;

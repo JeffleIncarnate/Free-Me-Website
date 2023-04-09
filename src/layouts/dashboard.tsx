@@ -8,7 +8,7 @@ export default function DashboardPage() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Dashboard | Free me";
+    document.title = "Dashboard | FreeMe";
 
     if (sessionStorage.getItem("token") === null) {
       navigate("/");

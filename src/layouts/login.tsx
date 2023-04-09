@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function LoginPage() {
   useEffect(() => {
-    document.title = "Login | Free Me";
+    document.title = "Login | FreeMe";
   }, []);
 
   return (
