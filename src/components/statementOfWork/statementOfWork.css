@@ -1,0 +1,212 @@
+.FRE__Main-StatementOfWork {
+  height: 85vh;
+  width: 100%;
+  margin-top: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Main-StatementOfWork > * {
+  padding: 2rem;
+}
+
+.FRE__Main-StatementOfWork h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.FRE__Main-StatementOfWork h2::after {
+  content: "";
+  width: 100%;
+  height: 0.2em;
+  background-color: var(--accent);
+}
+
+/* -- Current Jobs -- */
+.FRE__Main-StatementOfWork__Cur__Jobs {
+  flex: 1;
+  height: 100%;
+}
+
+/* -- Job -- */
+.FRE__Main-StatementOfWork__Job {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.FRE__Main-StatementOfWork__Job > h3 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.FRE__Main-StatementOfWork__Job-Data {
+  margin-right: auto;
+}
+
+.FRE__Main-StatementOfWork__Job-Table {
+  width: 100%;
+  margin-bottom: 20%;
+}
+
+.FRE__Main-StatementOfWork__Job-Table > h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.FRE__Main-StatementOFWork__Job-Table__Titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Main-StatementOFWork__Job-Table__Titles > div {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  margin: 0.5%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+
+.FRE__Main-StatementOFWork__Job-Table__Titles > div:nth-child(1) {
+  width: 10%;
+}
+
+.FRE__Main-StatementOFWork__Job-Table__Titles > div:nth-child(2) {
+  width: 50%;
+}
+
+.FRE__Main-StatementOFWork__Job-Table__Titles > div:nth-child(3) {
+  width: 12.5%;
+}
+
+.FRE__Main-StatementOFWork__Job-Table__Titles > div:nth-child(4) {
+  width: 12.5%;
+}
+
+.FRE__Main-StatementOFWork__Job-Table__Titles > div:nth-child(5) {
+  width: 12.5%;
+}
+
+/* Rows */
+.FRE__Main-StatementOfWork__Job-Table__Row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Colours */
+.FRE__Main-StatementOfWork__Job-Table__Row__Even > div {
+  background-color: rgba(250, 200, 152, 0.6);
+}
+
+.FRE__Main-StatementOfWork__Job-Table__Row__Odd > div {
+  background-color: rgba(250, 200, 158, 0.2);
+}
+
+.FRE__Main-StatementOfWork__Job-Table__Row > div {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin: 0.5%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.FRE__Main-StatementOfWork__Job-Table__Row > div:nth-child(1) {
+  width: 10%;
+}
+
+.FRE__Main-StatementOfWork__Job-Table__Row > div:nth-child(2) {
+  width: 50%;
+}
+
+.FRE__Main-StatementOfWork__Job-Table__Row > div:nth-child(3) {
+  width: 12.5%;
+}
+
+.FRE__Main-StatementOfWork__Job-Table__Row > div:nth-child(4) {
+  width: 12.5%;
+}
+
+.FRE__Main-StatementOfWork__Job-Table__Row > div:nth-child(5) {
+  width: 12.5%;
+}
+
+.FRE__Main-StatementOfWork__Job-Buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Main-StatementOfWork__Job-Buttons > button {
+  width: 20%;
+  padding: 0.8rem 1.3rem;
+  background: transparent;
+  font-size: 1.4rem;
+  color: var(--white);
+  border: 0.2rem solid var(--accent);
+  border-radius: 0.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__Main-StatementOfWork__Job-Buttons > button:hover {
+  transform: translate(0.3rem, -0.3rem);
+}
+
+/* -- Timeline -- */
+.FRE__Main-StatementOfWork__Timeline {
+  flex: 1;
+  height: 100%;
+}
+
+/* -- Statement of work switcher -- */
+.SattementOfWorkSwicher {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  margin: 1rem 0;
+  color: var(--white);
+  position: relative;
+}
+
+.SattementOfWorkSwicher::after {
+  position: absolute;
+  content: "";
+  background: var(--accent);
+  bottom: 0;
+  right: 0;
+  height: 0.2rem;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.SattementOfWorkSwicher:hover::after {
+  width: 100%;
+  left: 0;
+}

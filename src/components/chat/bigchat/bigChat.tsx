@@ -1,6 +1,16 @@
 import "./bigChat.css";
 
+import { useEffect, useRef } from "react";
+import { io } from "socket.io-client";
+
 export default function BigChat(props: any) {
+  useEffect(() => {
+    const socket = io("ws://localhost:3001");
+    socket.on("hello", (e: any) => {
+      console.log(e);
+    });
+  });
+
   return (
     <div className="FRE__Chat__Big">
       {props.isActive === "true" ? (
@@ -27,6 +37,7 @@ export default function BigChat(props: any) {
 
             <div className="FRE__Chat__Big-Bottom__Message">
               <input type="text" placeholder="Aa" />
+              <i className="fa-sharp fa-solid fa-paper-plane-top"></i>
             </div>
           </div>
         </>
