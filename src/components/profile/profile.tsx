@@ -60,7 +60,7 @@ export default function Profile() {
               <li>Painting</li>
               <li>Dance</li>
               <li>Chess</li>
-              <li>Garedening</li>
+              <li>Gardening</li>
               <li>Writing</li>
             </ul>
           </div>

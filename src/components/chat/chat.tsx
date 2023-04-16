@@ -3,7 +3,8 @@ import "./chat.css";
 import SmallChat from "./smallchat/smallChat";
 import BigChat from "./bigchat/bigChat";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { io } from "socket.io-client";
 
 interface IActiveChat {
   img: string | null;
@@ -14,7 +15,6 @@ export default function Chat() {
   // Active chip class: FRE__Chat__Left-Chips__Active
   // NotActive chip class: FRE__Chat__Left-Chips__Not_Active
   const [activeChip, setActiveChip] = useState<boolean[]>([true, false]);
-
   const [activeChat, setActiveChat] = useState<IActiveChat>({
     img: null,
     userName: null,

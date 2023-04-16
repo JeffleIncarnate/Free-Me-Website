@@ -59,6 +59,16 @@
   width: 100%;
 }
 
+.FRE__Chat__Big-Message {
+  background-color: rgba(250, 200, 152, 0.7);
+  margin-right: 80%;
+  padding: 1rem;
+  margin-top: 1rem;
+  max-width: 20%;
+  overflow-wrap: break-word;
+  border-radius: 1rem 1rem 1rem 0;
+}
+
 /* -- Bottom -- */
 .FRE__Chat__Big-Bottom {
   height: 10%;
@@ -100,4 +110,12 @@
 
 .FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Message > input:hover {
   border: solid 0.1rem var(--accent);
+}
+
+/* -- Sending -- */
+.FRE__Chat__Big-Bottom svg {
+  width: 2rem;
+  position: relative;
+  right: 2rem;
+  cursor: pointer;
 }
