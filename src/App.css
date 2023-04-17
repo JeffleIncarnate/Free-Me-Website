@@ -33,3 +33,7 @@ noscript {
   justify-content: center;
   text-align: center;
 }
+
+.fa-plus {
+  color: var(--accent);
+}

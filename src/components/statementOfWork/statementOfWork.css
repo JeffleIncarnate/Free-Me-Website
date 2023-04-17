@@ -32,6 +32,9 @@
 .FRE__Main-StatementOfWork__Cur__Jobs {
   flex: 1;
   height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 /* -- Job -- */
@@ -185,7 +188,7 @@
 }
 
 /* -- Statement of work switcher -- */
-.SattementOfWorkSwicher {
+.StatementOfWorkSwitcher {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   background: transparent;
@@ -195,7 +198,7 @@
   position: relative;
 }
 
-.SattementOfWorkSwicher::after {
+.StatementOfWorkSwitcher::after {
   position: absolute;
   content: "";
   background: var(--accent);
@@ -206,7 +209,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.SattementOfWorkSwicher:hover::after {
+.StatementOfWorkSwitcher:hover::after {
   width: 100%;
   left: 0;
 }

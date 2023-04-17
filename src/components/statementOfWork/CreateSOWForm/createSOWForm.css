@@ -1,0 +1,182 @@
+.FRE__Main-StatementOfWork__Form {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.FRE__Main-StatementOfWork__Form > div {
+  width: 100%;
+}
+
+.FRE__Main-StatementOfWork__Form__Data-Input__Wrapper {
+  width: 50%;
+  margin: 1rem 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.FRE__Main-StatementOfWork__Form__Data-Input__Wrapper > label {
+  margin: 0 1rem;
+}
+
+.FRE__Main-StatementOfWork__Form__Data-Input__Wrapper > input {
+  padding: 0.2rem 0.7rem;
+}
+
+/* GRID */
+.FRE__Main-StatementOfWork__Form__Grid-Wrapper {
+  width: 100%;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Titles {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Titles > div {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  margin: 0.5%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Titles > div:nth-child(1) {
+  width: 10%;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Titles > div:nth-child(2) {
+  width: 50%;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Titles > div:nth-child(3) {
+  width: 12.5%;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Titles > div:nth-child(4) {
+  width: 12.5%;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Titles > div:nth-child(5) {
+  width: 12.5%;
+}
+
+/* Add Task */
+.FRE__Main-StatementOfWork__Form__Grid-Add__Task {
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: fit-content;
+  background: transparent;
+  border: none;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Add__Task::after {
+  position: absolute;
+  content: "";
+  background: var(--accent);
+  bottom: 0;
+  right: 0;
+  height: 0.2rem;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__Main-StatementOfWork__Form__Grid-Add__Task:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Modal */
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper {
+  background-color: rgba(24, 24, 24, 0.9);
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper p {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper h1 {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper form > div {
+  margin: 1rem 0;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper form > div > label {
+  margin: 0 1rem;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper form > input {
+  padding: 0.3rem 2rem;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper > div {
+  height: 70%;
+  aspect-ratio: 16/9;
+  background-color: var(--black);
+  border-radius: 3rem;
+  border: solid var(--accent) 0.3rem;
+  position: relative;
+  text-align: center;
+}
+
+.FRE__Main-StatementOfWork__Form__Modal__Wrapper h3 {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 0.5rem 1rem;
+  border: solid var(--accent) 0.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Button */
+.FRE__Main-StatementOfWork__Form > div > button {
+  width: 20%;
+  margin: 3rem 40%;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background: transparent;
+  border: 0.2rem solid var(--accent);
+  color: var(--white);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__Main-StatementOfWork__Form > div > button:hover {
+  transform: translate(10px, -10px);
+}
