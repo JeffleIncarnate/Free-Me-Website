@@ -125,19 +125,19 @@ export default function CreateSOWForm(props: any) {
           <input type="text" placeholder="Enter Job Name" ref={jobName} />
         </div>
         <div className="FRE__Main-StatementOfWork__Form__Data-Input__Wrapper">
-          <label htmlFor="">Job Description</label>
-          <input
-            type="text"
-            placeholder="Enter Job Description"
-            ref={jobDescription}
-          />
-        </div>
-        <div className="FRE__Main-StatementOfWork__Form__Data-Input__Wrapper">
           <label htmlFor="">Consultant Email</label>
           <input
             type="text"
             placeholder="Enter Consultant Email"
             ref={consultantEmail}
+          />
+        </div>
+        <div className="FRE__Main-StatementOfWork__Form__Data-Input__Wrapper">
+          <label htmlFor="">Job Description</label>
+          <input
+            type="text"
+            placeholder="Enter Job Description"
+            ref={jobDescription}
           />
         </div>
 

@@ -1,103 +1,94 @@
 import "./statementOfWork.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateSOWButton from "./CreateSOWButton/createSOWButton";
 import CreateSOWForm from "./CreateSOWForm/createSOWForm";
 
 export interface IActiveSOW {
+  uuid: string | null;
   jobTitle: string | null;
   client: string | null;
   cosultant: string | null;
   tasks: [{}] | null;
   createSOW: boolean;
+  clientConfirm: boolean | null;
+  consultantConfirm: boolean | null;
 }
-
-let i = 0;
 
 export default function StatementOfWork() {
   const [activeSow, setActiveSow] = useState<IActiveSOW>({
+    uuid: null,
     jobTitle: null,
     client: null,
     cosultant: null,
     tasks: null,
     createSOW: false,
+    clientConfirm: null,
+    consultantConfirm: null,
   });
 
-  let jobs = [
-    {
-      jobTitle: "Graphic Design",
-      client: "Snoopy Singh",
-      cosultant: "Dhruv Rayat",
-      taks: [
-        {
-          id: 1,
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, et?",
-          amount: 240,
-        },
-        {
-          id: 2,
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, et?",
-          amount: 167,
-        },
-        {
-          id: 3,
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, et?",
-          amount: 167,
-        },
-        {
-          id: 4,
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, et?",
-          amount: 167,
-        },
-      ],
-    },
-    {
-      jobTitle: "Software Design",
-      client: "Ferd Swinkels",
-      cosultant: "Dhruv Rayat",
-      taks: [
-        {
-          id: 1,
-          description: "Gotta get good",
-          amount: 240,
-        },
-        {
-          id: 2,
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, et?",
-          amount: 167,
-        },
-        {
-          id: 3,
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, et?",
-          amount: 167,
-        },
-        {
-          id: 4,
-          description:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, et?",
-          amount: 167,
-        },
-      ],
-    },
-  ];
+  const [sow, setSow] = useState();
+  const [shouldCheckSOW, setShouldCheckSOW] = useState(false);
+
+  let getData = () => {
+    var requestOptions: any = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch(
+      `http://localhost:3000/freeme/getSpecificStatementOfWork?uuid=${sessionStorage.getItem(
+        "uuid"
+      )}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        setSow(result);
+        setShouldCheckSOW(true);
+      })
+      .catch((error) => console.log("error", error));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <main className="FRE__Main-StatementOfWork">
       <div className="FRE__Main-StatementOfWork__Cur__Jobs">
         <h2>Current Jobs</h2>
 
-        <StatementOfWorkSwicher data={jobs[0]} setActiveSow={setActiveSow} />
+        {shouldCheckSOW === true ? (
+          <>
+            {(sow as any).map((x: any) => {
+              return (
+                <StatementOfWorkSwicher
+                  key={crypto.randomUUID()}
+                  data={x}
+                  setActiveSow={setActiveSow}
+                />
+              );
+            })}
 
-        <StatementOfWorkSwicher data={jobs[1]} setActiveSow={setActiveSow} />
+            {(sow as any).length === 0 ? (
+              <h3
+                style={{
+                  marginTop: "2rem",
+                  fontSize: "2rem",
+                  textAlign: "center",
+                }}
+              >
+                No statements to be found
+              </h3>
+            ) : null}
+          </>
+        ) : (
+          <h1>Loading...</h1>
+        )}
 
         {sessionStorage.getItem("type") === "client" ? (
-          <CreateSOWButton setActiveSow={setActiveSow} i={i} />
+          <CreateSOWButton setActiveSow={setActiveSow} />
         ) : null}
       </div>
 
@@ -129,7 +120,8 @@ function StatementOfWorkMiddle(props: any) {
                     <strong>Client Name: </strong> {props.data.client}
                   </li>
                   <li>
-                    <strong>Consultant name: </strong> {props.data.cosultant}
+                    <strong>Consultant name: </strong>
+                    {props.data.cosultant}
                   </li>
                 </ul>
               </div>
@@ -153,20 +145,48 @@ function StatementOfWorkMiddle(props: any) {
                   </div>
                 </div>
 
-                {props.data.tasks.map((x: any) => {
-                  i++;
+                {props.data.tasks.map((x: any, index: any) => {
                   return (
                     <StatementOfWorkRow
-                      key={x.id}
-                      id={i}
-                      description={x.description}
+                      key={crypto.randomUUID()}
+                      id={index + 1}
+                      description={x.jobDescription}
                       amount={x.amount}
                     />
                   );
                 })}
+
+                {props.data.consultantConfirm === false &&
+                sessionStorage.getItem("type") === "client" ? (
+                  <h3 style={{ position: "relative", top: "2rem" }}>
+                    Consultant has not yet confirmed this SOW
+                  </h3>
+                ) : null}
               </div>
               <div className="FRE__Main-StatementOfWork__Job-Buttons">
-                <button>Send</button>
+                {(() => {
+                  if (
+                    sessionStorage.getItem("type") === "consultant" &&
+                    props.data.consultantConfirm === false
+                  ) {
+                    return (
+                      <>
+                        <button>Edit</button>
+                        <button>Confirm</button>
+                      </>
+                    );
+                  } else if (sessionStorage.getItem("type") === "client") {
+                    return <button>Send</button>;
+                  }
+                })()}
+
+                {/* {sessionStorage.getItem("type") === "consultant" &&
+                props.data.consultantConfirm === false ? (
+                  <>
+                    <button>Edit</button>
+                    <button>Confirm</button>
+                  </>
+                ) : null} */}
               </div>
             </div>
           );
@@ -187,17 +207,19 @@ function StatementOfWorkSwicher(props: any) {
     <button
       className="StatementOfWorkSwitcher"
       onClick={() => {
-        i = 0;
         props.setActiveSow({
-          jobTitle: props.data.jobTitle,
+          uuid: props.data.uuid,
+          jobTitle: props.data.name,
           client: props.data.client,
-          cosultant: props.data.cosultant,
-          tasks: props.data.taks,
+          cosultant: props.data.consultant,
+          tasks: props.data.tasks,
           createSOW: false,
+          clientConfirm: props.data.agreed.client,
+          consultantConfirm: props.data.agreed.consultant,
         });
       }}
     >
-      - {props.data.jobTitle}
+      - {props.data.name}
     </button>
   );
 }
