@@ -2,8 +2,13 @@ import "./profile.css";
 
 import { useEffect, useState } from "react";
 
+// Normal
 import Logo_Light from "../../assets/Logo_Light.png";
 import Logo_Light_Text from "../../assets/Logo_Light-Text.png";
+
+// E
+import Logo_E from "../../assets/e_picture.jpeg";
+import Profile_E from "../../assets/e_profile.jpg";
 
 export default function Profile() {
   const [background, setBackground] = useState<any>(null);
@@ -50,6 +55,9 @@ export default function Profile() {
     if (sessionStorage.getItem("email") === "dhruvrayat50@gmail.com")
       setBackground(`../../..${Logo_Light_Text}`);
 
+    if (sessionStorage.getItem("email") === "e@gmail.com")
+      setBackground(`../../..${Profile_E}`);
+
     getProfileData();
   });
 
@@ -63,6 +71,10 @@ export default function Profile() {
           {(() => {
             if (sessionStorage.getItem("email") === "dhruvrayat50@gmail.com") {
               return <img src={Logo_Light} alt="" />;
+            }
+
+            if (sessionStorage.getItem("email") === "e@gmail.com") {
+              return <img src={Logo_E} alt="" />;
             }
           })()}
 

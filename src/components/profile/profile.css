@@ -32,6 +32,7 @@
   position: relative;
   top: 7rem;
   left: 2rem;
+  aspect-ratio: 1/1;
 }
 
 .FRE__Profile__Images div > button {
