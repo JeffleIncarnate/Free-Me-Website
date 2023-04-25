@@ -104,7 +104,7 @@
 }
 
 .FRE__Profile__Grid-Education {
-  grid-column-start: col3;
+  grid-column-start: col2;
   grid-column-end: span col4;
   grid-row-start: row2;
   grid-row-end: span row4;
@@ -136,4 +136,26 @@
   grid-column-end: span col6;
   grid-row-start: row1;
   grid-row-end: span row5;
+}
+
+.FRE__Profile__Grid-Timeline > ul {
+  margin-left: 0;
+}
+
+.FRE__Profile__Grid-Timeline__Time {
+  width: 100%;
+  margin: 2rem 0;
+  background-color: rgba(212, 97, 18, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  list-style-type: none;
+  transition: scale 0.3s ease-in-out;
+}
+
+.FRE__Profile__Grid-Timeline__Time:hover {
+  scale: 1.02;
+}
+
+.FRE__Profile__Grid-Timeline__Time > * {
+  margin-bottom: 0.5rem;
 }

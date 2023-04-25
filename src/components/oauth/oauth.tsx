@@ -14,7 +14,7 @@ export default function OAuth() {
   let navigate = useNavigate();
 
   const onCodeEnter = async () => {
-    let codeVal: any = parseInt((code.current! as any).value);
+    let codeVal: number = parseInt((code.current! as any).value);
 
     if (codeVal !== 1) {
       setError(false);
@@ -28,13 +28,14 @@ export default function OAuth() {
     };
 
     fetch(
-      `http://localhost:3000/freeme/getUser?username=${sessionStorage.getItem(
+      `http://localhost:3000/freeme/getUser?email=${sessionStorage.getItem(
         "email"
       )}`,
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => {
+        console.log(result);
         sessionStorage.setItem("uuid", result.uuid);
         sessionStorage.setItem("address", result.address);
         sessionStorage.setItem("firstname", result.firstname);

@@ -6,14 +6,51 @@ import Logo_Light from "../../assets/Logo_Light.png";
 import Logo_Light_Text from "../../assets/Logo_Light-Text.png";
 
 export default function Profile() {
-  const [background, setBackground]: any = useState();
+  const [background, setBackground] = useState<any>(null);
+  const [profileData, setProfileData] = useState<any>("Loading...");
+  const [socialMedia, setSocialMedia] = useState<string[]>([]);
+  const [companyHistory, setCompanyHistory] = useState<string[]>([]);
+
+  let getProfileData = () => {
+    var requestOptions: any = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    fetch(
+      `http://localhost:3000/freeme/getUser?email=${sessionStorage.getItem(
+        "email"
+      )}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        setProfileData(result.profile);
+
+        if (sessionStorage.getItem("type") === "client") {
+          setSocialMedia([
+            profileData.socialMedia.twitter,
+            profileData.socialMedia.facebook,
+            profileData.socialMedia.instagram,
+          ]);
+
+          setCompanyHistory([
+            profileData.companyHistory.global,
+            profileData.companyHistory.founded,
+            profileData.companyHistory.other.map((value: string) => {
+              return value;
+            }),
+          ]);
+        }
+      })
+      .catch((error) => console.log("error", error));
+  };
 
   useEffect(() => {
-    if (
-      sessionStorage.getItem("uuid") === "4a10c437-a70f-4f06-823d-8c17fe2384db"
-    ) {
+    if (sessionStorage.getItem("email") === "dhruvrayat50@gmail.com")
       setBackground(`../../..${Logo_Light_Text}`);
-    }
+
+    getProfileData();
   });
 
   return (
@@ -24,10 +61,7 @@ export default function Profile() {
           style={{ backgroundImage: `url("${background}")` }}
         >
           {(() => {
-            if (
-              sessionStorage.getItem("uuid") ===
-              "4a10c437-a70f-4f06-823d-8c17fe2384db"
-            ) {
+            if (sessionStorage.getItem("email") === "dhruvrayat50@gmail.com") {
               return <img src={Logo_Light} alt="" />;
             }
           })()}
@@ -43,73 +77,173 @@ export default function Profile() {
             <h2>Values</h2>
 
             <ul>
-              <li>Loyalty</li>
-              <li>Spirituality</li>
-              <li>Humility</li>
-              <li>Compassion</li>
-              <li>Honesty</li>
-              <li>Kindness</li>
-              <li>Integrity</li>
-              <li>Selflessness</li>
+              {profileData !== "Loading..." ? (
+                profileData.values.map((value: string) => {
+                  return <li key={crypto.randomUUID()}>{value}</li>;
+                })
+              ) : (
+                <li>Loading...</li>
+              )}
             </ul>
           </div>
           <div className="FRE__Profile__Grid-Hobbies">
             <h2>Hobbies</h2>
 
             <ul>
-              <li>Painting</li>
-              <li>Dance</li>
-              <li>Chess</li>
-              <li>Gardening</li>
-              <li>Writing</li>
+              {profileData !== "Loading..." ? (
+                profileData.hobbies.map((value: string) => {
+                  return <li key={crypto.randomUUID()}>{value}</li>;
+                })
+              ) : (
+                <li>Loading...</li>
+              )}
             </ul>
           </div>
           <div className="FRE__Profile__Grid-Skills">
-            <h2>Skills</h2>
+            <h2>
+              {sessionStorage.getItem("type") === "client"
+                ? "Speciality"
+                : "Skills"}
+            </h2>
 
             <ul>
-              <li>Computer proficiency</li>
-              <li>Leadership experience</li>
-              <li>Communication skills</li>
-              <li>People skills</li>
+              {profileData !== "Loading..." ? (
+                sessionStorage.getItem("type") === "client" ? (
+                  profileData.speciality.map((value: any) => {
+                    return <li key={crypto.randomUUID()}>{value}</li>;
+                  })
+                ) : (
+                  profileData.skills.map((value: any) => {
+                    return <li key={crypto.randomUUID()}>{value}</li>;
+                  })
+                )
+              ) : (
+                <li>Loading...</li>
+              )}
             </ul>
           </div>
           <div className="FRE__Profile__Grid-Education">
-            <h2>Education</h2>
+            <h2>
+              {sessionStorage.getItem("type") === "client"
+                ? "Social Media"
+                : "Education"}
+            </h2>
 
             <ul>
-              <li>
-                <strong>Harvard University</strong> -- 2018-Current
-              </li>
-              <li>
-                <strong>MIT</strong> -- 2016-2018
-              </li>
+              {profileData !== "Loading..." ? (
+                sessionStorage.getItem("type") === "client" ? (
+                  socialMedia.map((value: any, index: number) => {
+                    return (
+                      <li key={crypto.randomUUID()}>
+                        <strong>{`${
+                          index === 0
+                            ? "Twitter"
+                            : index === 1
+                            ? "Facebook"
+                            : index === 2
+                            ? "Instagram"
+                            : "Wack code"
+                        }`}</strong>
+                        {` -- ${value}`}
+                      </li>
+                    );
+                  })
+                ) : (
+                  profileData.education.map((value: any) => {
+                    return (
+                      <li key={crypto.randomUUID()}>
+                        <strong>{value.school}</strong>
+                        {` -- ${value.startYear} - ${value.endYear}`}
+                      </li>
+                    );
+                  })
+                )
+              ) : (
+                <li>Loading...</li>
+              )}
             </ul>
           </div>
           <div className="FRE__Profile__Grid-CV_Highlights">
-            <h2>CV Highlights</h2>
+            <h2>
+              {sessionStorage.getItem("type") === "client"
+                ? "Company History"
+                : "CV Highlights"}
+            </h2>
+
+            <ul>
+              {profileData !== "Loading..." ? (
+                sessionStorage.getItem("type") === "client" ? (
+                  companyHistory.map((value: any, index: number) => {
+                    return (
+                      <li key={crypto.randomUUID()}>
+                        <strong>{`${
+                          index === 0
+                            ? "Global"
+                            : index === 1
+                            ? "Founded"
+                            : "Other"
+                        }`}</strong>
+                        {` -- ${value}`}
+                      </li>
+                    );
+                  })
+                ) : (
+                  profileData.cvHighlights.map((value: any) => {
+                    return <li key={crypto.randomUUID()}>{value}</li>;
+                  })
+                )
+              ) : (
+                <li>Loading...</li>
+              )}
+            </ul>
           </div>
           <div className="FRE__Profile__Grid-Ambtions">
             <h2>Ambtions</h2>
 
             <ul>
-              <li>Aqcuisitions and Mergers</li>
-              <li>Business Continuity Management</li>
+              {profileData !== "Loading..." ? (
+                profileData.ambitions.map((value: string) => {
+                  return <li key={crypto.randomUUID()}>{value}</li>;
+                })
+              ) : (
+                <li>Loading...</li>
+              )}
             </ul>
           </div>
           <div className="FRE__Profile__Grid-Awards">
             <h2>Awards</h2>
 
             <ul>
-              <li>2022 MBA Emerging leader award</li>
-              <li>Represented Holland in Rugby</li>
+              {profileData !== "Loading..." ? (
+                profileData.awards.map((value: string) => {
+                  return <li key={crypto.randomUUID()}>{value}</li>;
+                })
+              ) : (
+                <li>Loading...</li>
+              )}
             </ul>
           </div>
 
           <div className="FRE__Profile__Grid-Timeline">
             <h2>Timeline</h2>
 
-            <div className="FRE__Profile__Grid-Timeline__Time"></div>
+            <ul>
+              {profileData !== "Loading..." ? (
+                profileData.timeline.map((value: any) => {
+                  return (
+                    <li className="FRE__Profile__Grid-Timeline__Time">
+                      <h3>{value.title}</h3>
+                      <p>{value.description}</p>
+                      <span>{`${new Date(value.time * 1000).toLocaleDateString(
+                        "en-nz"
+                      )}`}</span>
+                    </li>
+                  );
+                })
+              ) : (
+                <li>Loading...</li>
+              )}
+            </ul>
           </div>
         </div>
       </main>
