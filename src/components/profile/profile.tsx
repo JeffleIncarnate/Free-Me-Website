@@ -154,7 +154,7 @@ export default function Profile() {
                             ? "Facebook"
                             : index === 2
                             ? "Instagram"
-                            : "Wack code"
+                            : null
                         }`}</strong>
                         {` -- ${value}`}
                       </li>
