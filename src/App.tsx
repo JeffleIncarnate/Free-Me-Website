@@ -12,6 +12,7 @@ import CommunityNetworkPage from "./layouts/communityNetwork";
 import ProfilePage from "./layouts/profile";
 import ChatPage from "./layouts/chat";
 import StatementOfWorkPage from "./layouts/statementOfWork";
+import BalancesPages from "./layouts/balances";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/chat" element={<ChatPage />} />
       <Route path="/sow" element={<StatementOfWorkPage />} />
+      <Route path="/balances" element={<BalancesPages />} />
     </Routes>
   );
 }
