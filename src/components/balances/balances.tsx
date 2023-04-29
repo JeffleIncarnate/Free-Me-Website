@@ -12,42 +12,66 @@ import {
   IBalancesIncomingAndOutgoings,
 } from "./interfacesBalances";
 
-export default function Balances(props: any) {
-  let BalancesTransactionsButtonsTest: IBalancesTransactionsButton[] = [
+export default function Balances() {
+  const [transactionDetails, setTransactionDetails] =
+    useState<ITransactionDetails | null>(null);
+
+  let BalancesTransactionDetailsTest: ITransactionDetails[] = [
     {
-      text: "Job Payment",
-      mounyOut: false,
+      title: "Job Payment",
+      moneyOut: true,
+      date: 1682729455,
+      from: "Consultant Balance",
+      to: "FreeMe Subscription",
+      description: "FreeMe Subscription",
+      setTransactionDetails: setTransactionDetails,
     },
     {
-      text: "Job Payment Deductions",
-      mounyOut: true,
+      title: "Job Payment Deductions",
+      moneyOut: false,
+      date: 1682729455,
+      from: "Consultant Balance",
+      to: "FreeMe Subscription",
+      description: "FreeMe Subscription",
+      setTransactionDetails: setTransactionDetails,
     },
     {
-      text: "Community Network Payment",
-      mounyOut: false,
+      title: "Community Network Payout",
+      moneyOut: true,
+      date: 1682729455,
+      from: "Consultant Balance",
+      to: "FreeMe Subscription",
+      description: "FreeMe Subscription",
+      setTransactionDetails: setTransactionDetails,
     },
     {
-      text: "FreeMe Subscription",
-      mounyOut: true,
+      title: "FreeMe Subscription",
+      moneyOut: false,
+      date: 1682729455,
+      from: "Consultant Balance",
+      to: "FreeMe Subscription",
+      description: "FreeMe Subscription",
+      setTransactionDetails: setTransactionDetails,
     },
     {
-      text: "Job Payment",
-      mounyOut: false,
+      title: "Job Payment",
+      moneyOut: true,
+      date: 1682729455,
+      from: "Consultant Balance",
+      to: "FreeMe Subscription",
+      description: "FreeMe Subscription",
+      setTransactionDetails: setTransactionDetails,
     },
     {
-      text: "Job Payment Deductions",
-      mounyOut: true,
+      title: "Job Payment Deductions",
+      moneyOut: false,
+      date: 1682729455,
+      from: "Consultant Balance",
+      to: "FreeMe Subscription",
+      description: "FreeMe Subscription",
+      setTransactionDetails: setTransactionDetails,
     },
   ];
-
-  let BalancesTransactionDetailsTest: ITransactionDetails = {
-    title: "FreeMe Subscription",
-    moneyOut: true,
-    date: 1682729455,
-    from: "Consultant Balance",
-    to: "FreeMe Subscription",
-    description: "FreeMe Subscription",
-  };
 
   let BalancesIncomingAndOutgoingsTest: IBalancesIncomingAndOutgoings[] = [
     {
@@ -76,17 +100,13 @@ export default function Balances(props: any) {
     },
   ];
 
-  const [transactionDetails, setTransactionDetails] =
-    useState<ITransactionDetails | null>(null);
-
   return (
     <main className="FRE__Balances">
       <BalancesTransactions
-        textArrayOfObjects={BalancesTransactionsButtonsTest}
+        textArrayOfObjects={BalancesTransactionDetailsTest}
+        setTransactionDetails={setTransactionDetails}
       />
-      <BalancesTransactionDetails
-        transactionDetails={BalancesTransactionDetailsTest}
-      />
+      <BalancesTransactionDetails transactionDetails={transactionDetails} />
       <BalancesIncomingAndOutgoings
         itemsToDisplay={BalancesIncomingAndOutgoingsTest}
       />

@@ -1,21 +1,25 @@
 import "./transactions.css";
 
-import { IBalancesTransactionsButton } from "../interfacesBalances";
+import { ITransaction, ITransactionDetails } from "../interfacesBalances";
 
 export default function BalancesTransactions({
   textArrayOfObjects,
-}: {
-  [key: string]: IBalancesTransactionsButton[];
-}) {
+  setTransactionDetails,
+}: ITransaction) {
   return (
     <main className="FRE__Balances__Transactions">
       <h2>Transactions</h2>
 
-      {textArrayOfObjects.map((item: IBalancesTransactionsButton) => {
+      {textArrayOfObjects.map((item: ITransactionDetails) => {
         return (
           <BalancesTransactionsButton
-            text={item.text}
-            mounyOut={item.mounyOut}
+            title={item.title}
+            moneyOut={item.moneyOut}
+            date={item.date}
+            from={item.from}
+            to={item.to}
+            description={item.description}
+            setTransactionDetails={setTransactionDetails}
             key={crypto.randomUUID()}
           />
         );
@@ -25,20 +29,33 @@ export default function BalancesTransactions({
 }
 
 export function BalancesTransactionsButton({
-  text,
-  mounyOut,
-}: IBalancesTransactionsButton) {
+  title,
+  moneyOut,
+  date,
+  from,
+  to,
+  description,
+  setTransactionDetails,
+}: ITransactionDetails) {
   return (
     // If true, text will be red, else will be green
     <button
       className="FRE__Balances__Transactions__Button"
-      style={{ color: mounyOut === true ? "#FAA0A0" : "#C1E1C1" }}
+      style={{ color: moneyOut === true ? "#FAA0A0" : "#C1E1C1" }}
       onClick={() => {
-        alert("e");
+        setTransactionDetails({
+          title: title,
+          moneyOut: moneyOut,
+          date: date,
+          from: from,
+          to: to,
+          description: description,
+          setTransactionDetails: setTransactionDetails,
+        });
       }}
     >
-      - {text}
-      {mounyOut === true ? (
+      - {title}
+      {moneyOut === true ? (
         <i className="fa-solid fa-arrow-down"></i>
       ) : (
         <i className="fa-solid fa-arrow-up"></i>

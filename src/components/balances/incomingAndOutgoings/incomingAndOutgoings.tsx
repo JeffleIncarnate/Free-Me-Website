@@ -9,13 +9,14 @@ export default function BalancesIncomingAndOutgoings({
 }) {
   return (
     <main className="FRE__Balances__IncomingAndOutgoings">
-      <h2>Total incoming and outgoings</h2>
+      <h2>Incoming & outgoings</h2>
 
       {itemsToDisplay.map((item: IBalancesIncomingAndOutgoings) => {
         return (
           <BalancesIncomingAndOutgoingsText
             text={item.text}
             amount={item.amount}
+            key={crypto.randomUUID()}
           />
         );
       })}
