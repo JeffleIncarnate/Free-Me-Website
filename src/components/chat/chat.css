@@ -10,7 +10,7 @@
 /* -- LEFT -- */
 .FRE__Chat > .FRE__Chat__Left {
   height: 100%;
-  width: 30%;
+  flex: 1;
   padding: 1rem;
   overflow-y: scroll;
 }

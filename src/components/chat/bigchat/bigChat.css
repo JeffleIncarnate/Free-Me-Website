@@ -1,6 +1,6 @@
 .FRE__Chat__Big {
   height: 100%;
-  width: 70%;
+  flex: 2.5;
   display: flex;
   align-items: center;
   justify-content: center;

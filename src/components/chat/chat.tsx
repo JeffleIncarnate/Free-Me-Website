@@ -2,6 +2,7 @@ import "./chat.css";
 
 import SmallChat from "./smallchat/smallChat";
 import BigChat from "./bigchat/bigChat";
+import ProfileChat from "./profileChat/profileChat";
 
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
@@ -89,6 +90,10 @@ export default function Chat() {
         </div>
       </div>
       <BigChat
+        isActive={activeChat.img === null ? "false" : "true"}
+        data={activeChat}
+      />
+      <ProfileChat
         isActive={activeChat.img === null ? "false" : "true"}
         data={activeChat}
       />
