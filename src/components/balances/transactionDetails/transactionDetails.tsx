@@ -40,7 +40,11 @@ export function BalancesTransactionDetailsDisplayData({
         </div>
         <div>
           <h3>Date: </h3>
-          <p>{transactionDetails!.date}</p>
+          <p>
+            {`${new Date(transactionDetails!.date * 1000).toLocaleDateString(
+              "en-nz"
+            )}`}
+          </p>
         </div>
         <div>
           <h3>From: </h3>
