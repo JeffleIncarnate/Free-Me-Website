@@ -93,10 +93,7 @@ export default function Chat() {
         isActive={activeChat.img === null ? "false" : "true"}
         data={activeChat}
       />
-      <ProfileChat
-        isActive={activeChat.img === null ? "false" : "true"}
-        data={activeChat}
-      />
+      <ProfileChat data={activeChat} />
     </main>
   );
 }
