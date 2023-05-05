@@ -13,6 +13,7 @@ import ProfilePage from "./layouts/profile";
 import ChatPage from "./layouts/chat";
 import StatementOfWorkPage from "./layouts/statementOfWork";
 import BalancesPages from "./layouts/balances";
+import NotificationsPage from "./layouts/notifcations";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path="/chat" element={<ChatPage />} />
       <Route path="/sow" element={<StatementOfWorkPage />} />
       <Route path="/balances" element={<BalancesPages />} />
+      <Route path="/notifications" element={<NotificationsPage />} />
     </Routes>
   );
 }

@@ -1,0 +1,8 @@
+.FRE__Notifications {
+  height: 85vh;
+  width: 100%;
+  margin-top: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
