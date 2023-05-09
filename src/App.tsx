@@ -9,6 +9,7 @@ import OauthPage from "./layouts/oauth";
 import OpportunitiesPage from "./layouts/opportunities";
 import DashboardPage from "./layouts/dashboard";
 import CommunityNetworkPage from "./layouts/communityNetwork";
+import HardwareAndSoftwarePage from "./layouts/hardwareAndSoftware";
 import ProfilePage from "./layouts/profile";
 import ChatPage from "./layouts/chat";
 import StatementOfWorkPage from "./layouts/statementOfWork";
@@ -30,6 +31,10 @@ function App() {
       <Route path="/sow" element={<StatementOfWorkPage />} />
       <Route path="/balances" element={<BalancesPages />} />
       <Route path="/notifications" element={<NotificationsPage />} />
+      <Route
+        path="/communityNetwork/hardware"
+        element={<HardwareAndSoftwarePage />}
+      ></Route>
     </Routes>
   );
 }

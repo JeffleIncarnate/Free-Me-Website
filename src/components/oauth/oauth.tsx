@@ -59,7 +59,7 @@ export default function OAuth() {
           onCodeEnter();
         }}
       >
-        <h2>OAuth</h2>
+        <h2>2 Factor</h2>
         <div>
           <label>
             2 Factor Code<span>*</span>
