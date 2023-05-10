@@ -1,9 +1,22 @@
 import "./communityNetwork.css";
 
+import { useNavigate } from "react-router-dom";
+
 export default function CommunityNetwork() {
+  let navigate = useNavigate();
+
+  let handleHardwareSoftwareClick = () => {
+    navigate("/communityNetwork/hardware");
+  };
+
   return (
     <main className="FRE__CommunityNetwork">
-      <div className="FRE__CommunityNetwork-hard_software">
+      <div
+        className="FRE__CommunityNetwork-hard_software"
+        onClick={() => {
+          handleHardwareSoftwareClick();
+        }}
+      >
         <h2>Hardware and Software</h2>
       </div>
       <div className="FRE__CommunityNetwork-utility">

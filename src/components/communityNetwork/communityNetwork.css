@@ -29,6 +29,7 @@
   grid-column-end: span col3;
   grid-row-start: row1;
   grid-row-end: span row3;
+  cursor: pointer;
 }
 
 .FRE__CommunityNetwork-utility {
