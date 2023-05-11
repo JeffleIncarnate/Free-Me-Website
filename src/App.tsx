@@ -15,6 +15,7 @@ import ChatPage from "./layouts/chat";
 import StatementOfWorkPage from "./layouts/statementOfWork";
 import BalancesPages from "./layouts/balances";
 import NotificationsPage from "./layouts/notifcations";
+import WatchlistPage from "./layouts/watchlist";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         path="/communityNetwork/hardware"
         element={<HardwareAndSoftwarePage />}
       ></Route>
+      <Route path="/watchlist" element={<WatchlistPage />} />
     </Routes>
   );
 }
