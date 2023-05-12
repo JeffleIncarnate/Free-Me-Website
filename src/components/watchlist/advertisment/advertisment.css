@@ -3,11 +3,12 @@
   grid-column-end: span col3;
   grid-row-start: row2;
   grid-row-end: span row2;
+  cursor: pointer;
 }
 
 .FRE__Watchlist__Advertisment {
-  background-image: url("https://images.unsplash.com/photo-1683780777629-7b75e7016acc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
+  background-image: url("https://www.pbtech.co.nz/imglib/dd/pb-logo-alt.svg");
   background-position: center;
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
 }
