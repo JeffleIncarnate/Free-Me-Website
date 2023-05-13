@@ -65,6 +65,8 @@
 .FRE__Chat__Right__Profile__Buttons > section > button {
   padding: 1rem;
   width: 60px;
+  background-color: rgba(24, 24, 24, 0.6);
+  color: var(--white);
   aspect-ratio: 1/1;
   font-size: 1.5rem;
   border-radius: 50%;

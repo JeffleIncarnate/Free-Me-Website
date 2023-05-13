@@ -87,7 +87,7 @@
 
 .FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Icons > i {
   padding: 0.5rem;
-  background-color: rgb(20, 20, 20);
+  background-color: rgba(24, 24, 24, 0.6);
   margin: 0 0.1rem;
   border-radius: 50%;
   cursor: pointer;
@@ -102,14 +102,14 @@
   width: 96%;
   border-radius: 2rem;
   padding: 0.8rem;
-  background-color: rgb(20, 20, 20);
+  background-color: rgba(24, 24, 24, 0.6);
   color: var(--white);
-  border: solid 0.1rem var(--black);
+  border: solid 0.2rem rgba(24, 24, 24, 0.6);
   transition: border 0.3s ease-in-out;
 }
 
 .FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Message > input:hover {
-  border: solid 0.1rem var(--accent);
+  border: solid 0.2rem var(--accent);
 }
 
 /* -- Sending -- */

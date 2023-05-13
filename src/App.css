@@ -4,6 +4,14 @@ body {
   color: var(--white);
   overflow-x: hidden;
   background-color: var(--black);
+
+  --black: rgba(, 1);
+  background-image: linear-gradient(
+      rgba(24, 24, 24, 0.9),
+      rgba(24, 24, 24, 0.9)
+    ),
+    url("./assets/Splash.jpg");
+  background-position: center;
 }
 
 :root {

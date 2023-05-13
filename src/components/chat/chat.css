@@ -32,7 +32,7 @@
 
 .FRE__Chat__Left > .FRE__Chat__Left-Top i {
   padding: 1rem;
-  background-color: rgb(20, 20, 20);
+  background-color: rgba(24, 24, 24, 0.6);
   margin: 0 0.5rem;
   border-radius: 50%;
   cursor: pointer;
@@ -47,14 +47,14 @@
   width: 100%;
   border-radius: 2rem;
   padding: 0.8rem;
-  background-color: rgb(20, 20, 20);
+  background-color: rgba(24, 24, 24, 0.6);
   color: var(--white);
-  border: solid 0.1rem var(--black);
+  border: solid 0.2rem rgba(24, 24, 24, 0.6);
   transition: border 0.3s ease-in-out;
 }
 
 .FRE__Chat__Left > .FRE__Chat__Left-Search > input:hover {
-  border: solid 0.1rem var(--accent);
+  border: solid 0.2rem var(--accent);
 }
 
 .FRE__Chat__Left-Chips {
