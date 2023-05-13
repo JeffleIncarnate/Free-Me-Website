@@ -1,24 +1,130 @@
 import "./profileChat.css";
 
-export default function ProfileChat({
-  data,
+import { useState } from "react";
+
+import { IProfileData } from "../chatInterface";
+
+export default function ProfileChat({ data }: { [key: string]: IProfileData }) {
+  return (
+    <div className="FRE__Chat__Right">
+      {data.username === "Rick Astley" ? (
+        <ProfileChatDisplay
+          name={data.username}
+          profilePicture={data.profilePicture}
+        />
+      ) : data.username === "Ferd Swinkels" ? (
+        <ProfileChatDisplay
+          name={data.username}
+          profilePicture={data.profilePicture}
+        />
+      ) : null}
+    </div>
+  );
+}
+
+function ProfileChatDisplay({
+  name,
+  profilePicture,
 }: {
-  [key: string]: { [key: string]: any };
+  [key: string]: string;
 }) {
   return (
-    <>
-      <div className="FRE__Chat__Right">
-        {data.userName === "Rick Astley" ? (
-          <div className="FRE__Chat__Right__Profile">
-            <img src={data.img} alt="" />
-            <h2>{data.userName}</h2>
-          </div>
-        ) : data.userName === "Ferd Swinkels" ? (
-          <h2>Ferd Swinkels</h2>
+    <div className="FRE__Chat__Right__Profile">
+      <ProfileChatDisplayPfpName name={name} profilePicture={profilePicture} />
+
+      <ProfileChatDisplayButtons />
+
+      <ProfileChatDisplayDropdown dropDownName="Chat Info" />
+      <ProfileChatDisplayDropdown dropDownName="Customize Chat" />
+      <ProfileChatDisplayDropdown dropDownName="Media, files, and links" />
+      <ProfileChatDisplayDropdown dropDownName="Privacy & Support" />
+    </div>
+  );
+}
+
+function ProfileChatDisplayPfpName({
+  name,
+  profilePicture,
+}: {
+  [key: string]: string;
+}) {
+  return (
+    <div className="FRE__Chat__Right__Profile__ImgName">
+      <div className="FRE__Chat__Small-Image_Circle">
+        <img src={profilePicture} alt="" />
+      </div>
+
+      <h3>{name}</h3>
+    </div>
+  );
+}
+
+function ProfileChatDisplayButtons() {
+  const [bellMute, setBellMute] = useState<boolean>(false);
+
+  let handleBellClick = () => {
+    setBellMute(bellMute ? false : true);
+  };
+
+  return (
+    <div className="FRE__Chat__Right__Profile__Buttons">
+      <section>
+        <button>
+          <i className="fa-solid fa-user"></i>
+        </button>
+        <p>Profile</p>
+      </section>
+      <section>
+        <button
+          onClick={() => {
+            handleBellClick();
+          }}
+        >
+          {bellMute ? (
+            <i className="fa-solid fa-bell-slash"></i>
+          ) : (
+            <i className="fa-solid fa-bell"></i>
+          )}
+        </button>
+        <p>Mute</p>
+      </section>
+      <section>
+        <button>
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <p>Search</p>
+      </section>
+    </div>
+  );
+}
+
+function ProfileChatDisplayDropdown({
+  dropDownName,
+}: {
+  [key: string]: string;
+}) {
+  const [displayDropdown, setDisplayDropdown] = useState<boolean>(false);
+
+  let handleClick = () => {
+    setDisplayDropdown(displayDropdown ? false : true);
+  };
+
+  return (
+    <div
+      className="FRE__Chat__Right__Dropdown"
+      onClick={() => {
+        handleClick();
+      }}
+    >
+      <div className="FRE__Chat__Right__Dropdown__Top">
+        <p>{dropDownName}</p>
+
+        {displayDropdown ? (
+          <i className="fa-solid fa-angle-up"></i>
         ) : (
-          <h2>Select a Chat</h2>
+          <i className="fa-solid fa-angle-down"></i>
         )}
       </div>
-    </>
+    </div>
   );
 }

@@ -1,3 +1,73 @@
 .FRE__Chat__Right {
   flex: 1;
+  height: 100%;
+}
+
+/* -- Profile -- */
+.FRE__Chat__Right__Profile__ImgName {
+  width: 90%;
+  margin: 1.4rem 5%;
+  position: relative;
+  text-align: center;
+}
+
+.FRE__Chat__Right__Profile__ImgName > h3 {
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.FRE__Chat__Right__Profile__ImgName > .FRE__Chat__Small-Image_Circle {
+  width: 40%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 30%;
+}
+
+.FRE__Chat__Right__Profile__ImgName > .FRE__Chat__Small-Image_Circle > img {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  left: 20%;
+  top: 150%;
+  scale: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* -- Dropdown -- */
+.FRE__Chat__Right__Dropdown__Top {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 1.4rem 5%;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+/* -- Buttons -- */
+.FRE__Chat__Right__Profile__Buttons {
+  width: 90%;
+  margin: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.FRE__Chat__Right__Profile__Buttons > section {
+  margin: 1rem;
+  text-align: center;
+}
+
+.FRE__Chat__Right__Profile__Buttons > section > button {
+  padding: 1rem;
+  width: 60px;
+  aspect-ratio: 1/1;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: none;
 }

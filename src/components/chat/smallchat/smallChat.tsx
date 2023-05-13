@@ -1,27 +1,33 @@
 import "./smallChat.css";
 
-export default function SmallChat(props: any) {
+import { ISmallChat } from "../chatInterface";
+
+export default function SmallChat({
+  profilePicture,
+  username,
+  receiving,
+  lastMessage,
+  muted,
+  setActiveChat,
+}: ISmallChat) {
   return (
     <div
       className="FRE__Chat__Small"
       onClick={() => {
-        props.setActiveChat({
-          img: props.img,
-          userName: props.userName,
+        setActiveChat({
+          username: username,
+          profilePicture: profilePicture,
+          muted: muted,
         });
       }}
     >
       <div className="FRE__Chat__Small-Image_Circle">
-        <img src={props.img} alt="" />
+        <img src={profilePicture} alt="" />
       </div>
 
       <div>
-        <h3>{props.userName}</h3>
-        <p>
-          {props.receiving === "true"
-            ? `Received: ${props.lastMessage}`
-            : `Sent: ${props.lastMessage}`}
-        </p>
+        <h3>{username}</h3>
+        <p>{receiving ? `Received: ${lastMessage}` : `Sent: ${lastMessage}`}</p>
       </div>
     </div>
   );

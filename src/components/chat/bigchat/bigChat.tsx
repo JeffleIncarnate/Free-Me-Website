@@ -1,9 +1,10 @@
 import "./bigChat.css";
 
 import { io } from "socket.io-client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { IBigChat } from "../chatInterface";
 
-export default function BigChat(props: any) {
+export default function BigChat({ isActive, data }: IBigChat) {
   const socket = io("ws://localhost:3001");
   const message = useRef(null);
 
@@ -19,14 +20,14 @@ export default function BigChat(props: any) {
 
   return (
     <div className="FRE__Chat__Big">
-      {props.isActive === "true" ? (
+      {isActive === true ? (
         <>
           <div className="FRE__Chat__Big-Top">
             <div className="FRE__Chat__Big-Top__Image_Cricle">
-              <img src={props.data.img} alt="" />
+              <img src={data.profilePicture} alt="" />
             </div>
 
-            <h2>{props.data.userName}</h2>
+            <h2>{data.username}</h2>
 
             <div>
               <i className="fa-solid fa-phone"></i>
