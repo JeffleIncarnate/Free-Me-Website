@@ -69,6 +69,7 @@
   padding: 2rem;
   border-radius: 0.7rem;
   position: relative;
+  border: 0.2rem solid var(--white);
 }
 
 .FRE__Profile__Grid > * > h2 {
