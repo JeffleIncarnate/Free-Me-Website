@@ -5,23 +5,89 @@
   display: grid;
   gap: 1rem;
   grid-template-rows: [row1] 25% [row2] 25% [row3] 25% [row4] 25% [end];
-  grid-template-columns: [col1] 15% [col2] 20% [col3] 15% [col4] auto [col5] auto [end];
+  grid-template-columns: [col1] 15% [col2] 20% [col3] 15% [col4] 20% [col5] auto [end];
 }
 
 .FRE__CommunityNetwork > * {
-  border: 0.2rem solid var(--white);
-  padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: space-evenly;
   transition: all 0.3s ease-in-out;
-  background-color: var(--black);
   border-radius: 0.7rem;
+  position: relative;
+  border: 0.2rem solid var(--white);
 }
 
-.FRE__CommunityNetwork > *:hover {
-  border: 0.6rem solid var(--accent);
+/* -- Specific Images -- */
+.FRE__CommunityNetwork-hard_software > img {
+  width: 30%;
+}
+
+.FRE__CommunityNetwork-utility > img {
+  width: 17%;
+}
+
+.FRE__CommunityNetwork-insurance > img {
+  width: 40%;
+}
+
+.FRE__CommunityNetwork-accomodation {
+  flex-direction: column;
+}
+
+.FRE__CommunityNetwork-accomodation > img {
+  width: 50%;
+}
+
+.FRE__CommunityNetwork-energy {
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+.FRE__CommunityNetwork-energy > img {
+  width: 15%;
+}
+.FRE__CommunityNetwork-banking {
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+.FRE__CommunityNetwork-banking > img {
+  width: 25%;
+}
+
+.FRE__CommunityNetwork-education {
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+.FRE__CommunityNetwork-education > img {
+  width: 24%;
+}
+
+.FRE__CommunityNetwork > * > div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: 0.4s ease-in-out;
+  border-radius: 0.7rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.FRE__CommunityNetwork > * > div > h2 {
+  margin-top: 1rem;
+}
+
+.FRE__CommunityNetwork > *:hover > div {
+  width: 100%;
 }
 
 .FRE__CommunityNetwork-hard_software {
