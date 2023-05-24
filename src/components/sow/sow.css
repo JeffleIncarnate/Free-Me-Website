@@ -1,8 +1,9 @@
-.FRE__Hardware {
-  height: 85vh;
+.FRE__StatementOfWork {
+  height: 80vh;
   width: 95%;
-  margin: 15vh 2.5% 0 2.5%;
+  margin: 15vh 2.5% 5vh 2.5%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }

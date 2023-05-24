@@ -9,6 +9,8 @@ body {
     ),
     url("./assets/Splash.jpg");
   background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
 }
 
 :root {

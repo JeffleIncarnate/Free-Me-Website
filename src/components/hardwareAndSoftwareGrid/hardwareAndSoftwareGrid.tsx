@@ -1,6 +1,4 @@
-import "./hardwareAndSoftware.css";
-
-import HardwareAndSoftwareDeals from "./deals/hardwareAndSoftwareDeals";
+import "./hardwareAndSoftwareGrid.css";
 
 import { IHardwareAndSoftware } from "./hardwareAndSoftwareInterface";
 
@@ -8,10 +6,11 @@ import PBTech from "../../assets/hardwareAndSoftware/pbtech.jpg";
 import Microsoft from "../../assets/hardwareAndSoftware/microsoft.webp";
 import IngramMicro from "../../assets/hardwareAndSoftware/ingram.png";
 
-export default function HardwareAndSoftware() {
+export default function HardwareAndSoftwareGrid() {
   let data: IHardwareAndSoftware[] = [
     {
       img: PBTech,
+      storeName: "Pb Tech",
       whoAreWe: `Saving you money since 1993
 
 Founded in 1993 and 100% New Zealand owned, PB Tech
@@ -39,6 +38,7 @@ PBTech`,
     },
     {
       img: Microsoft,
+      storeName: "Microsoft",
       whoAreWe: `Microsoft Corporation is an American multinational technology
 corporation headquartered in Redmond, Washington.
 Microsoft's best-known software products are the Windows line
@@ -52,6 +52,7 @@ purchase from Microsoft`,
 
     {
       img: IngramMicro,
+      storeName: "Ingram Micro",
       whoAreWe: `Ingram Micro helps businesses fully realize the
 promise of technology™— maximizing the value of
 the technology they make, sell or use. We amplify
@@ -75,10 +76,21 @@ purchase from Ingram Micro`,
   ];
 
   return (
-    <main className="FRE__Hardware">
-      <HardwareAndSoftwareDeals data={data[0]} />
-      <HardwareAndSoftwareDeals data={data[1]} />
-      <HardwareAndSoftwareDeals data={data[2]} />
+    <main className="FRE__HardwareSoftware">
+      <div className="FRE__HardwareSoftware__PbTech">
+        <div className="FRE__HardwareSoftware__PbTech__Top">
+          <img src={data[0].img} alt="" />
+          <p>About {data[0].storeName}</p>
+        </div>
+        <div className="FRE__HardwareSoftware__PbTech__Bottom"></div>
+      </div>
+      <div className="FRE__HardwareSoftware-utility"></div>
+      <div className="FRE__HardwareSoftware-insurance"></div>
+      <div className="FRE__HardwareSoftware-balances"></div>
+      <div className="FRE__HardwareSoftware-accomodation"></div>
+      <div className="FRE__HardwareSoftware-energy"></div>
+      <div className="FRE__HardwareSoftware-banking"></div>
+      <div className="FRE__HardwareSoftware-education"></div>
     </main>
   );
 }

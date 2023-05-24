@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar/navbar";
 import StatementOfWork from "../components/statementOfWork/statementOfWork";
+import SOW from "../components/sow/sow";
 
 import { useEffect } from "react";
 

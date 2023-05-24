@@ -1,8 +1,6 @@
-import "./signupConsultantForm.css";
+import { useState } from "react";
 
-import { useState, useRef } from "react";
-
-export default function SignupConsultantForm() {
+export default function SignupClientForm() {
   let [number, setNumber] = useState(1);
   let [form1, setForm1] = useState("FRE__Main__Signup-Cons__Form1");
   let [form2, setForm2] = useState("FRE__Main__Signup-Cons__Form2");

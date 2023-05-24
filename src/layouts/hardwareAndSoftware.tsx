@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar/navbar";
-import HardwareAndSoftware from "../components/hardwareAndSoftware/hardwareAndSoftware";
+import HardwareAndSoftwareGrid from "../components/hardwareAndSoftwareGrid/hardwareAndSoftwareGrid";
 
 import { useEffect } from "react";
 
@@ -11,7 +11,7 @@ export default function HardwareAndSoftwarePage() {
   return (
     <>
       <Navbar />
-      <HardwareAndSoftware />
+      <HardwareAndSoftwareGrid />
     </>
   );
 }

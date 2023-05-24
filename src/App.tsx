@@ -4,6 +4,7 @@ import "./App.css";
 
 import HomePage from "./layouts";
 import SignupConsultantPage from "./layouts/signupConsultant";
+import SignupClientPage from "./layouts/signupClient";
 import LoginPage from "./layouts/login";
 import OauthPage from "./layouts/oauth";
 import OpportunitiesPage from "./layouts/opportunities";
@@ -16,6 +17,7 @@ import StatementOfWorkPage from "./layouts/statementOfWork";
 import BalancesPages from "./layouts/balances";
 import NotificationsPage from "./layouts/notifcations";
 import WatchlistPage from "./layouts/watchlist";
+import SocialMediaPage from "./layouts/socialMedia";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signUpConsultant" element={<SignupConsultantPage />} />
+      <Route path="/signUpClient" element={<SignupClientPage />} />
       <Route path="/oauth" element={<OauthPage />} />
       <Route path="/opportunities" element={<OpportunitiesPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
@@ -37,6 +40,7 @@ function App() {
         element={<HardwareAndSoftwarePage />}
       ></Route>
       <Route path="/watchlist" element={<WatchlistPage />} />
+      <Route path="/socialMedia" element={<SocialMediaPage />} />
     </Routes>
   );
 }

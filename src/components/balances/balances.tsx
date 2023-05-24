@@ -7,7 +7,6 @@ import BalancesTransactionDetails from "./transactionDetails/transactionDetails"
 import BalancesIncomingAndOutgoings from "./incomingAndOutgoings/incomingAndOutgoings";
 
 import {
-  IBalancesTransactionsButton,
   ITransactionDetails,
   IBalancesIncomingAndOutgoings,
 } from "./interfacesBalances";
@@ -83,7 +82,7 @@ export default function Balances() {
       amount: 6969,
     },
     {
-      text: "Hliday Pay",
+      text: "Holiday Pay",
       amount: 265,
     },
     {

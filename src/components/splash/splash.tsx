@@ -29,7 +29,13 @@ export default function Splash() {
             <div className="FRE__Splash__SignUp">
               <h2>Client</h2>
               <p>Need skills?</p>
-              <button>Join Us!</button>
+              <button
+                onClick={() => {
+                  navigate("/signupClient");
+                }}
+              >
+                Join Us!
+              </button>
             </div>
           </div>
         </div>

@@ -240,21 +240,24 @@ export default function Profile() {
             <h2>Timeline</h2>
 
             <ul>
-              {profileData !== "Loading..." ? (
-                profileData.timeline.map((value: any) => {
-                  return (
-                    <li className="FRE__Profile__Grid-Timeline__Time">
-                      <h3>{value.title}</h3>
-                      <p>{value.description}</p>
-                      <span>{`${new Date(value.time * 1000).toLocaleDateString(
-                        "en-nz"
-                      )}`}</span>
-                    </li>
-                  );
-                })
-              ) : (
-                <li>Loading...</li>
-              )}
+              <div className="FRE__Profile__Grid-Timeline__Line"></div>
+              <div>
+                {profileData !== "Loading..." ? (
+                  profileData.timeline.map((value: any) => {
+                    return (
+                      <li className="FRE__Profile__Grid-Timeline__Time">
+                        <h3>{value.title}</h3>
+                        <p>{value.description}</p>
+                        <span>{`${new Date(
+                          value.time * 1000
+                        ).toLocaleDateString("en-nz")}`}</span>
+                      </li>
+                    );
+                  })
+                ) : (
+                  <li>Loading...</li>
+                )}
+              </div>
             </ul>
           </div>
         </div>

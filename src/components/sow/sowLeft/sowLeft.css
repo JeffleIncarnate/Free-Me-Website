@@ -1,0 +1,56 @@
+.FRE__StatementOfWork__Left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 90%;
+}
+
+.FRE__StatementOfWork__Left h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.FRE__StatementOfWork__Left h2::after {
+  content: "";
+  width: 100%;
+  height: 0.2em;
+  background-color: var(--accent);
+}
+
+.FRE__StatementOfWork__Left__Switcher {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  margin: 1rem 0;
+  color: var(--white);
+  position: relative;
+  cursor: pointer;
+}
+
+.FRE__StatementOfWork__Left__Switcher::after {
+  position: absolute;
+  content: "";
+  background: var(--accent);
+  bottom: 0;
+  right: 0;
+  height: 0.2rem;
+  width: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__StatementOfWork__Left__Switcher:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW {
+  font-size: 1.7rem;
+}
