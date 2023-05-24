@@ -5,7 +5,7 @@
 
 .FRE__Main__Left__Buttons {
   width: 100%;
-  height: 100%;
+  height: 60%;
 }
 
 .FRE__Main__Left__Buttons__User {
@@ -43,4 +43,38 @@
 
 .FRE__Main__Left__Buttons__Buttons__Button > h3 {
   margin-left: 1rem;
+}
+
+/* -- Bottom -- */
+.FRE__Main__Left__Bottom {
+  width: 100%;
+  height: 40%;
+  padding: 1rem;
+}
+
+.FRE__Main__Left__Bottom__Company {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: flex-start;
+  margin: 1rem 0;
+  border-top: solid rgba(250, 200, 152, 0.1) 0.1rem;
+  border-bottom: solid rgba(250, 200, 152, 0.1) 0.1rem;
+}
+
+.FRE__Main__Left__Bottom__Company > img {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.FRE__Main__Left__Bottom__Company > div {
+  height: 4rem;
+  width: 0.2rem;
+  background-color: var(--accent);
+  margin: 0rem 1.5rem;
+}
+
+.FRE__Main__Left__Bottom__Company > h3 {
+  font-size: 1.5rem;
 }
