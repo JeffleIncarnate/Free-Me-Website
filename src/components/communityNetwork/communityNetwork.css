@@ -6,6 +6,7 @@
   gap: 1rem;
   grid-template-rows: [row1] 25% [row2] 25% [row3] 25% [row4] 25% [end];
   grid-template-columns: [col1] 15% [col2] 20% [col3] 15% [col4] 20% [col5] auto [end];
+  padding: 1rem;
 }
 
 .FRE__CommunityNetwork > * {
@@ -15,7 +16,7 @@
   transition: all 0.3s ease-in-out;
   border-radius: 0.7rem;
   position: relative;
-  border: 0.2rem solid var(--white);
+  background-color: rgba(24, 24, 24, 0.5);
 }
 
 /* -- Specific Images -- */

@@ -1,0 +1,92 @@
+.FRE__Main__Centre__Post {
+  width: 100%;
+  background-color: rgba(24, 24, 24, 0.3);
+  margin: 1.5rem 0;
+  border-radius: 2rem;
+}
+
+/* -- Post -- */
+/* Post top */
+.FRE__Main__Centre__Post__Profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.FRE__Main__Centre__Post__Profile__Picture {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.FRE__Main__Centre__Post__Profile__Picture > img {
+  width: 100%;
+  border-radius: inherit;
+}
+
+.FRE__Main__Centre__Post__Profile__Text {
+  width: 84%;
+  margin-left: auto;
+}
+
+.FRE__Main__Centre__Post__Profile__Text > p:nth-child(1) {
+  margin-bottom: 0.3rem;
+}
+
+.FRE__Main__Centre__Post__Profile__Text > p:nth-child(1) > span {
+  color: grey;
+}
+
+.FRE__Main__Centre__Post__Profile__Icon {
+  width: 5%;
+  font-size: 2rem;
+}
+
+/* Body */
+.FRE__Main__Centre__Post__Body {
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  top: -1rem;
+}
+
+.FRE__Main__Centre__Post__Body > p {
+  font-size: 1.2rem;
+  margin: 2rem;
+}
+
+.FRE__Main__Centre__Post__Body > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+}
+
+.FRE__Main__Centre__Post__Body > div > img {
+  height: 100%;
+  margin: 1rem;
+}
+
+/* Actions */
+.FRE__Main__Centre__Post__Actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Main__Centre__Post__Action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(24, 24, 24, 0.6);
+  border-radius: 1rem;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.FRE__Main__Centre__Post__Action > * {
+  margin: 0.2rem;
+}

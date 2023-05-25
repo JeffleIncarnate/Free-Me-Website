@@ -1,5 +1,67 @@
 .FRE__Main__Centre {
   flex: 2;
   height: 100%;
-  background-color: red;
+  overflow-y: scroll;
+}
+
+.FRE__Main__Centre::-webkit-scrollbar {
+  display: none;
+}
+
+/* -- Post -- */
+.FRE__Main__Centre__Create {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(24, 24, 24, 0.3);
+  border-radius: 2rem;
+}
+
+/* -- Top -- */
+.FRE__Main__Centre__Create__Top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.FRE__Main__Centre__Create__Top > img {
+  width: 8%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.FRE__Main__Centre__Create__Top > input {
+  width: calc(100% - 8%);
+  border-radius: 2rem;
+  height: 100%;
+  padding: 1.5rem 1rem;
+  border: 0.2rem var(--white) solid;
+  background: transparent;
+}
+
+/* -- Bottom -- */
+.FRE__Main__Centre__Create__Bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.FRE__Main__Centre__Create__Bottom__Button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  background-color: rgba(24, 24, 24, 0.7);
+  border-radius: 2rem;
+}
+
+.FRE__Main__Centre__Create__Bottom__Button > i {
+  margin: 0 1rem;
+}
+
+.FRE__Main__Centre__Create__Bottom__Button > h3 {
+  margin: 0 1rem;
 }
