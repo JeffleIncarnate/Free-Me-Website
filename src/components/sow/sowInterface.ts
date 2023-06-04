@@ -1,10 +1,18 @@
 export interface ISOW {
-  agreed: { [key: string]: boolean };
+  agreed: { client: boolean; consultant: boolean };
   client: string;
   consultant: string;
   description: string;
   name: string;
-  tasks: [{}];
+  tasks: ISOWTableRows[];
   timeline: [{}];
   uuid: string;
+}
+
+export interface ISOWTableRows {
+  clientConfirmed: boolean;
+  consultantConfirmed: boolean;
+  description: string;
+  relativeFinishDate: number;
+  amount: number;
 }
