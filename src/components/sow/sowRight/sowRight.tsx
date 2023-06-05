@@ -30,7 +30,6 @@ function SOWRightShowTimeline({
     <div className="FRE__StatementOfWork__Right__Timeline">
       {timeline?.length === 0 ? null : (
         <>
-          {" "}
           <div className="FRE__StatementOfWork__Right__Timeline__Line"></div>
           <div className="FRE__StatementOfWork__Right__Timeline__Times">
             {timeline?.map((time: ISOWTimeline, index: number) => {
