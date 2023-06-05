@@ -5,8 +5,14 @@ export interface ISOW {
   description: string;
   name: string;
   tasks: ISOWTableRows[];
-  timeline: [{}];
+  timeline: ISOWTimeline[];
   uuid: string;
+}
+
+export interface ISOWTimeline {
+  description: string;
+  relativeFinishDate: number;
+  amount: number;
 }
 
 export interface ISOWTableRows {

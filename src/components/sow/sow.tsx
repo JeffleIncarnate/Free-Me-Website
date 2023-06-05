@@ -14,7 +14,7 @@ export default function SOW() {
     <main className="FRE__StatementOfWork">
       <SOWLeft setActiveSow={setActiveSow} />
       <SOWCentre activeSow={activeSow} />
-      <SOWRight />
+      <SOWRight activeSow={activeSow} />
     </main>
   );
 }

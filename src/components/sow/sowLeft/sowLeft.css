@@ -20,13 +20,6 @@
   width: 100%;
 }
 
-.FRE__StatementOfWork__Left h2::after {
-  content: "";
-  width: 100%;
-  height: 0.2em;
-  background-color: var(--accent);
-}
-
 .FRE__StatementOfWork__Left__Switcher {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
