@@ -22,3 +22,10 @@ export interface ISOWTableRows {
   relativeFinishDate: number;
   amount: number;
 }
+
+export interface ISOWAddTask {
+  id: number;
+  jobDescription: string;
+  amount: number;
+  finishDay: number;
+}

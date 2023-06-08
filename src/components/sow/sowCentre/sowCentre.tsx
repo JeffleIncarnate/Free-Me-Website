@@ -33,10 +33,16 @@ function SOWCentreActiveSOW({ activeSow }: IProps) {
 
       <div className="FRE__StatementOfWork__Centre__JobEmails">
         <p>
-          <strong>Client Email:</strong> {activeSow?.client}
+          <strong>Client Email:</strong>{" "}
+          {activeSow?.client === "29f9b991-8e45-45e9-840e-4aa9baf900b3"
+            ? "e@gmail.com"
+            : ""}
         </p>
         <p>
-          <strong>Consultant Email:</strong> {activeSow?.consultant}
+          <strong>Consultant Email:</strong>{" "}
+          {activeSow?.consultant === "e529d361-d6b9-462c-9410-5142a41f93d6"
+            ? "dhruvrayat50@gmail.com"
+            : ""}
         </p>
       </div>
 
@@ -89,6 +95,8 @@ function SOWCentreActiveSOWTableConfirmed({
           );
         })}
       </div>
+
+      <button>FreeMe Arbitrage</button>
     </div>
   );
 }
@@ -145,7 +153,6 @@ function SOWCentreActiveSOWTableNotConfirmed({
         <p>Client Confirmed</p>
         <p>Consultant Confirmed</p>
       </div>
-
       <div className="FRE__StatementOfWork__Centre__Table__NotConfirmed__Rows">
         {rows?.map((row: ISOWTableRows, index: number) => {
           return (
@@ -153,14 +160,15 @@ function SOWCentreActiveSOWTableNotConfirmed({
           );
         })}
       </div>
-
       <div className="FRE__StatementOfWork__Centre__Table__NotConfirmed__AddTask">
         <SOWCentreActiveSOWTableAddTask />
       </div>
-
+      <h2 className="FRE__StatementOfWork__Centre__Table__NotConfirmed__Text">
+        Consultant has not yet confirmed SOW
+      </h2>
       <div className="FRE__StatementOfWork__Centre__Table__NotConfirmed__Buttons">
         <SOWCentreActiveSOWButtons />
-      </div>
+      </div>{" "}
     </div>
   );
 }

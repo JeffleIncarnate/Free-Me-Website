@@ -50,3 +50,389 @@
 .FRE__StatementOfWork__Left__CreateSOW {
   font-size: 1.7rem;
 }
+
+/* -- Create SOW modal -- */
+.FRE__StatementOfWork__Left__CreateSOW__Backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(24, 24, 24, 0.4);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal {
+  width: 70%;
+  height: 75%;
+  background-color: var(--black);
+  border-radius: 3rem;
+  border: 0.2rem solid var(--white);
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 3.5rem;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form > h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData {
+  width: 90%;
+  margin: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData > section {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 207px;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData > section > div {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData
+  > section
+  > div
+  > label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData
+  > section
+  > div
+  > input {
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  background-color: var(--white);
+  color: var(--black);
+  border: solid 0.2rem var(--black);
+  transition: border 0.3s ease-in-out;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData
+  > section
+  > div
+  > input:hover {
+  border: solid 0.2rem var(--accent);
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData > div {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 207px;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData > div > label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData
+  > div
+  > textarea {
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  background-color: var(--white);
+  color: var(--black);
+  border: solid 0.2rem var(--black);
+  transition: border 0.3s ease-in-out;
+  height: 100%;
+  font-family: inherit;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__BasicData
+  > div
+  > textarea:hover {
+  border: solid 0.2rem var(--accent);
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__Table {
+  width: 85%;
+  margin: 0 7.5%;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__Table__AddTask {
+  font-size: 1.5rem;
+  border: 0;
+  color: var(--white);
+  background: transparent;
+  margin-right: 85%;
+  width: 15%;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__Table__AddTask > span {
+  color: var(--accent);
+  font-size: 3rem;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__Table__Send {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__Table__Send > button {
+  width: 20%;
+  padding: 0.8rem 1.3rem;
+  background: transparent;
+  font-size: 1.4rem;
+  color: var(--white);
+  border: 0.2rem solid var(--accent);
+  border-radius: 0.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Modal__Form__Table__Send
+  > button:hover {
+  transform: translate(0.3rem, -0.3rem);
+}
+
+.FRE__StatementOfWork__Left__CreateSOW__Backdrop > span {
+  font-size: 100rem;
+  z-index: 1000000000;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(24, 24, 24, 0.9);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__StatementOfWork__Left__AddTask {
+  width: 60%;
+  height: 60%;
+  background-color: var(--black);
+  border-radius: 3rem;
+  border: 0.2rem solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 3.5rem;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form {
+  width: 100%;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form > h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* -- Add Task Modal -- */
+.FRE__StatementOfWork__Left__AddTask__Form__Data {
+  width: 90%;
+  margin: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > section {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 207px;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > section > div {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > section > div > label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > section > div > input {
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  background-color: var(--white);
+  color: var(--black);
+  border: solid 0.2rem var(--black);
+  transition: border 0.3s ease-in-out;
+  font-family: inherit;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > section > div > input:hover {
+  border: solid 0.2rem var(--accent);
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > div {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 207px;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > div > label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > div > textarea {
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  background-color: var(--white);
+  color: var(--black);
+  border: solid 0.2rem var(--black);
+  transition: border 0.3s ease-in-out;
+  height: 100%;
+  font-family: inherit;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form__Data > div > textarea:hover {
+  border: solid 0.2rem var(--accent);
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form > button {
+  width: 20%;
+  margin: 1rem 40%;
+  padding: 0.8rem 1.3rem;
+  background: transparent;
+  font-size: 1.4rem;
+  color: var(--white);
+  border: 0.2rem solid var(--accent);
+  border-radius: 0.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__StatementOfWork__Left__AddTask__Form > button:hover {
+  transform: translate(0.3rem, -0.3rem);
+}
+
+/* -- Rows -- */
+.FRE__StatementOfWork__Left__Rows :nth-child(even) > * {
+  background-color: rgba(108, 122, 137, 0.4);
+}
+
+.FRE__StatementOfWork__Left__Rows :nth-child(odd) > * {
+  background-color: rgba(191, 191, 191, 0.4);
+}
+
+.FRE__StatementOfWork__Left__Row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  height: 3rem;
+  margin: 0.7rem 0;
+}
+
+.FRE__StatementOfWork__Left__Row > p {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.FRE__StatementOfWork__Left__Row > p:nth-child(1) {
+  width: 10%;
+  min-width: 10%;
+  max-width: 10%;
+}
+
+.FRE__StatementOfWork__Left__Row > p:nth-child(2) {
+  width: 50%;
+  min-width: 50%;
+  max-width: 50%;
+}
+
+.FRE__StatementOfWork__Left__Row > p:nth-child(3) {
+  width: 12.5%;
+  min-width: 12.5%;
+  max-width: 12.5%;
+}
+
+.FRE__StatementOfWork__Left__Row > p:nth-child(4) {
+  width: 12.5%;
+  min-width: 12.5%;
+  max-width: 12.5%;
+}
+
+.FRE__StatementOfWork__Left__Row > p:nth-child(5) {
+  width: 12.5%;
+  min-width: 12.5%;
+  max-width: 12.5%;
+}

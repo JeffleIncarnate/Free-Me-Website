@@ -173,6 +173,13 @@
   font-size: 3rem;
 }
 
+/* -- text for client -- */
+.FRE__StatementOfWork__Centre__Table__NotConfirmed__Text {
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
 /* -- Send Buttons -- */
 .FRE__StatementOfWork__Centre__Table__NotConfirmed__Buttons {
   width: 100%;
@@ -199,6 +206,25 @@
 /* -- Table SOW Confirmed -- */
 .FRE__StatementOfWork__Centre__Table__Confirmed {
   width: 100%;
+}
+
+.FRE__StatementOfWork__Centre__Table__Confirmed > button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3rem;
+  width: 20%;
+  padding: 0.8rem 1.3rem;
+  background: transparent;
+  font-size: 1.4rem;
+  color: var(--white);
+  border: 0.2rem solid var(--accent);
+  border-radius: 0.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__StatementOfWork__Centre__Table__Confirmed > button:hover {
+  transform: translate(-49%, -0.3rem);
 }
 
 .FRE__StatementOfWork__Centre__Table__Confirmed__Tasks {
