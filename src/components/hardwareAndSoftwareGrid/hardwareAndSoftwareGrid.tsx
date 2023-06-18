@@ -4,7 +4,11 @@ import { IHardwareAndSoftware } from "./hardwareAndSoftwareInterface";
 
 import PBTech from "../../assets/hardwareAndSoftware/pbtech.jpg";
 import Microsoft from "../../assets/hardwareAndSoftware/microsoft.webp";
+import Exapansys from "../../assets/hardwareAndSoftware/exapansys.png";
 import IngramMicro from "../../assets/hardwareAndSoftware/ingram.png";
+import Apple from "../../assets/hardwareAndSoftware/apple.jpg";
+import Alphabet from "../../assets/hardwareAndSoftware/alphabet.png";
+import Dell from "../../assets/hardwareAndSoftware/dell.png";
 
 export default function HardwareAndSoftwareGrid() {
   let data: IHardwareAndSoftware[] = [
@@ -49,48 +53,105 @@ when using your FreeMe user number to
 purchase from Microsoft`,
       dealURL: "https://www.google.com",
     },
-
     {
-      img: IngramMicro,
-      storeName: "Ingram Micro",
-      whoAreWe: `Ingram Micro helps businesses fully realize the
-promise of technology™— maximizing the value of
-the technology they make, sell or use. We amplify
-thousands of vendor, reseller and retailer partners
-by customizing and delivering highly targeted
-solutions and services for industry verticals,
-business-to-business customers and commercial
-needs.
-
-Our vast global infrastructure enables business
-partners to operate more efficiently and
-successfully. No other company delivers such a
-broad and deep spectrum of technology services to
-businesses around the world.`,
-      currentDeal: `Earn 12.5% cashback on Apple
-products plus free shipping when
-using your FreeMe user number to
-purchase from Ingram Micro`,
+      img: Exapansys,
+      storeName: "Expansys",
+      whoAreWe: "",
+      currentDeal: `Earn 15% cashback when using your
+FreeMe user number to purchase from
+PBTech`,
       dealURL: "https://www.google.com",
     },
   ];
 
   return (
-    <main className="FRE__HardwareSoftware">
-      <div className="FRE__HardwareSoftware__PbTech">
-        <div className="FRE__HardwareSoftware__PbTech__Top">
-          <img src={data[0].img} alt="" />
-          <p>About {data[0].storeName}</p>
+    <main className="FRE__CommunityNetwork__Hardware">
+      <div className="FRE__CommunityNetwork__Hardware-pbTech">
+        <img src={data[0].img} alt="" />
+
+        <p>
+          <strong>About Us</strong>:{" "}
+          {data[0].whoAreWe.substring(0, 200) + "..."}
+        </p>
+
+        <p>
+          <strong>Current Offer</strong>: {data[0].currentDeal}
+        </p>
+
+        <a href={data[0].dealURL}>{"<<<CLICK HERE>>>"}</a>
+
+        <div>
+          <h2>PB Tech</h2>
         </div>
-        <div className="FRE__HardwareSoftware__PbTech__Bottom"></div>
       </div>
-      <div className="FRE__HardwareSoftware-utility"></div>
-      <div className="FRE__HardwareSoftware-insurance"></div>
-      <div className="FRE__HardwareSoftware-balances"></div>
-      <div className="FRE__HardwareSoftware-accomodation"></div>
-      <div className="FRE__HardwareSoftware-energy"></div>
-      <div className="FRE__HardwareSoftware-banking"></div>
-      <div className="FRE__HardwareSoftware-education"></div>
+      <div className="FRE__CommunityNetwork__Hardware-Expansys">
+        <img src={data[2].img} alt="" />
+
+        <p>
+          <strong>Current Offer</strong>: {data[2].currentDeal}
+        </p>
+
+        <a href={data[0].dealURL}>{"<<<CLICK HERE>>>"}</a>
+
+        <div>
+          <h2>Expansys</h2>
+        </div>
+      </div>
+      <div className="FRE__CommunityNetwork__Hardware-apple">
+        <img src={Apple} alt="" />
+
+        <div>
+          <h2>Apple</h2>
+        </div>
+      </div>
+      <div className="FRE__CommunityNetwork-balances">
+        <div>
+          <h2>Balances and Activity</h2>
+        </div>
+      </div>
+
+      <div className="FRE__CommunityNetwork__Hardware-a">
+        <img src={Alphabet} alt="" />
+
+        <div>
+          <h2>Alphabet Inc.</h2>
+        </div>
+      </div>
+
+      <div className="FRE__CommunityNetwork__Hardware-microsoft">
+        <img src={data[1].img} alt="" />
+
+        <article>
+          <p>
+            <strong>About Us</strong>:{" "}
+            {data[1].whoAreWe.substring(0, 200) + "..."}
+          </p>
+
+          <p>
+            <strong>Current Offer</strong>: {data[1].currentDeal}
+          </p>
+          <a href={data[1].dealURL}>{"<<<CLICK HERE>>>"}</a>
+        </article>
+
+        <div>
+          <h2>Microsoft</h2>
+        </div>
+      </div>
+
+      <div className="FRE__CommunityNetwork__Hardware-ingram">
+        <img src={IngramMicro} alt="" />
+
+        <div>
+          <h2>Ingram Micro</h2>
+        </div>
+      </div>
+      <div className="FRE__CommunityNetwork__Hardware-dell">
+        <img src={Dell} alt="" />
+
+        <div>
+          <h2>Dell</h2>
+        </div>
+      </div>
     </main>
   );
 }

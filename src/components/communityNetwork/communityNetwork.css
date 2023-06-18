@@ -19,17 +19,21 @@
   background-color: rgba(24, 24, 24, 0.5);
 }
 
+.FRE__CommunityNetwork > * > img {
+  filter: grayscale(1) invert(1);
+}
+
 /* -- Specific Images -- */
 .FRE__CommunityNetwork-hard_software > img {
   width: 30%;
 }
 
 .FRE__CommunityNetwork-utility > img {
-  width: 17%;
+  width: 12%;
 }
 
 .FRE__CommunityNetwork-insurance > img {
-  width: 40%;
+  width: 20%;
 }
 
 .FRE__CommunityNetwork-accomodation {
@@ -41,15 +45,15 @@
 }
 
 .FRE__CommunityNetwork-energy {
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0 5rem;
 }
 
 .FRE__CommunityNetwork-energy > img {
-  width: 15%;
+  width: 12%;
 }
 .FRE__CommunityNetwork-banking {
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 5rem;
 }
 
@@ -58,12 +62,12 @@
 }
 
 .FRE__CommunityNetwork-education {
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 5rem;
 }
 
 .FRE__CommunityNetwork-education > img {
-  width: 24%;
+  width: 30%;
 }
 
 .FRE__CommunityNetwork > * > div {
