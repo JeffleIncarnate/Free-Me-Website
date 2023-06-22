@@ -9,10 +9,6 @@ export default function DashboardPage() {
 
   useEffect(() => {
     document.title = "Dashboard | FreeMe";
-
-    if (sessionStorage.getItem("token") === null) {
-      navigate("/");
-    }
   }, []);
 
   return (

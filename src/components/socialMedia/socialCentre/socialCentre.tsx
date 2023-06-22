@@ -166,7 +166,6 @@ function SocialMediaCentreCreate() {
   return (
     <div className="FRE__Main__Centre__Create">
       <SocialMediaCentreCreateTop />
-      <SocialMediaCentreCreateTopBottom buttons={buttons} />
     </div>
   );
 }

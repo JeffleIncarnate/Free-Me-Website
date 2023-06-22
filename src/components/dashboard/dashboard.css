@@ -1,4 +1,4 @@
-.FRE__Dashboard__Cons {
+.FRE__Dashboard {
   height: 85vh;
   width: 100%;
   margin-top: 15vh;
@@ -9,78 +9,224 @@
 }
 
 /* ---- TOP ---- */
-.FRE__Dashboard__Cons > .FRE__Dashboard__Cons__Top {
+.FRE__Dashboard__Top {
   width: 100%;
   height: 50%;
-  background-color: blue;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 1.2rem 0;
 }
 
-.FRE__Dashboard__Cons__Top > .FRE__Dashboard__Cons-opps {
+.FRE__Dashboard__Top > .FRE__Dashboard-opps {
   height: 100%;
   width: 32%;
-  background-color: aqua;
+  background-color: rgba(24, 24, 24, 0.4);
+  border-radius: 1rem;
 }
 
-.FRE__Dashboard__Cons__Top > .FRE__Dashboard__Cons-curr {
+.FRE__Dashboard-opps > .FRE__Social {
+  margin-top: 0;
+}
+
+.FRE__Dashboard__Top > .FRE__Dashboard-curr {
   height: 100%;
   width: 32%;
-  background-color: aqua;
+  background-color: rgba(24, 24, 24, 0.4);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
-.FRE__Dashboard__Cons__Top > .FRE__Dashboard__Cons-col {
+.FRE__Dashboard__Top > .FRE__Dashboard-col {
   height: 100%;
   width: 32%;
-  background-color: aqua;
 }
 
-.FRE__Dashboard__Cons__Top > .FRE__Dashboard__Cons-col {
+.FRE__Dashboard__Top > .FRE__Dashboard-col {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.FRE__Dashboard__Cons-col > .FRE__Dashboard__Cons-chats {
+.FRE__Dashboard-col > .FRE__Dashboard-chats {
   width: 100%;
-  height: 50%;
-  background-color: purple;
+  height: 48%;
+  margin-bottom: 1%;
+  background-color: rgba(24, 24, 24, 0.4);
+  border-radius: 1rem;
+  overflow-y: scroll;
+  padding: 1rem;
 }
 
-.FRE__Dashboard__Cons-col > .FRE__Dashboard__Cons-bal {
+.FRE__Dashboard-col > .FRE__Dashboard-chats::-webkit-scrollbar {
+  display: none;
+}
+
+.FRE__Dashboard-col > .FRE__Dashboard-bal {
   width: 100%;
-  height: 50%;
-  background-color: red;
+  height: 48%;
+  margin-top: 1%;
+  background-color: rgba(24, 24, 24, 0.4);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 /* ---- BOTTOM ---- */
-.FRE__Dashboard__Cons > .FRE__Dashboard__Cons__Bottom {
+.FRE__Dashboard__Bottom {
   width: 100%;
   height: 50%;
-  background-color: green;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 1.2rem 0;
 }
 
-.FRE__Dashboard__Cons__Bottom > .FRE__Dashboard__Cons-profile {
-  height: 100%;
-  width: 30%;
-  background-color: aqua;
+.FRE__Dashboard__Bottom > * {
+  background-color: rgba(24, 24, 24, 0.4);
+  border-radius: 1rem;
 }
 
-.FRE__Dashboard__Cons__Bottom > .FRE__Dashboard__Cons-notifs {
+.FRE__Dashboard__Bottom > .FRE__Dashboard-profile {
   height: 100%;
-  width: 30%;
-  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38.5%;
 }
 
-.FRE__Dashboard__Cons__Bottom > .FRE__Dashboard__Cons-network {
+.FRE__Dashboard__Bottom > .FRE__Dashboard-network {
   height: 100%;
-  width: 36%;
-  background-color: aqua;
+  width: 58.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -- Chats -- */
+.FRE__Dashboard-chat {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: solid rgba(250, 200, 152, 0.1) 0.1rem;
+  border-bottom: solid rgba(250, 200, 152, 0.1) 0.1rem;
+  padding: 1rem;
+}
+
+.FRE__Dashboard-chat__Img {
+  width: 17%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.FRE__Dashboard-chat__Img > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* -- Balances -- */
+.FRE__Dashboard-bal__Balance {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.5%;
+  font-size: 1.2rem;
+}
+
+.FRE__Dashboard-bal > p {
+  margin: 0.5%;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* -- Current Job -- */
+.FRE__Dashboard-curr__Current {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  margin: 4%;
+}
+
+/* -- Community Network -- */
+.FRE__Dashboard-network__Left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Dashboard-network__Left > div {
+  width: 100%;
+  aspect-ratio: 1/1;
+  margin: 2%;
+  overflow: hidden;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Dashboard-network__Left > div > img {
+  height: 100%;
+  filter: grayscale(1) invert(1);
+}
+
+.FRE__Dashboard-network__Left div:nth-child(2) img {
+  box-sizing: border-box;
+  padding: 1.5rem;
+}
+
+.FRE__Dashboard-network__Left div:nth-child(3) img {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.FRE__Dashboard-network__Right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Dashboard-network__Right > div {
+  width: 100%;
+  aspect-ratio: 1/1;
+  margin: 2%;
+  overflow: hidden;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Dashboard-network__Right > div > img {
+  height: 100%;
+  filter: grayscale(1) invert(1);
+}
+
+.FRE__Dashboard-network__Right div:nth-child(1) img {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.FRE__Dashboard-network__Right div:nth-child(2) img {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.FRE__Dashboard-network__Right div:nth-child(3) img {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+/* -- Social Media -- */
+.FRE__Dashboard-opps {
+  padding: 1rem;
 }
