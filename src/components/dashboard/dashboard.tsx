@@ -4,15 +4,16 @@ import { useNavigate, useLocation, useAsyncError } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import DashboardConsultant from "./consultant/consultant";
+import DashboardClient from "./client/client";
 
 export default function Dashboard() {
   let navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (sessionStorage.getItem("type") === null) {
-  //     navigate("/");
-  //   }
-  // });
+  useEffect(() => {
+    if (sessionStorage.getItem("type") === null) {
+      navigate("/");
+    }
+  });
 
   return (
     <>
@@ -24,7 +25,7 @@ export default function Dashboard() {
         }
 
         if (type === "client") {
-          return <h1>cli</h1>;
+          return <DashboardClient />;
         }
 
         if (type === "freerider") {

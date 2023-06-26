@@ -23,7 +23,12 @@ export default function DashboardConsultant() {
         >
           <DashboardConsultantSocialMedia />
         </div>
-        <div className="FRE__Dashboard-curr">
+        <div
+          className="FRE__Dashboard-curr"
+          onClick={() => {
+            navigate("/sow");
+          }}
+        >
           <DashboardConsultantCurrentJobs />
         </div>
         <div className="FRE__Dashboard-col">

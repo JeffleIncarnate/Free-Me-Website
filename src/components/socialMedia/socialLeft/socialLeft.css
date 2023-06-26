@@ -16,10 +16,24 @@
   padding: 1rem;
 }
 
-.FRE__Main__Left__Buttons__User > img {
+.FRE__Main__Left__Buttons__User > div {
   width: 15%;
+  aspect-ratio: 1/1;
   margin-right: 2rem;
   border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Main__Left__Buttons__User > div > img {
+  height: 100%;
+  width: 100%;
+}
+
+.FRE__Main__Left__Buttons__User h2 {
+  text-transform: capitalize;
 }
 
 .FRE__Main__Left__Buttons__Buttons {
@@ -77,8 +91,4 @@
 
 .FRE__Main__Left__Bottom__Company > h3 {
   font-size: 1.5rem;
-}
-
-.element:container(width > 99px) {
-
 }

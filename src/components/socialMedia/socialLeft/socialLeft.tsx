@@ -5,6 +5,9 @@ import {
   IRecentlyVisitedCompany,
 } from "../socialMediaInterface";
 
+import LogoLight from "../../../assets/Logo_Light.png";
+import Rick from "../../../assets/e_picture.jpeg";
+
 export default function SocialMediaLeft() {
   let buttons: ISocialMediaLeftButtons = {
     friends: "fa-solid fa-user",
@@ -43,12 +46,20 @@ function SocialMediaLeftTop({
   return (
     <div className="FRE__Main__Left__Buttons">
       <div className="FRE__Main__Left__Buttons__User">
-        <img
-          src="https://images.unsplash.com/photo-1600354587397-681c16c184bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-          alt=""
-        />
+        <div>
+          <img
+            src={
+              sessionStorage.getItem("email") === "dhruvrayat50@gmail.com"
+                ? LogoLight
+                : Rick
+            }
+            alt=""
+          />
+        </div>
 
-        <h2>Rick Astley</h2>
+        <h2>{`${sessionStorage.getItem("firstname")} ${sessionStorage.getItem(
+          "lastname"
+        )}`}</h2>
       </div>
 
       <div className="FRE__Main__Left__Buttons__Buttons">

@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* ---- TOP ---- */
@@ -15,6 +16,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.FRE__Dashboard__Top > * {
+  cursor: pointer;
 }
 
 .FRE__Dashboard__Top > .FRE__Dashboard-opps {
@@ -79,6 +84,10 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 1.2rem 0;
+}
+
+.FRE__Dashboard__Bottom > * {
+  cursor: pointer;
 }
 
 .FRE__Dashboard__Bottom > * {
