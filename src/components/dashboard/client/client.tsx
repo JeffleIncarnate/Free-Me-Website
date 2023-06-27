@@ -80,7 +80,7 @@ export default function DashboardClient() {
           <ProfileSmall />
 
           <article>
-            <h2>Balances</h2>
+            <h2>Profile</h2>
           </article>
         </div>
         <div
@@ -92,7 +92,7 @@ export default function DashboardClient() {
           <DashboardClientCommunityNetwork />
 
           <article>
-            <h2>Balances</h2>
+            <h2>Corporate Network</h2>
           </article>
         </div>
       </div>
