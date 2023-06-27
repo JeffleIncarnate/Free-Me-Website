@@ -44,6 +44,6 @@
 .FRE__Balances__TransactionDetails-Flex > div > p {
   flex: 3;
   padding: 1rem;
-  text-align: left;
+  text-align: left; 
   border-radius: 1rem;
 }
