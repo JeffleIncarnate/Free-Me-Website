@@ -1,7 +1,7 @@
 .FRE__Watchlist {
   height: 80vh;
-  width: 95%;
-  margin: 15vh 2.5% 0 2.5%;
+  width: 97%;
+  margin: 15vh 1.25% 0 1.25%;
   display: grid;
   grid-template-columns: [col1] 50% [col2] 50% [end];
   grid-template-rows: [row1] 80% [row2] 20% [end];

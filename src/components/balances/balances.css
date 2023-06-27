@@ -1,7 +1,7 @@
 .FRE__Balances {
-  height: 85vh;
-  width: 100%;
-  margin-top: 15vh;
+  height: 83vh;
+  width: 97%;
+  margin: 15vh 1.25% 0 1.25%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;

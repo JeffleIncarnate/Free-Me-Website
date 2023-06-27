@@ -5,6 +5,9 @@
   align-items: flex-start;
   flex-direction: column;
   overflow-y: scroll;
+  background-color: rgba(24, 24, 24, 0.5);
+  padding: 2rem;
+  border-radius: 2rem;
 }
 
 .FRE__Balances__Transactions::-webkit-scrollbar {
@@ -12,20 +15,13 @@
 }
 
 .FRE__Balances__Transactions > h2 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-}
-
-.FRE__Balances__Transactions h2::after {
-  content: "";
-  width: 100%;
-  height: 0.2em;
-  background-color: var(--accent);
 }
 
 .FRE__Balances__Transactions__Button {
