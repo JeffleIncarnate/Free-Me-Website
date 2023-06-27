@@ -19,57 +19,81 @@ export default function DashboardClient() {
     <main className="FRE__Dashboard">
       <div className="FRE__Dashboard__Top">
         <div
-          className="FRE__Dashboard-opps"
+          className="FRE__Dashboard-opps FRE__Dashboard__Hover"
           onClick={() => {
             navigate("/socialMedia");
           }}
         >
           <DashboardClientSocialMedia />
+
+          <article>
+            <h2>Social Media</h2>
+          </article>
         </div>
         <div
-          className="FRE__Dashboard-curr"
+          className="FRE__Dashboard-curr FRE__Dashboard__Hover"
           onClick={() => {
             navigate("/sow");
           }}
         >
           <DashboardClientCurrentJobs />
+
+          <article>
+            <h2>Current Jobs</h2>
+          </article>
         </div>
         <div className="FRE__Dashboard-col">
           <div
-            className="FRE__Dashboard-chats"
+            className="FRE__Dashboard-chats FRE__Dashboard__Hover"
             onClick={() => {
               navigate("/chat");
             }}
           >
             <DashboardClientChats />
+
+            <article>
+              <h2>Chat</h2>
+            </article>
           </div>
           <div
-            className="FRE__Dashboard-bal"
+            className="FRE__Dashboard-bal FRE__Dashboard__Hover"
             onClick={() => {
               navigate("/balances");
             }}
           >
             <DashboardClientBalance />
+
+            <article>
+              <h2>Balances</h2>
+            </article>
           </div>
         </div>
       </div>
 
       <div className="FRE__Dashboard__Bottom">
         <div
-          className="FRE__Dashboard-profile"
+          className="FRE__Dashboard-profile FRE__Dashboard__Hover"
           onClick={() => {
             navigate("/profile");
           }}
         >
           <ProfileSmall />
+
+          <article>
+            <h2>Balances</h2>
+          </article>
         </div>
         <div
-          className="FRE__Dashboard-network"
+          className="FRE__Dashboard-network FRE__Dashboard__Hover"
           onClick={() => {
             navigate("/communityNetwork");
           }}
         >
           <DashboardClientCommunityNetwork />
+
+          <article>
+            <h2>Balances</h2>
+          </article>
         </div>
       </div>
     </main>
