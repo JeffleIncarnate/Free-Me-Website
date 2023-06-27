@@ -2,6 +2,9 @@
   grid-column-start: col2;
   grid-column-end: span auto;
   grid-row-start: row1;
+  background-color: rgba(24, 24, 24, 0.5);
+  padding: 2rem;
+  border-radius: 2rem;
   grid-row-end: span row2;
 }
 
@@ -15,13 +18,6 @@
   text-align: center;
   width: 100%;
   margin-bottom: 2rem;
-}
-
-.FRE__Watchlist__Following h2::after {
-  content: "";
-  width: 100%;
-  height: 0.2em;
-  background-color: var(--accent);
 }
 
 /* -- Following Profile -- */

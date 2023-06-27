@@ -3,6 +3,9 @@
   grid-column-end: span col2;
   grid-row-start: row1;
   grid-row-end: span row2;
+  background-color: rgba(24, 24, 24, 0.5);
+  padding: 2rem;
+  border-radius: 2rem;
 }
 
 .FRE__Watchlist__Jobs h2 {
@@ -15,13 +18,6 @@
   width: 100%;
   margin-bottom: 2rem;
   text-align: center;
-}
-
-.FRE__Watchlist__Jobs h2::after {
-  content: "";
-  width: 100%;
-  height: 0.2em;
-  background-color: var(--accent);
 }
 
 .FRE__Watchlist__Jobs > ul {
