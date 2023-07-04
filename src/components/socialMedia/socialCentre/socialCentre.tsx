@@ -80,7 +80,9 @@ function SocialMediaCentreCreateTop() {
         src={
           sessionStorage.getItem("email") === "dhruvrayat50@gmail.com"
             ? LogoLight
-            : Rick
+            : sessionStorage.getItem("emai") === "e@gmail.com"
+            ? Rick
+            : "e"
         }
         alt=""
       />

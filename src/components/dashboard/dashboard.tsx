@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import DashboardConsultant from "./consultant/consultant";
 import DashboardClient from "./client/client";
+import DashboardFreeRider from "./freerider/freerider";
 
 export default function Dashboard() {
   let navigate = useNavigate();
@@ -22,14 +23,10 @@ export default function Dashboard() {
 
         if (type === "consultant") {
           return <DashboardConsultant />;
-        }
-
-        if (type === "client") {
+        } else if (type === "client") {
           return <DashboardClient />;
-        }
-
-        if (type === "freerider") {
-          return <h1>fre</h1>;
+        } else if (type === "freerider") {
+          return <DashboardFreeRider />;
         }
       })()}
     </>
