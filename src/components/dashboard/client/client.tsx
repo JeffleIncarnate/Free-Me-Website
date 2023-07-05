@@ -5,11 +5,9 @@ import Fuel from "../../../assets/communityNetwork/newLogos/fuwl.png";
 import Hotel from "../../../assets/communityNetwork/newLogos/hotel.png";
 import Bank from "../../../assets/communityNetwork/newLogos/bank.png";
 
+import Dhruv from "../../../assets/Logo_Light.png";
 import SocialMediaCentre from "../../socialMedia/socialCentre/socialCentre";
 import ProfileSmall from "../profileSmall/profileSmall";
-
-import Dhruv from "../../../assets/Logo_Light.png";
-
 import { useNavigate } from "react-router-dom";
 
 export default function DashboardClient() {
@@ -17,91 +15,93 @@ export default function DashboardClient() {
 
   return (
     <main className="FRE__Dashboard">
-      <div className="FRE__Dashboard__Top">
-        <div
-          className="FRE__Dashboard-opps FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/socialMedia");
-          }}
-        >
-          <DashboardClientSocialMedia />
-
-          <article>
-            <h2>Social Media</h2>
-          </article>
-        </div>
-        <div
-          className="FRE__Dashboard-curr FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/sow");
-          }}
-        >
-          <DashboardClientCurrentJobs />
-
-          <article>
-            <h2>Current Jobs</h2>
-          </article>
-        </div>
-        <div className="FRE__Dashboard-col">
-          <div
-            className="FRE__Dashboard-chats FRE__Dashboard__Hover"
-            onClick={() => {
-              navigate("/chat");
-            }}
-          >
-            <DashboardClientChats />
-
-            <article>
-              <h2>Chat</h2>
-            </article>
-          </div>
-          <div
-            className="FRE__Dashboard-bal FRE__Dashboard__Hover"
-            onClick={() => {
-              navigate("/balances");
-            }}
-          >
-            <DashboardClientBalance />
-
-            <article>
-              <h2>Balances</h2>
-            </article>
-          </div>
-        </div>
+      <div
+        className="FRE__Dashboard-opps FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/socialMedia");
+        }}
+      >
+        <DashboardClientSocialMedia />
+        <article>
+          <h2>Social Media</h2>
+        </article>
       </div>
 
-      <div className="FRE__Dashboard__Bottom">
-        <div
-          className="FRE__Dashboard-profile FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/profile");
-          }}
-        >
+      <div
+        className="FRE__Dashboard-curr FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/sow");
+        }}
+      >
+        <DashboardClientCurrentJobs />
+        <article>
+          <h2>Current Jobs</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-chats FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/chat");
+        }}
+      >
+        <DashboardClientChats />
+
+        <article>
+          <h2>Chat</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-bal FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/balances");
+        }}
+      >
+        <DashboardClientBalance />
+
+        <article>
+          <h2>Balance</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-profile FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/profile");
+        }}
+      >
+        <div className="wrapper">
           <ProfileSmall />
-
-          <article>
-            <h2>Profile</h2>
-          </article>
         </div>
-        <div
-          className="FRE__Dashboard-network FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/communityNetwork");
-          }}
-        >
-          <DashboardClientCommunityNetwork />
 
-          <article>
-            <h2>Corporate Network</h2>
-          </article>
-        </div>
+        <article>
+          <h2>Profile</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-network FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/communityNetwork");
+        }}
+      >
+        <DashboardClientCommunityNetwork />
+
+        <article>
+          <h2>Corporate Network</h2>
+        </article>
       </div>
     </main>
   );
 }
 
 function DashboardClientSocialMedia() {
-  return <SocialMediaCentre />;
+  return (
+    <div className="wrapper">
+      <SocialMediaCentre />
+    </div>
+  );
 }
 
 function DashboardClientCurrentJobs() {
@@ -125,9 +125,11 @@ function DashboardClientCurrentJobs() {
 
   return (
     <>
-      {jobs.map((job, index) => {
-        return <DashboardClientCurrentJob index={index} name={job.name} />;
-      })}
+      <div className="wrapper">
+        {jobs.map((job, index) => {
+          return <DashboardClientCurrentJob index={index} name={job.name} />;
+        })}
+      </div>
     </>
   );
 }
@@ -162,15 +164,17 @@ function DashboardClientChats() {
 
   return (
     <>
-      {chats.map((chat) => {
-        return (
-          <DashboardClientChat
-            companyName={chat.companyName}
-            lastMessage={chat.lastMessage}
-            profilePicture={chat.profilePicture}
-          />
-        );
-      })}
+      <div className="wrapper">
+        {chats.map((chat) => {
+          return (
+            <DashboardClientChat
+              companyName={chat.companyName}
+              lastMessage={chat.lastMessage}
+              profilePicture={chat.profilePicture}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }
@@ -183,13 +187,15 @@ const DashboardClientChat = ({
   [key: string]: string;
 }) => {
   return (
-    <div className="FRE__Dashboard-chat">
-      <div className="FRE__Dashboard-chat__Img">
-        <img src={profilePicture} alt="" />
-      </div>
-      <div>
-        <h3>{companyName}</h3>
-        <p>{lastMessage}</p>
+    <div className="wrapper">
+      <div className="FRE__Dashboard-chat">
+        <div className="FRE__Dashboard-chat__Img">
+          <img src={profilePicture} alt="" />
+        </div>
+        <div>
+          <h3>{companyName}</h3>
+          <p>{lastMessage}</p>
+        </div>
       </div>
     </div>
   );
@@ -224,18 +230,20 @@ function DashboardClientBalance() {
 
   return (
     <>
-      {balances.transaction.map((transaction) => {
-        return (
-          <DashboardClientBalanceItem
-            name={transaction.name}
-            moneyOut={transaction.moneyOut}
-          />
-        );
-      })}
+      <div className="wrapper">
+        {balances.transaction.map((transaction) => {
+          return (
+            <DashboardClientBalanceItem
+              name={transaction.name}
+              moneyOut={transaction.moneyOut}
+            />
+          );
+        })}
 
-      <p>
-        <strong>Total:</strong> {balances.total}
-      </p>
+        <p>
+          <strong>Total:</strong> {balances.total}
+        </p>
+      </div>
     </>
   );
 }
@@ -270,7 +278,7 @@ function DashboardClientProfile() {
 function DashboardClientCommunityNetwork() {
   return (
     <>
-      <div className="FRE__Dashboard-network__Left">
+      <div className="wrapper">
         <div>
           <img src={Computer} alt="" />
         </div>
@@ -280,8 +288,6 @@ function DashboardClientCommunityNetwork() {
         <div>
           <img src={Umbrella} alt="" />
         </div>
-      </div>
-      <div className="FRE__Dashboard-network__Right">
         <div>
           <img src={Fuel} alt="" />
         </div>

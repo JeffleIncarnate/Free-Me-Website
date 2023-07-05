@@ -71,8 +71,9 @@ export default function DashboardFreeRider() {
           navigate("/profile");
         }}
       >
-        <ProfileSmall />
-
+        <div className="wrapper">
+          <ProfileSmall />
+        </div>
         <article>
           <h2>Profile</h2>
         </article>

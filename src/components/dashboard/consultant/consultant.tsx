@@ -14,91 +14,93 @@ export default function DashboardConsultant() {
 
   return (
     <main className="FRE__Dashboard">
-      <div className="FRE__Dashboard__Top">
-        <div
-          className="FRE__Dashboard-opps FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/socialMedia");
-          }}
-        >
-          <DashboardConsultantSocialMedia />
-
-          <article>
-            <h2>Social Media</h2>
-          </article>
-        </div>
-        <div
-          className="FRE__Dashboard-curr FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/sow");
-          }}
-        >
-          <DashboardConsultantCurrentJobs />
-
-          <article>
-            <h2>Current Jobs</h2>
-          </article>
-        </div>
-        <div className="FRE__Dashboard-col">
-          <div
-            className="FRE__Dashboard-chats FRE__Dashboard__Hover"
-            onClick={() => {
-              navigate("/chat");
-            }}
-          >
-            <DashboardConsultantChats />
-
-            <article>
-              <h2>Chat</h2>
-            </article>
-          </div>
-          <div
-            className="FRE__Dashboard-bal FRE__Dashboard__Hover"
-            onClick={() => {
-              navigate("/balances");
-            }}
-          >
-            <DashboardConsultantBalance />
-
-            <article>
-              <h2>Balance</h2>
-            </article>
-          </div>
-        </div>
+      <div
+        className="FRE__Dashboard-opps FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/socialMedia");
+        }}
+      >
+        <DashboardConsultantSocialMedia />
+        <article>
+          <h2>Social Media</h2>
+        </article>
       </div>
 
-      <div className="FRE__Dashboard__Bottom">
-        <div
-          className="FRE__Dashboard-profile FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/profile");
-          }}
-        >
+      <div
+        className="FRE__Dashboard-curr FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/sow");
+        }}
+      >
+        <DashboardConsultantCurrentJobs />
+        <article>
+          <h2>Current Jobs</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-chats FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/chat");
+        }}
+      >
+        <DashboardConsultantChats />
+
+        <article>
+          <h2>Chat</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-bal FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/balances");
+        }}
+      >
+        <DashboardConsultantBalance />
+
+        <article>
+          <h2>Balance</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-profile FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/profile");
+        }}
+      >
+        <div className="wrapper">
           <ProfileSmall />
-
-          <article>
-            <h2>Profile</h2>
-          </article>
         </div>
-        <div
-          className="FRE__Dashboard-network FRE__Dashboard__Hover"
-          onClick={() => {
-            navigate("/communityNetwork");
-          }}
-        >
-          <DashboardConsultantCommunityNetwork />
 
-          <article>
-            <h2>Corporate Network</h2>
-          </article>
-        </div>
+        <article>
+          <h2>Profile</h2>
+        </article>
+      </div>
+
+      <div
+        className="FRE__Dashboard-network FRE__Dashboard__Hover"
+        onClick={() => {
+          navigate("/communityNetwork");
+        }}
+      >
+        <DashboardConsultantCommunityNetwork />
+
+        <article>
+          <h2>Corporate Network</h2>
+        </article>
       </div>
     </main>
   );
 }
 
 function DashboardConsultantSocialMedia() {
-  return <SocialMediaCentre />;
+  return (
+    <div className="wrapper">
+      <SocialMediaCentre />
+    </div>
+  );
 }
 
 function DashboardConsultantCurrentJobs() {
@@ -122,9 +124,13 @@ function DashboardConsultantCurrentJobs() {
 
   return (
     <>
-      {jobs.map((job, index) => {
-        return <DashboardConsultantCurrentJob index={index} name={job.name} />;
-      })}
+      <div className="wrapper">
+        {jobs.map((job, index) => {
+          return (
+            <DashboardConsultantCurrentJob index={index} name={job.name} />
+          );
+        })}
+      </div>
     </>
   );
 }
@@ -160,15 +166,17 @@ function DashboardConsultantChats() {
 
   return (
     <>
-      {chats.map((chat) => {
-        return (
-          <DashboardConsultantChat
-            companyName={chat.companyName}
-            lastMessage={chat.lastMessage}
-            profilePicture={chat.profilePicture}
-          />
-        );
-      })}
+      <div className="wrapper">
+        {chats.map((chat) => {
+          return (
+            <DashboardConsultantChat
+              companyName={chat.companyName}
+              lastMessage={chat.lastMessage}
+              profilePicture={chat.profilePicture}
+            />
+          );
+        })}
+      </div>
     </>
   );
 }
@@ -181,13 +189,15 @@ const DashboardConsultantChat = ({
   [key: string]: string;
 }) => {
   return (
-    <div className="FRE__Dashboard-chat">
-      <div className="FRE__Dashboard-chat__Img">
-        <img src={profilePicture} alt="" />
-      </div>
-      <div>
-        <h3>{companyName}</h3>
-        <p>{lastMessage}</p>
+    <div className="wrapper">
+      <div className="FRE__Dashboard-chat">
+        <div className="FRE__Dashboard-chat__Img">
+          <img src={profilePicture} alt="" />
+        </div>
+        <div>
+          <h3>{companyName}</h3>
+          <p>{lastMessage}</p>
+        </div>
       </div>
     </div>
   );
@@ -222,18 +232,20 @@ function DashboardConsultantBalance() {
 
   return (
     <>
-      {balances.transaction.map((transaction) => {
-        return (
-          <DashboardConsultantBalanceItem
-            name={transaction.name}
-            moneyOut={transaction.moneyOut}
-          />
-        );
-      })}
+      <div className="wrapper">
+        {balances.transaction.map((transaction) => {
+          return (
+            <DashboardConsultantBalanceItem
+              name={transaction.name}
+              moneyOut={transaction.moneyOut}
+            />
+          );
+        })}
 
-      <p>
-        <strong>Total:</strong> {balances.total}
-      </p>
+        <p>
+          <strong>Total:</strong> {balances.total}
+        </p>
+      </div>
     </>
   );
 }
@@ -268,7 +280,7 @@ function DashboardConsultantProfile() {
 function DashboardConsultantCommunityNetwork() {
   return (
     <>
-      <div className="FRE__Dashboard-network__Left">
+      <div className="wrapper">
         <div>
           <img src={Computer} alt="" />
         </div>
@@ -278,8 +290,6 @@ function DashboardConsultantCommunityNetwork() {
         <div>
           <img src={Umbrella} alt="" />
         </div>
-      </div>
-      <div className="FRE__Dashboard-network__Right">
         <div>
           <img src={Fuel} alt="" />
         </div>

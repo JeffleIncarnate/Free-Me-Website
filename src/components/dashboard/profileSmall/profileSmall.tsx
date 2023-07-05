@@ -49,31 +49,22 @@ export default function ProfileSmall() {
 
   return (
     <>
-      <div className="wrapper">
-        <main className="FRE__Profile__Small">
-          <div
-            className="FRE__Profile__Small__Images"
-            style={{ backgroundImage: `url("${background}")` }}
-          >
-            {(() => {
-              if (
-                sessionStorage.getItem("email") === "dhruvrayat50@gmail.com"
-              ) {
-                return <img src={Logo_Light} alt="" />;
-              } else if (sessionStorage.getItem("email") === "e@gmail.com") {
-                return <img src={Logo_E} alt="" />;
-              } else {
-                return <img src={ProfilePicture} alt="" />;
-              }
-            })()}
-
-            <div>
-              <button>Add Background</button>
-              <button>Upload Photo</button>
-            </div>
-          </div>
-        </main>
-      </div>
+      <main className="FRE__Profile__Small">
+        <div
+          className="FRE__Profile__Small__Images"
+          style={{ backgroundImage: `url("${background}")` }}
+        >
+          {(() => {
+            if (sessionStorage.getItem("email") === "dhruvrayat50@gmail.com") {
+              return <img src={Logo_Light} alt="" />;
+            } else if (sessionStorage.getItem("email") === "e@gmail.com") {
+              return <img src={Logo_E} alt="" />;
+            } else {
+              return <img src={ProfilePicture} alt="" />;
+            }
+          })()}
+        </div>
+      </main>
     </>
   );
 }
