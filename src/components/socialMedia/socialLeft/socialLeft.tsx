@@ -7,6 +7,7 @@ import {
 
 import LogoLight from "../../../assets/Logo_Light.png";
 import Rick from "../../../assets/e_picture.jpeg";
+import DefaultPFP from "../../../assets/defaultPFP.png";
 
 export default function SocialMediaLeft() {
   let buttons: ISocialMediaLeftButtons = {
@@ -51,7 +52,9 @@ function SocialMediaLeftTop({
             src={
               sessionStorage.getItem("email") === "dhruvrayat50@gmail.com"
                 ? LogoLight
-                : Rick
+                : sessionStorage.getItem("email") === "e@gmail.com"
+                ? Rick
+                : DefaultPFP
             }
             alt=""
           />
