@@ -17,7 +17,7 @@
   margin-top: 15rem;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper {
+.FRE__Splash__Signup__Wrapper {
   margin-top: 7rem;
   width: 100%;
   height: fit-content;
@@ -26,28 +26,28 @@
   justify-content: space-evenly;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp {
+.FRE__Splash__SignUp {
   width: 47%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   padding: 7rem 0;
   transition: all 0.3s ease-in-out;
+  background-color: rgba(24, 24, 24, 0.2);
   border-radius: 0.5rem;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+.FRE__Splash__SignUp:hover {
+  background-color: rgba(24, 24, 24, 0.4);
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp:hover > * {
+.FRE__Splash__SignUp:hover > * {
   visibility: visible;
   opacity: 1;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button {
+.FRE__Splash__SignUp button {
   border: none;
   background: transparent;
   font-size: 2rem;
@@ -64,11 +64,11 @@
   opacity: 0;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp:hover > button {
+.FRE__Splash__SignUp:hover > button {
   visibility: visible;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp h2 {
+.FRE__Splash__SignUp h2 {
   font-size: 4rem;
   margin: 0.5rem;
   visibility: hidden;
@@ -76,23 +76,23 @@
   opacity: 0;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp p {
+.FRE__Splash__SignUp p {
   font-size: 2rem;
   margin: 0.5rem;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button::after {
+.FRE__Splash__SignUp button::after {
   content: "";
   width: 0;
   height: 0.2rem;
   transition: all 0.3s ease-in-out;
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button:hover {
+.FRE__Splash__SignUp button:hover {
   color: var(--accent);
 }
 
-.FRE__Splash__Cons-Clis-Wrapper .FRE__Splash__SignUp button:hover::after {
+.FRE__Splash__SignUp button:hover::after {
   content: "";
   width: 100%;
   background-color: var(--accent);

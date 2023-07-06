@@ -13,7 +13,7 @@ export default function Splash() {
 
         <div className="FRE__Splash">
           <h1>FreeMe</h1>
-          <div className="FRE__Splash__Cons-Clis-Wrapper">
+          <div className="FRE__Splash__Signup__Wrapper">
             <div className="FRE__Splash__SignUp">
               <h2>Consultant</h2>
               <p>Have Skills?</p>
