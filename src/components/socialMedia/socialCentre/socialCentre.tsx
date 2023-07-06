@@ -6,6 +6,7 @@ import SocialMediaCentrePost from "./socialCentrePost/socialCentrePost";
 
 import LogoLight from "../../../assets/Logo_Light.png";
 import Rick from "../../../assets/e_picture.jpeg";
+import DefaultPFP from "../../../assets/defaultPFP.png";
 
 export default function SocialMediaCentre() {
   let posts: IPost[] = [
@@ -82,7 +83,7 @@ function SocialMediaCentreCreateTop() {
             ? LogoLight
             : sessionStorage.getItem("emai") === "e@gmail.com"
             ? Rick
-            : "e"
+            : DefaultPFP
         }
         alt=""
       />
