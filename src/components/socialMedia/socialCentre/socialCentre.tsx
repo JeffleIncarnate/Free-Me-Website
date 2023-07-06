@@ -81,7 +81,7 @@ function SocialMediaCentreCreateTop() {
         src={
           sessionStorage.getItem("email") === "dhruvrayat50@gmail.com"
             ? LogoLight
-            : sessionStorage.getItem("emai") === "e@gmail.com"
+            : sessionStorage.getItem("email") === "e@gmail.com"
             ? Rick
             : DefaultPFP
         }
