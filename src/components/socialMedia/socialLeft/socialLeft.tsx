@@ -6,7 +6,6 @@ import {
 } from "../socialMediaInterface";
 
 import LogoLight from "../../../assets/Logo_Light.png";
-import Rick from "../../../assets/e_picture.jpeg";
 import DefaultPFP from "../../../assets/defaultPFP.png";
 
 export default function SocialMediaLeft() {
@@ -61,13 +60,9 @@ function SocialMediaLeftTop({
       <div className="FRE__Main__Left__Buttons__User">
         <div>
           <img
-            src={
-              sessionStorage.getItem("email") === "dhruvrayat50@gmail.com"
-                ? LogoLight
-                : sessionStorage.getItem("email") === "e@gmail.com"
-                ? Rick
-                : DefaultPFP
-            }
+            src={`${"data:image/jpeg;base64,"}${sessionStorage.getItem(
+              "profilePicture"
+            )}`}
             alt=""
           />
         </div>

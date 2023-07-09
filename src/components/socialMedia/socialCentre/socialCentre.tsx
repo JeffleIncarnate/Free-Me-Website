@@ -78,13 +78,9 @@ function SocialMediaCentreCreateTop() {
   return (
     <div className="FRE__Main__Centre__Create__Top">
       <img
-        src={
-          sessionStorage.getItem("email") === "dhruvrayat50@gmail.com"
-            ? LogoLight
-            : sessionStorage.getItem("email") === "e@gmail.com"
-            ? Rick
-            : DefaultPFP
-        }
+        src={`${"data:image/jpeg;base64,"}${sessionStorage.getItem(
+          "profilePicture"
+        )}`}
         alt=""
       />
       <input type="text" placeholder="Make a post..." />
