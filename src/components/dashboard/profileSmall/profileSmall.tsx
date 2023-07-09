@@ -38,11 +38,9 @@ export default function ProfileSmall() {
   };
 
   useEffect(() => {
-    if (sessionStorage.getItem("email") === "dhruvrayat50@gmail.com")
-      setBackground(`../../../..${Logo_Light_Text}`);
-    else if (sessionStorage.getItem("email") === "e@gmail.com")
-      setBackground(`../../../..${Profile_E}`);
-    else setBackground(`../../../..${Banner}`);
+    setBackground(
+      `${"data:image/jpeg;base64,"}${sessionStorage.getItem("banner")}`
+    );
 
     getProfileData();
   });
@@ -55,13 +53,14 @@ export default function ProfileSmall() {
           style={{ backgroundImage: `url("${background}")` }}
         >
           {(() => {
-            if (sessionStorage.getItem("email") === "dhruvrayat50@gmail.com") {
-              return <img src={Logo_Light} alt="" />;
-            } else if (sessionStorage.getItem("email") === "e@gmail.com") {
-              return <img src={Logo_E} alt="" />;
-            } else {
-              return <img src={ProfilePicture} alt="" />;
-            }
+            return (
+              <img
+                src={`${"data:image/jpeg;base64,"}${sessionStorage.getItem(
+                  "profilePicture"
+                )}`}
+                alt=""
+              />
+            );
           })()}
         </div>
       </main>
