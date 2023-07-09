@@ -2,18 +2,6 @@ import "./profileSmall.css";
 
 import { useEffect, useState } from "react";
 
-// Normal
-import Logo_Light from "../../../assets/Logo_Light.png";
-import Logo_Light_Text from "../../../assets/Logo_Light-Text.png";
-
-// E
-import Logo_E from "../../../assets/e_picture.jpeg";
-import Profile_E from "../../../assets/e_profile.jpg";
-
-// Default
-import ProfilePicture from "../../../assets/defaultPFP.png";
-import Banner from "../../../assets/defaultBanner.jpg";
-
 export default function ProfileSmall() {
   const [background, setBackground] = useState<any>(null);
   const [profileData, setProfileData] = useState<any>("Loading...");
