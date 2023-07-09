@@ -14,9 +14,7 @@
 }
 
 .FRE__Navbar > .FRE__Navbar__Img img {
-  width: 100px;
-  aspect-ratio: 1/1;
-  margin-left: 1rem;
+  width: 100%;
 }
 
 .FRE__Navbar > ul {

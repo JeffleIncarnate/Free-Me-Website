@@ -46,6 +46,8 @@ export default function OAuth() {
         sessionStorage.setItem("email", result.email);
         sessionStorage.setItem("type", result.type);
         sessionStorage.setItem("dateOfBirth", result.dateofbirth);
+        sessionStorage.setItem("profilePicture", result.profilepicture);
+        sessionStorage.setItem("banner", result.banner);
         navigate("/dashboard");
       })
       .catch((error) => console.log("error", error));
