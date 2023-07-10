@@ -30,7 +30,7 @@ export default function DashboardClient() {
       <div
         className="FRE__Dashboard-curr FRE__Dashboard__Hover"
         onClick={() => {
-          navigate("/sow");
+          navigate("/watchlist");
         }}
       >
         <DashboardClientCurrentJobs />

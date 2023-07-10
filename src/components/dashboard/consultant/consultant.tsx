@@ -29,7 +29,7 @@ export default function DashboardConsultant() {
       <div
         className="FRE__Dashboard-curr FRE__Dashboard__Hover"
         onClick={() => {
-          navigate("/sow");
+          navigate("/watchlist");
         }}
       >
         <DashboardConsultantCurrentJobs />

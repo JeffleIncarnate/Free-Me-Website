@@ -31,7 +31,7 @@ export default function DashboardFreeRider() {
       <div
         className="FRE__Dashboard__Freerider-curr FRE__Dashboard__Freerider__Hover"
         onClick={() => {
-          navigate("/sow");
+          navigate("/watchlist");
         }}
       >
         <DashboardFreeRiderCurrentJobs />

@@ -184,11 +184,20 @@
 }
 
 /* -- Current Job -- */
+.FRE__Dashboard-curr {
+  grid-column-start: col2;
+  grid-column-end: span col4;
+  grid-row-start: row1;
+  grid-row-end: span row3;
+  background-color: rgba(24, 24, 24, 0.4);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
 .FRE__Dashboard-curr__Current {
   font-size: 1.4rem;
   margin-left: 1rem;
   margin: 4%;
-  background-color: rgba(24, 24, 24, 0.4);
 }
 
 /* -- Community Network -- */
