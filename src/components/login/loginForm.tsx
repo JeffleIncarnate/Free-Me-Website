@@ -42,7 +42,7 @@ export default function LoginForm() {
       redirect: "follow",
     };
 
-    fetch("http://localhost:3000/freeme/auth/login", requestOptions)
+    fetch("https://free-me-api.vercel.app/freeme/auth/login", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setShowLoader(false);

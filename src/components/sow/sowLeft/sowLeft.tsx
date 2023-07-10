@@ -17,7 +17,7 @@ export default function SOWLeft({ setActiveSow }: IProps) {
     };
 
     fetch(
-      `http://localhost:3000/freeme/getSpecificStatementOfWork?uuid=${sessionStorage.getItem(
+      `https://free-me-api.vercel.app/freeme/getSpecificStatementOfWork?uuid=${sessionStorage.getItem(
         "uuid"
       )}`,
       requestOptions

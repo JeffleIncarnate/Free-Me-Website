@@ -13,7 +13,7 @@ export default function ProfileSmall() {
     };
 
     fetch(
-      `http://localhost:3000/freeme/getUser?email=${sessionStorage.getItem(
+      `https://free-me-api.vercel.app/freeme/getUser?email=${sessionStorage.getItem(
         "email"
       )}`,
       requestOptions
