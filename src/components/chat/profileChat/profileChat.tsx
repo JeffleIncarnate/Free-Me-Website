@@ -6,19 +6,25 @@ import { IProfileData } from "../chatInterface";
 
 export default function ProfileChat({ data }: { [key: string]: IProfileData }) {
   return (
-    <div className="FRE__Chat__Right">
-      {data.username === "Rick Astley" ? (
-        <ProfileChatDisplay
-          name={data.username}
-          profilePicture={data.profilePicture}
-        />
-      ) : data.username === "Ferd Swinkels" ? (
-        <ProfileChatDisplay
-          name={data.username}
-          profilePicture={data.profilePicture}
-        />
+    <>
+      {data.username !== "" ? (
+        <>
+          <div className="FRE__Chat__Right">
+            {data.username === "Rick Astley" ? (
+              <ProfileChatDisplay
+                name={data.username}
+                profilePicture={data.profilePicture}
+              />
+            ) : data.username === "Ferd Swinkels" ? (
+              <ProfileChatDisplay
+                name={data.username}
+                profilePicture={data.profilePicture}
+              />
+            ) : null}
+          </div>
+        </>
       ) : null}
-    </div>
+    </>
   );
 }
 

@@ -2,6 +2,7 @@ import "./sowLeft.css";
 
 import { useEffect, useState, useRef } from "react";
 import { ISOW, ISOWAddTask } from "../sowInterface";
+import { apiURL } from "../../../core/data";
 
 interface IProps {
   setActiveSow: (item: ISOW) => void;
@@ -17,7 +18,7 @@ export default function SOWLeft({ setActiveSow }: IProps) {
     };
 
     fetch(
-      `https://free-me-api.vercel.app/freeme/getSpecificStatementOfWork?uuid=${sessionStorage.getItem(
+      `${apiURL}/freeme/getSpecificStatementOfWork?uuid=${sessionStorage.getItem(
         "uuid"
       )}`,
       requestOptions

@@ -4,6 +4,7 @@ import Loader from "../loader/loader";
 
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiURL } from "../../core/data";
 
 export default function LoginForm() {
   const username = useRef(null);
@@ -42,7 +43,7 @@ export default function LoginForm() {
       redirect: "follow",
     };
 
-    fetch("https://free-me-api.vercel.app/freeme/auth/login", requestOptions)
+    fetch(`${apiURL}/freeme/auth/login`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setShowLoader(false);

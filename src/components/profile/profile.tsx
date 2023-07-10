@@ -1,6 +1,7 @@
 import "./profile.css";
 
 import { useEffect, useState } from "react";
+import { apiURL } from "../../core/data";
 
 export default function Profile() {
   const [background, setBackground] = useState<any>(null);
@@ -15,9 +16,7 @@ export default function Profile() {
     };
 
     fetch(
-      `https://free-me-api.vercel.app/freeme/getUser?email=${sessionStorage.getItem(
-        "email"
-      )}`,
+      `${apiURL}/freeme/getUser?email=${sessionStorage.getItem("email")}`,
       requestOptions
     )
       .then((response) => response.json())

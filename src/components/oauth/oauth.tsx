@@ -4,6 +4,7 @@ import Loader from "../loader/loader";
 
 import { useRef, useState } from "react";
 import { json, useNavigate } from "react-router-dom";
+import { apiURL } from "../../core/data";
 
 export default function OAuth() {
   const code = useRef(null);
@@ -28,9 +29,7 @@ export default function OAuth() {
     };
 
     fetch(
-      `https://free-me-api.vercel.app/freeme/getUser?email=${sessionStorage.getItem(
-        "email"
-      )}`,
+      `${apiURL}/freeme/getUser?email=${sessionStorage.getItem("email")}`,
       requestOptions
     )
       .then((response) => response.json())
