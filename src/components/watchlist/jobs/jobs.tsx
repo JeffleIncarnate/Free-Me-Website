@@ -4,9 +4,12 @@ import { IWatchList } from "../watchListInterface";
 import { ISOW } from "../../sow/sowInterface";
 
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { apiURL } from "../../../core/data";
 
 export default function WatchlistJobs() {
+  const navigate = useNavigate();
+
   const [jobs, setJobs] = useState<ISOW[] | null>(null);
 
   let getCurrentJobs = () => {
@@ -33,14 +36,23 @@ export default function WatchlistJobs() {
   });
 
   return (
-    <div className="FRE__Watchlist__Jobs">
+    <div
+      className="FRE__Watchlist__Jobs"
+      onClick={() => {
+        navigate("/sow");
+      }}
+    >
       <h2>Jobs</h2>
 
       <ul>
         {jobs !== null ? (
-          jobs.map((job: ISOW) => {
-            return <WatchListJobsButton jobName={job.name} />;
-          })
+          jobs.length !== 0 ? (
+            jobs.map((job: ISOW) => {
+              return <WatchListJobsButton jobName={job.name} />;
+            })
+          ) : (
+            <h3>No Current Jobs</h3>
+          )
         ) : (
           <h3>Loading...</h3>
         )}

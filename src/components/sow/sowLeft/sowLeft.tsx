@@ -37,9 +37,15 @@ export default function SOWLeft({ setActiveSow }: IProps) {
       <h2>Current Jobs</h2>
 
       {jobs !== null ? (
-        jobs.map((job: ISOW) => {
-          return <SOWLeftSwitcher jobData={job} setActiveSow={setActiveSow} />;
-        })
+        jobs.length !== 0 ? (
+          jobs.map((job: ISOW) => {
+            return (
+              <SOWLeftSwitcher jobData={job} setActiveSow={setActiveSow} />
+            );
+          })
+        ) : (
+          <h3>No Current Jobs</h3>
+        )
       ) : (
         <h3>Loading...</h3>
       )}
