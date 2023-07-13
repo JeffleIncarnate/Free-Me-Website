@@ -32,7 +32,7 @@ export default function Watchlist() {
 
   return (
     <main className="FRE__Watchlist">
-      <WatchlistJobs jobs={jobs} />
+      <WatchlistJobs />
       <WatchlistFollowing />
       <WatchlistAdvertisment />
     </main>

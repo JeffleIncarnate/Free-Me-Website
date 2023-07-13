@@ -74,6 +74,12 @@ export default function Profile() {
           </div>
         </div>
 
+        <div className="FRE__Profile__Name">
+          <p>{`${sessionStorage.getItem("firstname")} ${sessionStorage.getItem(
+            "lastname"
+          )}`}</p>
+        </div>
+
         <div className="FRE__Profile__Grid">
           <div className="FRE__Profile__Grid-Values">
             <h2>Values</h2>
