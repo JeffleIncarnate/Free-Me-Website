@@ -30,7 +30,7 @@ export default function SOWLeft({ setActiveSow }: IProps) {
 
   useEffect(() => {
     getCurrentJobs();
-  });
+  }, []);
 
   return (
     <div className="FRE__StatementOfWork__Left">
