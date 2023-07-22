@@ -6,6 +6,7 @@
   background-color: rgba(24, 24, 24, 0.5);
   padding: 2rem;
   border-radius: 2rem;
+  cursor: pointer;
 }
 
 .FRE__Watchlist__Jobs h3 {

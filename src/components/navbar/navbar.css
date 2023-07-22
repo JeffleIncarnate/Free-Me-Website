@@ -1,113 +1,127 @@
 .FRE__Navbar {
   width: 90%;
   height: 12vh;
+
+  margin: 0 5%;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+
   position: absolute;
-  top: 3rem;
-  right: 5%;
+  top: 2rem;
 }
 
-.FRE__Navbar > .FRE__Navbar__Img {
-  width: 200px;
-}
+/* ---- Logged In ---- */
+.FRE__Navbar__LoggedIn {
+  position: absolute;
 
-.FRE__Navbar > .FRE__Navbar__Img img {
   width: 100%;
+
+  z-index: 1;
+
+  transition: all 0.3s ease 0s;
 }
 
-.FRE__Navbar > ul {
-  list-style-type: none;
+/* The navbar */
+.FRE__Navbar__LoggedIn__List {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.FRE__Navbar > ul li {
-  margin: 0 1rem;
-  font-size: 1.5rem;
-}
-
-.FRE__Navbar a {
-  color: var(--white);
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.FRE__Navbar a:hover {
-  color: var(--accent);
-}
-
-.FRE__Navbar > ul li a {
-  text-decoration: none;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transition: all 0.3s ease-in-out;
-  margin: 0;
-  padding: 0;
-}
-
-.FRE__Navbar > ul li a::after {
-  content: "";
-  width: 0;
-  transition: all 0.3s ease-in-out;
-  height: 0.2rem;
-}
-
-.FRE__Navbar > ul li a:hover {
-  color: var(--accent);
-}
-
-.FRE__Navbar > ul li a:hover::after {
-  content: "";
-  width: 100%;
-  height: 0.2rem;
-  background-color: var(--accent);
-}
-
-.FRE__Navbar > div {
-  display: flex;
-
   align-items: center;
   justify-content: space-evenly;
 }
 
-.FRE__Navbar > div > * {
-  margin: 1rem;
+.FRE__Navbar__LoggedIn__List a img {
+  max-width: 60%;
 }
 
-.FRE__Navbar > div button {
-  border: none;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border-radius: 0.5rem;
+/* Navbar links */
+.FRE__Navbar__LoggedIn__List a {
+  float: left;
+
   color: var(--white);
-  font-size: 1.3rem;
-  transition: all 0.3s ease-in-out;
+
+  padding: 1rem;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 1.5rem;
+
+  transition: all 0.3s ease 0s;
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.FRE__Navbar > div button::after {
-  content: "";
-  width: 0;
-  transition: all 0.3s ease-in-out;
-  height: 0.2rem;
-}
-
-.FRE__Navbar > div button:hover::after {
-  content: "";
+.FRE__Navbar__LoggedIn__List li > button {
   width: 100%;
-  height: 0.2rem;
-  background-color: var(--accent);
+
+  background: transparent;
+  font-size: 1.5rem;
+
+  border: none;
 }
 
-.FRE__Navbar > div > button:hover {
+.FRE__Navbar__LoggedIn__List li *:after {
+  content: "";
+
+  height: 0.2rem;
+
+  width: 0;
+
+  background: var(--accent);
+  transition: all 0.3s;
+}
+
+.FRE__Navbar__LoggedIn__List a:hover {
   color: var(--accent);
+}
+
+.FRE__Navbar__LoggedIn__List li a:hover:after {
+  width: 100%;
+
+  left: 0;
+}
+
+.FRE__Navbar__LoggedIn__List li {
+  list-style: none;
+  position: relative;
+  display: inline;
+}
+
+/* ---- Not logged In ---- */
+.FRE__Navbar__NotLoggedIn {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FRE__Navbar__NotLoggedIn > * {
+  color: var(--white);
+
+  text-align: center;
+
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.FRE__Navbar__NotLoggedIn > * {
+  width: 30%;
+}
+
+.FRE__Navbar__NotLoggedIn > *:nth-child(2) {
+  max-width: 15rem;
+
+  margin: 0 20%;
+}
+.FRE__Navbar__NotLoggedIn img {
+  width: 100%;
+}
+
+.FRE__Navbar__NotLoggedIn > *:nth-child(3) > i {
+  margin-left: 1rem;
 }
