@@ -23,7 +23,12 @@ export default function DashboardClient() {
       >
         <DashboardClientSocialMedia />
         <article>
+          <i className="fa-regular fa-comment-dots"></i>
           <h2>Social Media</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur, quod?
+          </p>
         </article>
       </div>
 
@@ -35,7 +40,12 @@ export default function DashboardClient() {
       >
         <DashboardClientCurrentJobs />
         <article>
+          <i className="fa-solid fa-chart-pie"></i>
           <h2>Current Jobs</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur, quod?
+          </p>
         </article>
       </div>
 
@@ -48,7 +58,12 @@ export default function DashboardClient() {
         <DashboardClientChats />
 
         <article>
+          <i className="fa-solid fa-cube"></i>
           <h2>Chat</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur, quod?
+          </p>
         </article>
       </div>
 
@@ -61,7 +76,12 @@ export default function DashboardClient() {
         <DashboardClientBalance />
 
         <article>
+          <i className="fa-solid fa-chart-simple"></i>
           <h2>Balance</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur, quod?
+          </p>
         </article>
       </div>
 
@@ -76,7 +96,12 @@ export default function DashboardClient() {
         </div>
 
         <article>
+          <i className="fa-solid fa-user"></i>
           <h2>Profile</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur, quod?
+          </p>
         </article>
       </div>
 
@@ -89,7 +114,12 @@ export default function DashboardClient() {
         <DashboardClientCommunityNetwork />
 
         <article>
+          <i className="fa-solid fa-circle-nodes"></i>
           <h2>Corporate Network</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur, quod?
+          </p>
         </article>
       </div>
     </main>

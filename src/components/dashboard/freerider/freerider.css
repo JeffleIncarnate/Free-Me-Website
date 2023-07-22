@@ -31,6 +31,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.FRE__Dashboard__Freerider__Hover > article > i {
+  margin: 0.5rem;
+  font-size: 3.5rem;
+}
+
+.FRE__Dashboard__Freerider__Hover > article > h2 {
+  margin: 0.5rem;
+  font-size: 2.5rem;
+}
+
+.FRE__Dashboard__Freerider__Hover > article > p {
+  margin: 0.5rem;
 }
 
 .FRE__Dashboard__Freerider__Hover:hover article {
@@ -72,7 +87,7 @@
   grid-column-end: span col2;
   grid-row-start: row1;
   grid-row-end: span row3;
-  background-color: rgba(212, 97, 18, 0.1);
+  background-color: rgba(24, 24, 24, 0.4);
   border-radius: 1rem;
   padding: 1rem;
 }
@@ -142,7 +157,7 @@
   grid-column-end: span col3;
   grid-row-start: row2;
   grid-row-end: span row4;
-  background-color: rgba(0, 128, 0, 0.1);
+  background-color: rgba(24, 24, 24, 0.4);
   border-radius: 1rem;
   padding: 1rem;
 }
