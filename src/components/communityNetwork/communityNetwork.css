@@ -1,7 +1,7 @@
 .FRE__CommunityNetwork {
-  height: 75vh;
+  height: 80vh;
   width: 100%;
-  margin-top: 18vh;
+  margin-top: 14vh;
   display: grid;
   gap: 1rem;
   grid-template-rows: [row1] 25% [row2] 25% [row3] 25% [row4] 25% [end];
