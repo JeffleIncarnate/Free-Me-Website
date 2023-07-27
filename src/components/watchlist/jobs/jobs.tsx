@@ -33,7 +33,7 @@ export default function WatchlistJobs() {
 
   useEffect(() => {
     getCurrentJobs();
-  });
+  }, []);
 
   return (
     <div

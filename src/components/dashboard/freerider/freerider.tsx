@@ -150,7 +150,13 @@ function DashboardFreeRiderCurrentJobs() {
     <>
       <div className="wrapper">
         {jobs.map((job, index) => {
-          return <DashboardFreeRiderCurrentJob index={index} name={job.name} />;
+          return (
+            <DashboardFreeRiderCurrentJob
+              key={crypto.randomUUID()}
+              index={index}
+              name={job.name}
+            />
+          );
         })}
       </div>
     </>
@@ -193,6 +199,7 @@ function DashboardFreeRiderChats() {
           return (
             <DashboardFreeRiderChat
               companyName={chat.companyName}
+              key={crypto.randomUUID()}
               lastMessage={chat.lastMessage}
               profilePicture={chat.profilePicture}
             />
@@ -319,6 +326,7 @@ function DashboardFreeRiderBalance() {
           return (
             <DashboardFreeRiderBalanceItem
               name={transaction.name}
+              key={crypto.randomUUID()}
               moneyOut={transaction.moneyOut}
             />
           );

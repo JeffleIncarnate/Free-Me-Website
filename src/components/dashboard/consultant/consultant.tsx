@@ -157,7 +157,11 @@ function DashboardConsultantCurrentJobs() {
       <div className="wrapper">
         {jobs.map((job, index) => {
           return (
-            <DashboardConsultantCurrentJob index={index} name={job.name} />
+            <DashboardConsultantCurrentJob
+              key={crypto.randomUUID()}
+              index={index}
+              name={job.name}
+            />
           );
         })}
       </div>
@@ -201,6 +205,7 @@ function DashboardConsultantChats() {
           return (
             <DashboardConsultantChat
               companyName={chat.companyName}
+              key={crypto.randomUUID()}
               lastMessage={chat.lastMessage}
               profilePicture={chat.profilePicture}
             />
@@ -267,6 +272,7 @@ function DashboardConsultantBalance() {
           return (
             <DashboardConsultantBalanceItem
               name={transaction.name}
+              key={crypto.randomUUID()}
               moneyOut={transaction.moneyOut}
             />
           );
