@@ -10,7 +10,7 @@
 }
 
 .FRE__Profile__Images {
-  height: 40%;
+  height: 60%;
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -24,7 +24,7 @@
 
 .FRE__Profile__Images > img {
   background-color: var(--black);
-  height: 180px;
+  height: 200;
   border: 0.2rem solid var(--white);
   border-radius: 50%;
   padding: 1rem;
