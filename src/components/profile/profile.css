@@ -24,7 +24,7 @@
 
 .FRE__Profile__Images > img {
   background-color: var(--black);
-  height: 200;
+  height: 200px;
   border: 0.2rem solid var(--white);
   border-radius: 50%;
   padding: 1rem;

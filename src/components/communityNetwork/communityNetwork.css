@@ -5,94 +5,60 @@
   display: grid;
   gap: 1rem;
   grid-template-rows: [row1] 25% [row2] 25% [row3] 25% [row4] 25% [end];
-  grid-template-columns: [col1] 15% [col2] 20% [col3] 15% [col4] 20% [col5] auto [end];
+  grid-template-columns: [col1] 25% [col2] 10% [col3] 15% [col4] 20% [col5] auto [end];
   padding: 1rem;
 }
 
 .FRE__CommunityNetwork > * {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  transition: all 0.3s ease-in-out;
-  border-radius: 0.7rem;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 1rem;
+  text-align: center;
+
   position: relative;
+
+  transition: all 0.3s ease-in-out;
+
   background-color: rgba(24, 24, 24, 0.5);
+}
+
+.FRE__CommunityNetwork > *:hover {
+  background-color: rgba(24, 24, 24, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.FRE__CommunityNetwork > * > i {
+  font-size: 3.5rem;
+}
+
+.FRE__CommunityNetwork > * > h2 {
+  font-size: 2.5rem;
 }
 
 .FRE__CommunityNetwork > * > img {
   filter: grayscale(1) invert(1);
 }
 
-/* -- Specific Images -- */
-.FRE__CommunityNetwork-hard_software > img {
-  width: 30%;
-}
-
-.FRE__CommunityNetwork-utility > img {
-  width: 12%;
-}
-
-.FRE__CommunityNetwork-insurance > img {
-  width: 20%;
-}
-
-.FRE__CommunityNetwork-accomodation {
-  flex-direction: column;
-}
-
-.FRE__CommunityNetwork-accomodation > img {
-  width: 50%;
-}
-
 .FRE__CommunityNetwork-energy {
   justify-content: space-evenly;
-  padding: 0 5rem;
-}
 
-.FRE__CommunityNetwork-energy > img {
-  width: 12%;
+  padding: 0 5rem;
 }
 .FRE__CommunityNetwork-banking {
   justify-content: center;
-  padding: 0 5rem;
-}
 
-.FRE__CommunityNetwork-banking > img {
-  width: 25%;
+  padding: 0 5rem;
 }
 
 .FRE__CommunityNetwork-education {
   justify-content: center;
+
   padding: 0 5rem;
-}
-
-.FRE__CommunityNetwork-education > img {
-  width: 30%;
-}
-
-.FRE__CommunityNetwork > * > div {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-  width: 0;
-  height: 100%;
-  transition: 0.4s ease-in-out;
-  border-radius: 0.7rem;
-  white-space: nowrap;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.FRE__CommunityNetwork > * > div > h2 {
-  margin-top: 1rem;
-}
-
-.FRE__CommunityNetwork > *:hover > div {
-  width: 100%;
 }
 
 .FRE__CommunityNetwork-hard_software {

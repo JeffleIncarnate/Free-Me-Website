@@ -2,35 +2,6 @@ import "./communityNetwork.css";
 
 import { useNavigate } from "react-router-dom";
 
-// // Hardware Software
-// import PbTech from "../../assets/communityNetwork/pbTech.png";
-// import MicrosoftStore from "../../assets/communityNetwork/microsoftStore.png";
-// import InGram from "../../assets/communityNetwork/ingram.png";
-
-// // Utilitys
-// import Mercury from "../../assets/communityNetwork/mercury.png";
-// import Spark from "../../assets/communityNetwork/spark.png";
-
-// // Insurance
-// import Crombie from "../../assets/communityNetwork/crombie.png";
-// import AA from "../../assets/communityNetwork/aa.png";
-
-// // Accomodation
-// import Quest from "../../assets/communityNetwork/quest.png";
-// import HotelH from "../../assets/communityNetwork/hotelH.png";
-
-// // Energy
-// import Z from "../../assets/communityNetwork/z.png";
-// import Canstar from "../../assets/communityNetwork/canstar.png";
-
-// // Banking
-// import ANZ from "../../assets/communityNetwork/anz.png";
-// import OtherBank from "../../assets/communityNetwork/otherBank.png";
-
-// // Education
-// import Waikato from "../../assets/communityNetwork/waikato.png";
-// import TePukenga from "../../assets/communityNetwork/tePukenga.png";
-
 // Hardware and Software
 import Computer from "../../assets/communityNetwork/newLogos/computer.png";
 import Save from "../../assets/communityNetwork/newLogos/save.png";
@@ -71,28 +42,31 @@ export default function CommunityNetwork() {
           handleHardwareSoftwareClick();
         }}
       >
-        <img src={Computer} alt="" />
-        <img src={Save} alt="" />
+        <i className="fa-solid fa-computer"></i>
 
-        <div>
-          <h2>Hardware and Software</h2>
-        </div>
+        <h2>Hardware and Software</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          recusandae.
+        </p>
       </div>
       <div className="FRE__CommunityNetwork-utility">
-        <img src={Phone} alt="" />
-        <img src={Tap} alt="" />
-        <img src={Light} alt="" />
+        <i className="fa-solid fa-phone"></i>
 
-        <div>
-          <h2>Utilitys</h2>
-        </div>
+        <h2>Utilitys</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          recusandae.
+        </p>
       </div>
       <div className="FRE__CommunityNetwork-insurance">
-        <img src={Umbrella} alt="" />
+        <i className="fa-solid fa-umbrella"></i>
 
-        <div>
-          <h2>Insurance</h2>
-        </div>
+        <h2>Insurance</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          recusandae.
+        </p>
       </div>
       <div className="FRE__CommunityNetwork-balances">
         <div>
@@ -101,35 +75,36 @@ export default function CommunityNetwork() {
       </div>
 
       <div className="FRE__CommunityNetwork-accomodation">
-        <img src={Hotel} alt="" />
+        <i className="fa-solid fa-hotel"></i>
 
-        <div>
-          <h2>Accomodation</h2>
-        </div>
+        <h2>Accommodation</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
 
       <div className="FRE__CommunityNetwork-energy">
-        <img src={Fuel} alt="" />
-        <img src={LPG} alt="" />
+        <i className="fa-solid fa-gas-pump"></i>
 
-        <div>
-          <h2>Energy</h2>
-        </div>
+        <h2>Energy</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
       </div>
 
       <div className="FRE__CommunityNetwork-banking">
-        <img src={Bank} alt="" />
+        <i className="fa-solid fa-umbrella"></i>
 
-        <div>
-          <h2>Banking</h2>
-        </div>
+        <h2>Insurance</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          recusandae.
+        </p>
       </div>
       <div className="FRE__CommunityNetwork-education">
-        <img src={Hat} alt="" />
+        <i className="fa-solid fa-graduation-cap"></i>
 
-        <div>
-          <h2>Education</h2>
-        </div>
+        <h2>Education</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum,
+          recusandae.
+        </p>
       </div>
     </main>
   );
