@@ -23,6 +23,8 @@
 
   transition: all 0.3s ease-in-out;
 
+  border-radius: 1rem;
+
   background-color: rgba(24, 24, 24, 0.5);
 }
 
