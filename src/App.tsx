@@ -7,7 +7,6 @@ import SignupConsultantPage from "./layouts/signupConsultant";
 import SignupClientPage from "./layouts/signupClient";
 import LoginPage from "./layouts/login";
 import OauthPage from "./layouts/oauth";
-import OpportunitiesPage from "./layouts/opportunities";
 import DashboardPage from "./layouts/dashboard";
 import CommunityNetworkPage from "./layouts/communityNetwork";
 import HardwareAndSoftwarePage from "./layouts/hardwareAndSoftware";
@@ -18,6 +17,8 @@ import BalancesPages from "./layouts/balances";
 import NotificationsPage from "./layouts/notifcations";
 import WatchlistPage from "./layouts/watchlist";
 import SocialMediaPage from "./layouts/socialMedia";
+import Switcher from "./components/switcher/switcher";
+import SearchPage from "./layouts/search";
 
 function App() {
   return (
@@ -27,7 +28,6 @@ function App() {
       <Route path="/signUpConsultant" element={<SignupConsultantPage />} />
       <Route path="/signUpClient" element={<SignupClientPage />} />
       <Route path="/oauth" element={<OauthPage />} />
-      <Route path="/opportunities" element={<OpportunitiesPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/communityNetwork" element={<CommunityNetworkPage />} />
       <Route path="/profile" element={<ProfilePage />} />
@@ -41,6 +41,7 @@ function App() {
       ></Route>
       <Route path="/watchlist" element={<WatchlistPage />} />
       <Route path="/socialMedia" element={<SocialMediaPage />} />
+      <Route path="/search" element={<SearchPage />} />
     </Routes>
   );
 }

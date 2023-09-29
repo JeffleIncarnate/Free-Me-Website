@@ -57,11 +57,6 @@ export default function BigChat({ isActive, data }: IBigChat) {
             ) : null}
           </div>
           <div className="FRE__Chat__Big-Bottom">
-            <div className="FRE__Chat__Big-Bottom__Icons">
-              <i className="fa-solid fa-circle-plus"></i>
-              <i className="fa-solid fa-photo-film"></i>
-            </div>
-
             <div className="FRE__Chat__Big-Bottom__Message">
               <input type="text" placeholder="Aa" ref={message} />
             </div>

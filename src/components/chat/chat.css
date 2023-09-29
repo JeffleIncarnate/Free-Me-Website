@@ -15,8 +15,7 @@
   flex: 1;
   padding: 1rem;
   overflow-y: scroll;
-  background-color: rgba(24, 24, 24, 0.5);
-  border-radius: 2rem;
+  background-color: var(--black);
   padding: 2rem;
 }
 
@@ -37,9 +36,11 @@
 
 .FRE__Chat__Left > .FRE__Chat__Left-Top i {
   padding: 1rem;
-  background-color: rgba(24, 24, 24, 0.6);
   margin: 0 0.5rem;
   border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -52,9 +53,9 @@
   width: 100%;
   border-radius: 2rem;
   padding: 0.8rem;
-  background-color: rgba(24, 24, 24, 0.6);
+  background-color: transparent;
   color: var(--white);
-  border: solid 0.2rem rgba(24, 24, 24, 0.6);
+  border: solid 0.2rem var(--white);
   transition: border 0.3s ease-in-out;
 }
 

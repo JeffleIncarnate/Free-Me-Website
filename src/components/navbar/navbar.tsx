@@ -30,23 +30,20 @@ const _NavbarLoggedIn: FC<_INavbarLoggedInProps> = ({}) => {
     <div className="FRE__Navbar__LoggedIn">
       <ul className="FRE__Navbar__LoggedIn__List">
         <li>
-          <Link to="/socialMedia">Social Media</Link>
+          <Link
+            onClick={() => {
+              sessionStorage.clear();
+            }}
+            to="/login"
+          >
+            About Us
+          </Link>
         </li>
-        <li>
-          <Link to="/balances">Balances</Link>
-        </li>
-        <li>
-          <Link to="/chat">Chat</Link>
-        </li>
+
         <Link to="/dashboard">
           <img src={FreeMeLogo} alt="" />
         </Link>
-        <li>
-          <Link to="/profile">Profile</Link>
-        </li>
-        <li>
-          <Link to="/communityNetwork">Corporate Network</Link>
-        </li>
+
         <li>
           <Link
             onClick={() => {
@@ -54,7 +51,7 @@ const _NavbarLoggedIn: FC<_INavbarLoggedInProps> = ({}) => {
             }}
             to="/login"
           >
-            <i className="fa-solid fa-right-from-bracket"></i>
+            Logout
           </Link>
         </li>
       </ul>

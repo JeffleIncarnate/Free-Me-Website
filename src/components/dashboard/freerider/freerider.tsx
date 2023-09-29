@@ -58,9 +58,7 @@ export default function DashboardFreeRider() {
         <article>
           <i className="fa-solid fa-cube"></i>
           <h2>Chat</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum!
-          </p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
         </article>
       </div>
       <div
@@ -75,7 +73,7 @@ export default function DashboardFreeRider() {
           <i className="fa-solid fa-chart-simple"></i>
           <h2>Balance</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum!
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </p>
         </article>
       </div>

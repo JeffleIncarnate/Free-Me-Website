@@ -81,21 +81,6 @@
   justify-content: center;
 }
 
-.FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Icons {
-  width: 7%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Icons > i {
-  padding: 0.5rem;
-  background-color: rgba(24, 24, 24, 0.6);
-  margin: 0 0.1rem;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 .FRE__Chat__Big-Bottom > .FRE__Chat__Big-Bottom__Message {
   width: 95%;
   position: relative;

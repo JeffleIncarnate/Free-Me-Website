@@ -189,7 +189,8 @@
 }
 
 .FRE__StatementOfWork__Centre__Table__NotConfirmed__Buttons > button {
-  width: 20%;
+  min-width: 30%;
+  margin: 0 1rem;
   padding: 0.8rem 1.3rem;
   background: transparent;
   font-size: 1.4rem;

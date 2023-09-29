@@ -1,13 +1,7 @@
-import Computer from "../../../assets/communityNetwork/newLogos/computer.png";
-import Tap from "../../../assets/communityNetwork/newLogos/tap.png";
-import Umbrella from "../../../assets/communityNetwork/newLogos/umbrella.png";
-import Fuel from "../../../assets/communityNetwork/newLogos/fuwl.png";
-import Hotel from "../../../assets/communityNetwork/newLogos/hotel.png";
-import Bank from "../../../assets/communityNetwork/newLogos/bank.png";
-
 import Dhruv from "../../../assets/Logo_Light.png";
 import SocialMediaCentre from "../../socialMedia/socialCentre/socialCentre";
 import ProfileSmall from "../profileSmall/profileSmall";
+
 import { useNavigate } from "react-router-dom";
 
 export default function DashboardClient() {
@@ -61,8 +55,7 @@ export default function DashboardClient() {
           <i className="fa-solid fa-cube"></i>
           <h2>Chat</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, quod?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt!
           </p>
         </article>
       </div>
@@ -79,8 +72,7 @@ export default function DashboardClient() {
           <i className="fa-solid fa-chart-simple"></i>
           <h2>Balance</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, quod?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt!
           </p>
         </article>
       </div>
@@ -258,10 +250,6 @@ function DashboardClientBalance() {
         name: "GST",
         moneyOut: true,
       },
-      {
-        name: "Income Cashback",
-        moneyOut: false,
-      },
     ],
   };
 
@@ -278,8 +266,8 @@ function DashboardClientBalance() {
           );
         })}
 
-        <p>
-          <strong>Total:</strong> {balances.total}
+        <p className="FRE__Dashboard-bal__Balance__Total">
+          Total: {balances.total}
         </p>
       </div>
     </>
@@ -318,22 +306,22 @@ function DashboardClientCommunityNetwork() {
     <>
       <div className="wrapper">
         <div>
-          <img src={Computer} alt="" />
+          <i className="fa-solid fa-computer"></i>
         </div>
         <div>
-          <img src={Tap} alt="" />
+          <i className="fa-solid fa-faucet"></i>
         </div>
         <div>
-          <img src={Umbrella} alt="" />
+          <i className="fa-solid fa-umbrella"></i>
         </div>
         <div>
-          <img src={Fuel} alt="" />
+          <i className="fa-solid fa-gas-pump"></i>
         </div>
         <div>
-          <img src={Hotel} alt="" />
+          <i className="fa-solid fa-hotel"></i>
         </div>
         <div>
-          <img src={Bank} alt="" />
+          <i className="fa-solid fa-building-columns"></i>
         </div>
       </div>
     </>

@@ -2,31 +2,6 @@ import "./communityNetwork.css";
 
 import { useNavigate } from "react-router-dom";
 
-// Hardware and Software
-import Computer from "../../assets/communityNetwork/newLogos/computer.png";
-import Save from "../../assets/communityNetwork/newLogos/save.png";
-
-// Utilitys
-import Tap from "../../assets/communityNetwork/newLogos/tap.png";
-import Phone from "../../assets/communityNetwork/newLogos/phone.png";
-import Light from "../../assets/communityNetwork/newLogos/light.png";
-
-// Insurance
-import Umbrella from "../../assets/communityNetwork/newLogos/umbrella.png";
-
-// Accomodation
-import Hotel from "../../assets/communityNetwork/newLogos/hotel.png";
-
-// Energy
-import Fuel from "../../assets/communityNetwork/newLogos/fuwl.png";
-import LPG from "../../assets/communityNetwork/newLogos/lpg.png";
-
-// Banking
-import Bank from "../../assets/communityNetwork/newLogos/bank.png";
-
-// Education
-import Hat from "../../assets/communityNetwork/newLogos/education.png";
-
 export default function CommunityNetwork() {
   let navigate = useNavigate();
 

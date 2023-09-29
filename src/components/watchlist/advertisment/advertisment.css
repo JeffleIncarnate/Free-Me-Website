@@ -3,10 +3,12 @@
   grid-column-end: span col3;
   grid-row-start: row2;
   grid-row-end: span row2;
+
   cursor: pointer;
-  background-color: rgba(24, 24, 24, 0.5);
+
   padding: 2rem;
-  border-radius: 2rem;
+
+  background-color: var(--black);
 }
 
 .FRE__Watchlist__Advertisment {

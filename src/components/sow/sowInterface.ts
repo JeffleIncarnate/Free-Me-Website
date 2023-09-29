@@ -7,10 +7,12 @@ export interface ISOW {
   tasks: ISOWTableRows[];
   timeline: ISOWTimeline[];
   uuid: string;
+  consultantemail: string;
+  clientemail: string;
 }
 
 export interface ISOWTimeline {
-  description: string;
+  jobDescription: string;
   relativeFinishDate: number;
   amount: number;
 }
@@ -18,14 +20,24 @@ export interface ISOWTimeline {
 export interface ISOWTableRows {
   clientConfirmed: boolean;
   consultantConfirmed: boolean;
-  description: string;
+  jobDescription: string;
   relativeFinishDate: number;
   amount: number;
+  id: number;
 }
 
 export interface ISOWAddTask {
   id: number;
   jobDescription: string;
   amount: number;
-  finishDay: number;
+  relativeFinishDate: number;
+  clientConfirmed: boolean;
+  consultantConfirmed: boolean;
+}
+
+export interface ISOWTimelineId {
+  id: number;
+  jobDescription: string;
+  amount: number;
+  relativeFinishDate: number;
 }

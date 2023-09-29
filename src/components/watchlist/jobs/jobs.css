@@ -3,10 +3,11 @@
   grid-column-end: span col2;
   grid-row-start: row1;
   grid-row-end: span row2;
-  background-color: rgba(24, 24, 24, 0.5);
   padding: 2rem;
-  border-radius: 2rem;
+
   cursor: pointer;
+
+  background-color: var(--black);
 }
 
 .FRE__Watchlist__Jobs h3 {
@@ -47,7 +48,7 @@
 .FRE__Watchlist__Jobs__Button::after {
   position: absolute;
   content: "";
-  background: var(--accent);
+  background: var(--white);
   bottom: 0;
   right: 0;
   height: 0.2rem;

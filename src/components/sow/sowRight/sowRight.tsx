@@ -7,7 +7,6 @@ interface IProps {
 }
 
 export default function SOWRight({ activeSow }: IProps) {
-  console.log(activeSow?.timeline);
   return (
     <div className="FRE__StatementOfWork__Right">
       <h2>Timeline</h2>
@@ -36,9 +35,10 @@ function SOWRightShowTimeline({
               return (
                 <SOWRightShowTime
                   index={index}
-                  description={time.description}
+                  description={time.jobDescription}
                   day={time.relativeFinishDate}
                   amount={time.amount}
+                  key={crypto.randomUUID()}
                 />
               );
             })}
@@ -73,7 +73,7 @@ function SOWRightShowTime({
       </p>
       <p>
         <strong>Expected Finish Date:</strong>{" "}
-        {`${new Date(day * 1000).toLocaleDateString("en-nz")}`}
+        {`${new Date(day).toLocaleDateString("en-nz")}`}
       </p>
     </div>
   );

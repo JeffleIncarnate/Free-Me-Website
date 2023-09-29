@@ -1,11 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   padding: 0;
   color: var(--white);
   overflow-x: hidden;
   background-image: linear-gradient(
-      rgba(24, 24, 24, 0.9),
-      rgba(24, 24, 24, 0.9)
+      rgba(var(--background), 0.5),
+      rgba(var(--background), 0.5)
     ),
     url("./assets/Splash.jpg");
   background-position: center;
@@ -17,6 +21,9 @@ body {
   --accent: #d46112;
   --black: #181818;
   --white: #faf9f6;
+  --background: 24, 24, 24;
+  --whiteRGB: 250, 249, 246;
+  --blackRGB: 24, 24, 24;
 }
 
 * {

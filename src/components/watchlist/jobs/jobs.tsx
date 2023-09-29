@@ -42,13 +42,18 @@ export default function WatchlistJobs() {
         navigate("/sow");
       }}
     >
-      <h2>Jobs</h2>
+      <h2>Jobs {jobs !== null ? `[${jobs.length}]` : "[...]"}</h2>
 
       <ul>
         {jobs !== null ? (
           jobs.length !== 0 ? (
             jobs.map((job: ISOW) => {
-              return <WatchListJobsButton jobName={job.name} />;
+              return (
+                <WatchListJobsButton
+                  companyName={job.clientemail}
+                  jobName={job.name}
+                />
+              );
             })
           ) : (
             <h3>No Current Jobs</h3>
@@ -69,7 +74,7 @@ function WatchListJobsButton({
 }) {
   return (
     <button className="FRE__Watchlist__Jobs__Button">
-      <strong>{companyName}</strong> -- {jobName}
+      <strong>{companyName}</strong> - {jobName}
     </button>
   );
 }

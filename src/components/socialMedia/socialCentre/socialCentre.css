@@ -12,8 +12,11 @@
 .FRE__Main__Centre__Create {
   width: 100%;
   padding: 1rem;
-  background-color: rgba(24, 24, 24, 0.3);
   border-radius: 2rem;
+
+  background-color: rgba(var(--blackRGB), 0.7);
+  color: var(--white);
+  border: 0.2rem solid var(--white);
 }
 
 /* -- Top -- */
@@ -37,7 +40,7 @@
   border-radius: 2rem;
   height: 100%;
   padding: 1.5rem 1rem;
-  border: 0.2rem var(--white) solid;
+  border: 0.2rem var(--black) solid;
   background: transparent;
 }
 

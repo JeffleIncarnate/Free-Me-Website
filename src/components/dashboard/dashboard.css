@@ -26,12 +26,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(24, 24, 24, 0.4);
+  background-color: var(--black);
   overflow: hidden;
   width: 100%;
   height: 100%;
   transition: 0.4s ease-in-out;
-  border-radius: 0.7rem;
+  border-radius: 0rem;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -92,25 +92,35 @@
   grid-column-end: span col2;
   grid-row-start: row1;
   grid-row-end: span row3;
-  background-color: rgba(24, 24, 24, 0.4);
-  border-radius: 1rem;
+  background-color: var(--black);
+  border-radius: 0rem;
   padding: 1rem;
   overflow-y: scroll;
+
+  color: var(--white);
 }
 
 .FRE__Social {
   margin-top: 0;
 }
 
-/* ---- Current Jobs ---- */
+/* -- Current Job -- */
 .FRE__Dashboard-curr {
   grid-column-start: col2;
   grid-column-end: span col4;
   grid-row-start: row1;
   grid-row-end: span row3;
-  background-color: rgba(24, 24, 24, 0.4);
-  border-radius: 1rem;
+  background-color: var(--black);
+  border-radius: 0rem;
   padding: 1rem;
+
+  color: var(--white);
+}
+
+.FRE__Dashboard-curr__Current {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  margin: 4%;
 }
 
 /* ---- Chats ---- */
@@ -119,38 +129,15 @@
   grid-column-end: span end;
   grid-row-start: row1;
   grid-row-end: span row2;
-  background-color: rgba(24, 24, 24, 0.4);
-  border-radius: 1rem;
+  background-color: var(--black);
+  border-radius: 0rem;
   overflow-x: hidden;
   padding: 1rem;
+
+  color: var(--white);
 }
 
-/* ---- Balances ---- */
-.FRE__Dashboard-bal {
-  grid-column-start: col4;
-  grid-column-end: span end;
-  grid-row-start: row2;
-  grid-row-end: span row3;
-  margin-top: 1%;
-  background-color: rgba(24, 24, 24, 0.4);
-  border-radius: 1rem;
-  padding: 1rem;
-}
-
-/* ---- Profile ---- */
-.FRE__Dashboard-profile {
-  grid-column-start: col1;
-  grid-column-end: span col3;
-  grid-row-start: row3;
-  grid-row-end: span row4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: rgba(24, 24, 24, 0.4);
-}
-
-/* -- Chats -- */
+/* Chat */
 .FRE__Dashboard-chat {
   width: 100%;
   display: flex;
@@ -177,6 +164,35 @@
   height: 100%;
 }
 
+/* ---- Balances ---- */
+.FRE__Dashboard-bal {
+  grid-column-start: col4;
+  grid-column-end: span end;
+  grid-row-start: row2;
+  grid-row-end: span row3;
+  margin-top: 1%;
+  background-color: var(--black);
+  border-radius: 0rem;
+  padding: 1rem;
+
+  color: var(--white);
+}
+
+/* ---- Profile ---- */
+.FRE__Dashboard-profile {
+  grid-column-start: col1;
+  grid-column-end: span col3;
+  grid-row-start: row3;
+  grid-row-end: span row4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--black);
+
+  color: var(--white);
+}
+
 /* -- Balances -- */
 .FRE__Dashboard-bal__Balance {
   width: 100%;
@@ -193,21 +209,12 @@
   text-align: center;
 }
 
-/* -- Current Job -- */
-.FRE__Dashboard-curr {
-  grid-column-start: col2;
-  grid-column-end: span col4;
-  grid-row-start: row1;
-  grid-row-end: span row3;
-  background-color: rgba(24, 24, 24, 0.4);
-  border-radius: 1rem;
-  padding: 1rem;
-}
+.FRE__Dashboard-bal__Balance__Total {
+  font-weight: bold;
 
-.FRE__Dashboard-curr__Current {
-  font-size: 1.4rem;
-  margin-left: 1rem;
-  margin: 4%;
+  text-align: center;
+
+  font-size: 1.2rem;
 }
 
 /* -- Community Network -- */
@@ -219,7 +226,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(24, 24, 24, 0.4);
+  background-color: var(--black);
+
+  color: var(--white);
 }
 
 .FRE__Dashboard-network div {
@@ -227,38 +236,10 @@
   aspect-ratio: 1/1;
   margin: 2%;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.FRE__Dashboard-network div > img {
-  height: 100%;
-  filter: grayscale(1) invert(1);
-}
-
-.FRE__Dashboard-network div:nth-child(2) img {
-  box-sizing: border-box;
-  padding: 1.5rem;
-}
-
-.FRE__Dashboard-network div:nth-child(3) img {
-  box-sizing: border-box;
-  padding: 2rem;
-}
-
-.FRE__Dashboard-network div:nth-child(4) img {
-  box-sizing: border-box;
-  padding: 2rem;
-}
-
-.FRE__Dashboard-network div:nth-child(5) img {
-  box-sizing: border-box;
-  padding: 2rem;
-}
-
-.FRE__Dashboard-network div:nth-child(6) img {
-  box-sizing: border-box;
-  padding: 2rem;
+  font-size: 4rem;
 }

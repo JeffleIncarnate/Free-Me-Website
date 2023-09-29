@@ -19,7 +19,7 @@
   background-size: cover;
   background-position: center;
   border: var(--white) 0.2rem solid;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .FRE__Profile__Images > img {
@@ -67,9 +67,10 @@
 
 .FRE__Profile__Grid > * {
   padding: 2rem;
-  border-radius: 0.7rem;
   position: relative;
-  background-color: rgba(24, 24, 24, 0.5);
+  background-color: var(--black);
+
+  transition: all 0.3s ease-in-out;
 }
 
 .FRE__Profile__Grid > * > h2 {

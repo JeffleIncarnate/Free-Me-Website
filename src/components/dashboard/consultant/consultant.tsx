@@ -60,8 +60,7 @@ export default function DashboardConsultant() {
           <i className="fa-solid fa-cube"></i>
           <h2>Chat</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, quod?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt!
           </p>
         </article>
       </div>
@@ -78,8 +77,7 @@ export default function DashboardConsultant() {
           <i className="fa-solid fa-chart-simple"></i>
           <h2>Balance</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, quod?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt!
           </p>
         </article>
       </div>

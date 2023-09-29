@@ -4,10 +4,6 @@ import { IPostButton, IPost } from "../socialMediaInterface";
 
 import SocialMediaCentrePost from "./socialCentrePost/socialCentrePost";
 
-import LogoLight from "../../../assets/Logo_Light.png";
-import Rick from "../../../assets/e_picture.jpeg";
-import DefaultPFP from "../../../assets/defaultPFP.png";
-
 export default function SocialMediaCentre() {
   let posts: IPost[] = [
     {
@@ -48,25 +44,6 @@ export default function SocialMediaCentre() {
 }
 
 function SocialMediaCentreCreate() {
-  let buttons: IPostButton[] = [
-    {
-      name: "Photo",
-      icon: "fa-solid fa-image",
-    },
-    {
-      name: "Video",
-      icon: "fa-solid fa-film",
-    },
-    {
-      name: "Audio Event",
-      icon: "fa-regular fa-calendar",
-    },
-    {
-      name: "Write an Article",
-      icon: "fa-solid fa-newspaper",
-    },
-  ];
-
   return (
     <div className="FRE__Main__Centre__Create">
       <SocialMediaCentreCreateTop />
@@ -84,25 +61,6 @@ function SocialMediaCentreCreateTop() {
         alt=""
       />
       <input type="text" placeholder="Make a post..." />
-    </div>
-  );
-}
-
-function SocialMediaCentreCreateTopBottom({
-  buttons,
-}: {
-  [key: string]: IPostButton[];
-}) {
-  return (
-    <div className="FRE__Main__Centre__Create__Bottom">
-      {buttons.map((button) => {
-        return (
-          <SocialMediaCentreCreateTopBottomButton
-            icon={button.icon}
-            name={button.name}
-          />
-        );
-      })}
     </div>
   );
 }

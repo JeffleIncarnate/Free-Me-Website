@@ -15,11 +15,18 @@
   padding: 1rem;
   justify-content: space-evenly;
   transition: all 0.3s ease-in-out;
-  border-radius: 0.7rem;
   position: relative;
   flex-direction: column;
-  background-color: rgba(24, 24, 24, 0.5);
+  background-color: rgba(var(--blackRGB));
   text-align: center;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.FRE__CommunityNetwork__Hardware > *:hover {
+  background-color: rgba(var(--blackRGB), 0.9);
+  box-shadow: 0px 1px 10px 0 rgba(var(--blackRGB), 0.7),
+    0 6px 30px 0 rgba(var(--blackRGB), 0.19);
 }
 
 .FRE__CommunityNetwork__Hardware > * > img {
@@ -91,15 +98,17 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(var(--whiteRGB), 0.7);
   overflow: hidden;
+
+  color: var(--black);
+
   width: 0;
   height: 100%;
   transition: 0.4s ease-in-out;
-  border-radius: 0.7rem;
   white-space: nowrap;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 

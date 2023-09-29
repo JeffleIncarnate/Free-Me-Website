@@ -210,6 +210,8 @@
   background: transparent;
   margin-right: 85%;
   width: 15%;
+
+  cursor: pointer;
 }
 
 .FRE__StatementOfWork__Left__CreateSOW__Modal__Form__Table__AddTask > span {
@@ -385,6 +387,16 @@
 }
 
 /* -- Rows -- */
+.FRE__StatementOfWork__Left__Rows {
+  max-height: 9rem;
+
+  overflow-y: scroll;
+}
+
+.FRE__StatementOfWork__Left__Rows::-webkit-scrollbar {
+  display: none;
+}
+
 .FRE__StatementOfWork__Left__Rows :nth-child(even) > * {
   background-color: rgba(108, 122, 137, 0.4);
 }
@@ -400,6 +412,7 @@
   justify-content: space-evenly;
   gap: 1rem;
   height: 3rem;
+
   margin: 0.7rem 0;
 }
 

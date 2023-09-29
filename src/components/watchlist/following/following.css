@@ -2,10 +2,11 @@
   grid-column-start: col2;
   grid-column-end: span auto;
   grid-row-start: row1;
-  background-color: rgba(24, 24, 24, 0.5);
-  padding: 2rem;
-  border-radius: 2rem;
   grid-row-end: span row2;
+
+  padding: 2rem;
+
+  background-color: var(--black);
 }
 
 .FRE__Watchlist__Following h2 {
