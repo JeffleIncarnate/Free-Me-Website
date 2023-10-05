@@ -1,6 +1,7 @@
 import SignupConsultantForm from "../components/signupConsultantForm/signupConsultantForm";
 import Navbar from "../components/navbar/navbar";
 import Switcher from "../components/switcher/switcher";
+import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 
@@ -10,10 +11,10 @@ export default function SignupConsultantPage() {
   }, []);
 
   return (
-    <>
+    <AnimatedPage>
       <Navbar />
       <Switcher />
       <SignupConsultantForm />
-    </>
+    </AnimatedPage>
   );
 }

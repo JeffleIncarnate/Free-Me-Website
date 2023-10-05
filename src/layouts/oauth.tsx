@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar/navbar";
 import OAuth from "../components/oauth/oauth";
 import Switcher from "../components/switcher/switcher";
+import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,10 +18,10 @@ export default function OauthPage() {
   }, []);
 
   return (
-    <>
+    <AnimatedPage>
       <Navbar />
       <Switcher />
       <OAuth />
-    </>
+    </AnimatedPage>
   );
 }
