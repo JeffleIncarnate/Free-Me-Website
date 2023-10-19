@@ -10,7 +10,7 @@ const SocialRight = () => {
       initial={{ opacity: 0, filter: "blur(3px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.25 }}
-      className="w-[26%] h-full bg-neutral-900"
+      className="w-[26%] h-full bg-neutral-900 flex items-center justify-start flex-col"
     >
       {/* Person */}
       <div className="w-[calc(100%-2rem)] p-4 bg-neutral-800 m-4 rounded-xl flex justify-evenly items-center">
@@ -56,7 +56,7 @@ const SocialRight = () => {
       )}
 
       {/* Advertisements */}
-      <div className="w-full p-4">
+      <div className="w-full p-4 overflow-y-scroll no-scrollbar">
         <h2 className="font-bold text-2xl">Advertisements</h2>
 
         {/* Pb Tech */}

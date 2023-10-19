@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 
 /* 
-    This is for clients to search for consultants
+  This is for clients to search for consultants
 */
 
 // Consultant Search: Industry, Regions
@@ -92,88 +92,18 @@ const SearchConsultant = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quaerat corporis doloremque reprehenderit sint? Dolores, at! Facere iste cumque ea!",
     },
-
-    {
-      clientName: "Lorem",
-      stars: [
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-      ],
-      country: "🇦🇺 Australia",
-      comments: 100,
-      shortDescription: "Lorem Ipsum Dolor Sit",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quaerat corporis doloremque reprehenderit sint? Dolores, at! Facere iste cumque ea!",
-    },
-
-    {
-      clientName: "Lorem",
-      stars: [
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-      ],
-      country: "🇦🇺 Australia",
-      comments: 100,
-      shortDescription: "Lorem Ipsum Dolor Sit",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quaerat corporis doloremque reprehenderit sint? Dolores, at! Facere iste cumque ea!",
-    },
-
-    {
-      clientName: "Lorem",
-      stars: [
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-      ],
-      country: "🇦🇺 Australia",
-      comments: 100,
-      shortDescription: "Lorem Ipsum Dolor Sit",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quaerat corporis doloremque reprehenderit sint? Dolores, at! Facere iste cumque ea!",
-    },
-    {
-      clientName: "Lorem",
-      stars: [
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-      ],
-      country: "🇦🇺 Australia",
-      comments: 100,
-      shortDescription: "Lorem Ipsum Dolor Sit",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quaerat corporis doloremque reprehenderit sint? Dolores, at! Facere iste cumque ea!",
-    },
-    {
-      clientName: "Lorem",
-      stars: [
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-        <FontAwesomeIcon icon={faStar} />,
-      ],
-      country: "🇦🇺 Australia",
-      comments: 100,
-      shortDescription: "Lorem Ipsum Dolor Sit",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quaerat corporis doloremque reprehenderit sint? Dolores, at! Facere iste cumque ea!",
-    },
   ];
 
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
 
+  const [isChatOpen, setIsChatOpen] = useState("hidden");
+  const [isChatButtonOpen, setIsChatButtonOpen] = useState("");
+
   return (
     <main className="h-[85vh] w-[98%] mt-[15vh] mx-[1%] flex gap-4 ">
+      {/* Search  */}
       <div className="flex flex-col w-9/12 bg-neutral-900 p-4 ">
-        {/* Search  */}
         <div className="h-1/5">
           <h1 className="text-5xl font-bold">Browse</h1>
           <div className="w-full my-4 flex justify-center items-center gap-2 relative">
@@ -456,6 +386,7 @@ const SearchConsultant = () => {
         </div>
       </div>
 
+      {/* Results */}
       <div className="w-3/12 bg-neutral-900 p-4">
         <h2 className="text-3xl font-bold">Advertisements</h2>
         <div className="w-full bg-neutral-700 rounded-lg flex gap-4 my-6">
@@ -481,6 +412,110 @@ const SearchConsultant = () => {
             <a href="#" className="text-blue-500 underline">
               Learn More
             </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`absolute bottom-0 right-0 mb-4 mr-4 ${isChatButtonOpen}`}
+      >
+        <button
+          onClick={() => {
+            setIsChatOpen("");
+            setIsChatButtonOpen("hidden");
+          }}
+          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 flex items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            ></path>
+          </svg>
+          Chat
+        </button>
+      </div>
+
+      <div className={`${isChatOpen} fixed bottom-1 right-4 w-96`}>
+        <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
+          <div className="p-4 border-b bg-blue-500 text-white rounded-t-lg flex justify-between items-center">
+            <p className="text-lg font-semibold">Admin Bot</p>
+            <button
+              onClick={() => {
+                setIsChatOpen("hidden");
+                setIsChatButtonOpen("");
+              }}
+              className="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div className="p-4 h-80 overflow-y-auto">
+            <div className="mb-2 text-right">
+              <p className="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
+                hello
+              </p>
+            </div>
+            <div className="mb-2">
+              <p className="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">
+                This is a response from the chatbot.
+              </p>
+            </div>
+            <div className="mb-2 text-right">
+              <p className="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
+                this example of chat
+              </p>
+            </div>
+            <div className="mb-2">
+              <p className="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">
+                This is a response from the chatbot.
+              </p>
+            </div>
+            <div className="mb-2 text-right">
+              <p className="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
+                design with tailwind
+              </p>
+            </div>
+            <div className="mb-2">
+              <p className="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">
+                This is a response from the chatbot.
+              </p>
+            </div>
+          </div>
+          <div className="p-4 border-t flex">
+            <input
+              id="user-input"
+              type="text"
+              placeholder="Type a message"
+              className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+              id="send-button"
+              className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition duration-300"
+            >
+              Send
+            </button>
           </div>
         </div>
       </div>

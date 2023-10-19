@@ -17,6 +17,10 @@ body {
   background-size: cover;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --accent: #d46112;
   --black: #181818;

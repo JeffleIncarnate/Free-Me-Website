@@ -1,13 +1,13 @@
 import "./dashboard.css";
 
-import { useNavigate, useLocation, useAsyncError } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 import DashboardConsultant from "./consultant/consultant";
-// import DashboardClient from "./client/client";
+import DashboardClient from "./client/client";
 import DashboardFreeRider from "./freerider/freerider";
 
-import DashboardClient from "../../tailwindComponents/dashboard/client";
+// import DashboardClient from "../../tailwindComponents/dashboard/client";
 
 export default function Dashboard() {
   let navigate = useNavigate();

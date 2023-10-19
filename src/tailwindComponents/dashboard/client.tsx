@@ -9,53 +9,123 @@ import {
   faCircleNodes,
   faPeopleRobbery,
   faFile,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import React, { useState, Dispatch, SetStateAction, useEffect } from "react";
+
+// Social Media
+import SocialLeft from "../socialMedia/left";
+import SocialCentre from "../socialMedia/centre";
+import SocialRight from "../socialMedia/right";
+
+// WatchList
+import WatchlistJobs from "../../components/watchlist/jobs/jobs";
+import WatchlistFollowing from "../../components/watchlist/following/following";
+import WatchlistAdvertisment from "../../components/watchlist/advertisment/advertisment";
 
 interface ChildProps {
   navigate: NavigateFunction;
+  isModalOpen: boolean;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 function DashboardClient() {
   const navigate = useNavigate();
 
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   return (
     <main className="w-full p-4 flex item-center justify-center flex-col gap-4 mt-[15vh]">
       <div className="w-full flex items-center justify-center gap-4">
-        <SocialMedia navigate={navigate} />
-        <CurrentJobs navigate={navigate} />
+        <SocialMedia
+          navigate={navigate}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
+        <CurrentJobs
+          navigate={navigate}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
       </div>
 
       <div className="w-full flex items-center justify-center gap-4">
-        <Profile navigate={navigate} />
-        <ConsultantSearch navigate={navigate} />
-        <div className="w-1/3 h-96 flex flex-col gap-4">
-          <Chat navigate={navigate} />
-          <Balances navigate={navigate} />
+        <Profile
+          navigate={navigate}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
+        <ConsultantSearch
+          navigate={navigate}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
+        <div className="w-1/3 h-[30rem] flex flex-col gap-4">
+          <Chat
+            navigate={navigate}
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+          />
+          <Balances
+            navigate={navigate}
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+          />
         </div>
       </div>
 
       <div className="w-full flex item-center justify-center gap-4">
-        <CorporateNetwork navigate={navigate} />
-        <Friends navigate={navigate} />
-        <Placeholder navigate={navigate} />
+        <CorporateNetwork
+          navigate={navigate}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
+        <Friends
+          navigate={navigate}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
+        <Placeholder
+          navigate={navigate}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
       </div>
     </main>
   );
 }
 
 const SocialMedia = ({ navigate }: ChildProps) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [isModalOpen]);
+
+  window.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "Escape" && isModalOpen) {
+        setIsModalOpen(false);
+      }
+    },
+    false
+  );
+
   return (
-    <div
-      className="w-1/2 group overflow-hidden relative flex"
-      onClick={() => navigate("/socialMedia")}
-    >
+    <>
       <motion.div
         whileTap={{ scale: 0.97 }}
         initial={{ opacity: 0, filter: "blur(3px)" }}
         animate={{ opacity: 1, filter: "blur(0px)" }}
-        className="w-full h-96 bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer group-hover:translate-x-full transition-all"
+        className="w-1/2 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer group-hover:-translate-x-full transition-all duration-500"
+        onClick={() => setIsModalOpen(true)}
       >
         <FontAwesomeIcon icon={faCommentDots} className="text-7xl" />
         <h2 className="text-4xl font-bold">Social Media</h2>
@@ -65,43 +135,121 @@ const SocialMedia = ({ navigate }: ChildProps) => {
         </p>
       </motion.div>
 
-      <div
-        className="w-full h-96 bg-neutral-900 flex items-center ben.dover694293123@gmail.com
-justify-center flex-col gap-4 p-8 cursor-pointer group-hover:right-0 transition-all absolute right-full"
-      >
-        omg no way
-      </div>
-    </div>
+      <AnimatePresence mode="wait">
+        {isModalOpen && (
+          <motion.div
+            className="h-screen w-screen backdrop-blur-sm bg-[#18181866] fixed top-0 left-0 z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            key="SocialMedia"
+          >
+            {/* Button */}
+            <button
+              className="absolute top-6 right-12"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <FontAwesomeIcon className="text-7xl" icon={faXmark} />
+            </button>
+
+            {/* Modal Details */}
+            <div
+              onClick={() => navigate("/socialMedia")}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10/12 h-4/5 border-2 rounded-2xl border-white bg-neutral-900 p-4 flex item-center justify-center gap-4"
+            >
+              <SocialLeft />
+              <SocialCentre />
+              <SocialRight />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
 const CurrentJobs = ({ navigate }: ChildProps) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [isModalOpen]);
+
+  window.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "Escape" && isModalOpen) {
+        setIsModalOpen(false);
+      }
+    },
+    false
+  );
+
   return (
-    <motion.div
-      whileTap={{ scale: 0.97 }}
-      initial={{ opacity: 0, filter: "blur(3px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 0.25 }}
-      className="w-1/2 h-96 bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
-    >
-      <FontAwesomeIcon icon={faChartPie} className="text-7xl" />
-      <h2 className="text-4xl font-bold">Current Jobs</h2>
-      <p className="text-center">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quam cum
-        voluptate unde eaque ipsam architecto autem recusandae totam blanditiis!
-      </p>
-    </motion.div>
+    <>
+      <motion.div
+        whileTap={{ scale: 0.97 }}
+        initial={{ opacity: 0, filter: "blur(3px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        className="w-1/2 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer group-hover:-translate-x-full transition-all duration-500"
+        onClick={() => setIsModalOpen(true)}
+      >
+        <FontAwesomeIcon icon={faChartPie} className="text-7xl" />
+        <h2 className="text-4xl font-bold">Current Jobs</h2>
+        <p className="text-center">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quam
+          cum voluptate unde eaque ipsam architecto autem recusandae totam
+          blanditiis!
+        </p>
+      </motion.div>
+
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className="h-screen w-screen backdrop-blur-sm bg-[#18181866] fixed top-0 left-0 z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            key="CurrentJobs"
+          >
+            {/* Button */}
+            <button
+              className="absolute top-6 right-12"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <FontAwesomeIcon className="text-7xl" icon={faXmark} />
+            </button>
+
+            {/* Modal Details */}
+            <div
+              onClick={() => navigate("/watchList")}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10/12 h-4/5 border-2 rounded-2xl border-white bg-neutral-900 p-4 grid-cols-[[col1] 50% [col2] 50% [end]] grid-rows-[[row1] 80% [row2] 20% [end]]"
+            >
+              <WatchlistJobs />
+              <WatchlistFollowing />
+              <WatchlistAdvertisment />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
-const Profile = ({ navigate }: ChildProps) => {
+const Profile = ({ navigate, isModalOpen, setIsModalOpen }: ChildProps) => {
   return (
     <motion.div
       whileTap={{ scale: 0.97 }}
       initial={{ opacity: 0, filter: "blur(3px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.3 }}
-      className="w-1/3 h-96 bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
+      className="w-1/3 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
     >
       <FontAwesomeIcon icon={faUser} className="text-7xl" />
       <h2 className="text-4xl font-bold">Profile</h2>
@@ -113,14 +261,18 @@ const Profile = ({ navigate }: ChildProps) => {
   );
 };
 
-const ConsultantSearch = ({ navigate }: ChildProps) => {
+const ConsultantSearch = ({
+  navigate,
+  isModalOpen,
+  setIsModalOpen,
+}: ChildProps) => {
   return (
     <motion.div
       whileTap={{ scale: 0.97 }}
       initial={{ opacity: 0, filter: "blur(3px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.35 }}
-      className="w-1/3 h-96 bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
+      className="w-1/3 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
     >
       <FontAwesomeIcon
         icon={faMagnifyingGlassArrowRight}
@@ -135,7 +287,7 @@ const ConsultantSearch = ({ navigate }: ChildProps) => {
   );
 };
 
-const Chat = ({ navigate }: ChildProps) => {
+const Chat = ({ navigate, isModalOpen, setIsModalOpen }: ChildProps) => {
   return (
     <motion.div
       whileTap={{ scale: 0.97 }}
@@ -151,7 +303,7 @@ const Chat = ({ navigate }: ChildProps) => {
   );
 };
 
-const Balances = ({ navigate }: ChildProps) => {
+const Balances = ({ navigate, isModalOpen, setIsModalOpen }: ChildProps) => {
   return (
     <motion.div
       whileTap={{ scale: 0.97 }}
@@ -176,7 +328,7 @@ const CorporateNetwork = ({ navigate }: ChildProps) => {
       initial={{ opacity: 0, filter: "blur(3px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.5 }}
-      className="w-5/12 h-96 bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
+      className="w-5/12 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
     >
       <FontAwesomeIcon icon={faCircleNodes} className="text-7xl" />
       <h2 className="text-4xl font-bold">Corporate Network</h2>
@@ -195,7 +347,7 @@ const Friends = ({ navigate }: ChildProps) => {
       initial={{ opacity: 0, filter: "blur(3px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.55 }}
-      className="w-3/12 h-96 bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
+      className="w-3/12 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
     >
       <FontAwesomeIcon icon={faPeopleRobbery} className="text-7xl" />
       <h2 className="text-4xl font-bold">Friends</h2>
@@ -213,7 +365,7 @@ const Placeholder = ({ navigate }: ChildProps) => {
       initial={{ opacity: 0, filter: "blur(3px)" }}
       animate={{ opacity: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.6 }}
-      className="w-4/12 h-96 bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
+      className="w-4/12 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
     >
       <FontAwesomeIcon icon={faFile} className="text-7xl" />
       <h2 className="text-4xl font-bold">Placeholder</h2>

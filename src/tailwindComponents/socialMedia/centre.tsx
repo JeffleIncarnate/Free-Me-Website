@@ -122,7 +122,7 @@ const SocialCentreReel = ({ img, name, views }: SocialCentreReelProps) => {
   );
 };
 
-const PostsClient = () => {
+export const PostsConsultant = () => {
   return (
     <div className="overflow-y-scroll h-[90%] no-scrollbar">
       {/* Post 1 */}
@@ -208,7 +208,9 @@ const PostsClient = () => {
         {/* Text and Images */}
         <div className="w-full flex flex-col gap-4">
           <p className="mt-4">
-            For my Tauranga Branch I’m looking for a legal underwriter
+            For my Tauranga Branch I’m looking for a project consultant with
+            experience in insurances and the maori entertainment Industry for a
+            large client.
           </p>
         </div>
       </div>
@@ -216,7 +218,7 @@ const PostsClient = () => {
   );
 };
 
-const PostsConsultant = () => {
+export const PostsClient = () => {
   return (
     <div className="overflow-y-scroll h-[90%] no-scrollbar">
       {/* Post 1 */}
