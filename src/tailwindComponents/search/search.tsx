@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import SearchClient from "./clientSearch";
+import SearchClient from "./opportunities";
 import SearchConsultant from "./consultantSearch";
 
 const Search = () => {

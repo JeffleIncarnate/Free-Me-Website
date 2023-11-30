@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import React, { useState, Dispatch, SetStateAction, useEffect } from "react";
+import { useState, Dispatch, SetStateAction, useEffect } from "react";
 
 // Social Media
 import SocialLeft from "../socialMedia/left";
@@ -21,9 +21,10 @@ import SocialCentre from "../socialMedia/centre";
 import SocialRight from "../socialMedia/right";
 
 // WatchList
-import WatchlistJobs from "../../components/watchlist/jobs/jobs";
-import WatchlistFollowing from "../../components/watchlist/following/following";
-import WatchlistAdvertisment from "../../components/watchlist/advertisment/advertisment";
+import WatchListDashboard from "./modals/watchlist";
+
+// Profile
+import ProfileModal from "./modals/profile";
 
 interface ChildProps {
   navigate: NavigateFunction;
@@ -52,7 +53,7 @@ function DashboardClient() {
       </div>
 
       <div className="w-full flex items-center justify-center gap-4">
-        <Profile
+        <ProfileDashboard
           navigate={navigate}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
@@ -229,11 +230,9 @@ const CurrentJobs = ({ navigate }: ChildProps) => {
             {/* Modal Details */}
             <div
               onClick={() => navigate("/watchList")}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10/12 h-4/5 border-2 rounded-2xl border-white bg-neutral-900 p-4 grid-cols-[[col1] 50% [col2] 50% [end]] grid-rows-[[row1] 80% [row2] 20% [end]]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10/12 h-4/5 border-2 rounded-2xl border-white bg-neutral-900 p-4 flex item-center justify-center gap-4"
             >
-              <WatchlistJobs />
-              <WatchlistFollowing />
-              <WatchlistAdvertisment />
+              <WatchListDashboard />
             </div>
           </motion.div>
         )}
@@ -242,22 +241,75 @@ const CurrentJobs = ({ navigate }: ChildProps) => {
   );
 };
 
-const Profile = ({ navigate, isModalOpen, setIsModalOpen }: ChildProps) => {
+const ProfileDashboard = ({ navigate }: ChildProps) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+  }, [isModalOpen]);
+
+  window.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "Escape" && isModalOpen) {
+        setIsModalOpen(false);
+      }
+    },
+    false
+  );
+
   return (
-    <motion.div
-      whileTap={{ scale: 0.97 }}
-      initial={{ opacity: 0, filter: "blur(3px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 0.3 }}
-      className="w-1/3 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
-    >
-      <FontAwesomeIcon icon={faUser} className="text-7xl" />
-      <h2 className="text-4xl font-bold">Profile</h2>
-      <p className="text-center">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quam cum
-        voluptate unde eaque ipsam architecto autem recusandae totam blanditiis!
-      </p>
-    </motion.div>
+    <>
+      <motion.div
+        whileTap={{ scale: 0.97 }}
+        initial={{ opacity: 0, filter: "blur(3px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.3 }}
+        className="w-1/3 h-[30rem] bg-neutral-900 flex items-center justify-center flex-col gap-4 p-8 cursor-pointer"
+        onClick={() => setIsModalOpen(true)}
+      >
+        <FontAwesomeIcon icon={faUser} className="text-7xl" />
+        <h2 className="text-4xl font-bold">Profile</h2>
+        <p className="text-center">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quam
+          cum voluptate unde eaque ipsam architecto autem recusandae totam
+          blanditiis!
+        </p>
+      </motion.div>
+
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className="h-screen w-screen backdrop-blur-sm bg-[#18181866] fixed top-0 left-0 z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            key="Profile"
+          >
+            {/* Button */}
+            <button
+              className="absolute top-6 right-12"
+              onClick={() => setIsModalOpen(false)}
+            >
+              <FontAwesomeIcon className="text-7xl" icon={faXmark} />
+            </button>
+
+            {/* Modal Details */}
+            <div
+              onClick={() => navigate("/profile")}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10/12 h-4/5 border-2 rounded-2xl border-white bg-neutral-900 p-4 flex item-center justify-center gap-4"
+            >
+              <ProfileModal />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

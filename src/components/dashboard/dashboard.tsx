@@ -8,6 +8,7 @@ import DashboardClient from "./client/client";
 import DashboardFreeRider from "./freerider/freerider";
 
 // import DashboardClient from "../../tailwindComponents/dashboard/client";
+// import DashboardConsultant from "../../tailwindComponents/dashboard/consultant";
 
 export default function Dashboard() {
   let navigate = useNavigate();
