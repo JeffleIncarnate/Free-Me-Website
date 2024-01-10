@@ -1,0 +1,20 @@
+@import "./variable";
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: $background;
+  color: $text;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
