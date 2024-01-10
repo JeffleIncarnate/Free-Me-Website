@@ -1,0 +1,40 @@
+@import "../../variable";
+
+.Navbar__Home {
+  width: 100%;
+  height: 15lvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  // Links
+  & > .Link {
+    width: 200px;
+
+    text-decoration: none;
+
+    font-size: 1.2rem;
+
+    color: $text;
+
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $accent;
+    }
+
+    & > .Icon {
+      margin-left: 0.5rem;
+    }
+  }
+
+  // Main Image
+  div {
+    width: clamp(100px, 50%, 200px);
+
+    img {
+      width: 100%;
+    }
+  }
+}
