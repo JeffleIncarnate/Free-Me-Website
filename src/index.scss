@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 @import "./variable";
 
 body {
@@ -6,6 +8,8 @@ body {
 
   background-color: $background;
   color: $text;
+
+  font-family: "Lato", sans-serif;
 }
 
 * {
@@ -17,4 +21,6 @@ body {
 
 button {
   cursor: pointer;
+
+  font-family: "Lato", sans-serif;
 }
