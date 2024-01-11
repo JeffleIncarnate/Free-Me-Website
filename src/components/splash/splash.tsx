@@ -2,13 +2,16 @@ import "./splash.scss";
 
 import SplashLogo from "../../assets/splashLogo.svg";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function Splash() {
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
+
+  const username = useRef(null);
+  const password = useRef(null);
 
   return (
     <header className="Splash">
