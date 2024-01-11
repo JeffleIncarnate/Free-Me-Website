@@ -10,8 +10,13 @@ import { Link } from "react-router-dom";
 export default function Splash() {
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
-  const username = useRef(null);
+  const email = useRef(null);
   const password = useRef(null);
+
+  console.log(email);
+  console.log(password);
+
+  console.log();
 
   return (
     <header className="Splash">
