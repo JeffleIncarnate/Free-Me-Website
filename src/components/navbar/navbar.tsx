@@ -28,7 +28,7 @@ const NavbarHome = () => {
       </div>
 
       <Link className="Link" to={"/login"}>
-        Login <FontAwesomeIcon className="Icon" icon={faRightFromBracket} />
+        Sign In <FontAwesomeIcon className="Icon" icon={faRightFromBracket} />
       </Link>
     </nav>
   );
