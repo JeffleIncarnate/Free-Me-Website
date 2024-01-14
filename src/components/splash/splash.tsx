@@ -5,16 +5,27 @@ import SplashLogo from "../../assets/splashLogo.svg";
 import axios from "axios";
 import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import {
+  faEye,
+  faEyeSlash,
+  faCircleNotch,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
-import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
+import { useAppDispatch } from "../../core/state/hooks";
+import { login } from "../../core/state/reducers/authSlice";
 
 type QueryVariables = {
   email: string;
   password: string;
+};
+
+type Success = {
+  success: true;
+  accessToken: string;
+  refreshToken: string;
 };
 
 export default function Splash() {
@@ -22,6 +33,10 @@ export default function Splash() {
 
   const email = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
+
+  const dispatch = useAppDispatch();
+
+  const nav = useNavigate();
 
   const mutate = useMutation({
     mutationFn: ({ email, password }: QueryVariables) => {
@@ -31,9 +46,16 @@ export default function Splash() {
       });
     },
     onSuccess: (ctx) => {
-      console.log(ctx.data);
-      // do redux shit now probably
-      toast.success("e");
+      const data: Success = ctx.data;
+
+      dispatch(
+        login({
+          accessToken: data.accessToken,
+          refreshToken: data.refreshToken,
+        })
+      );
+
+      nav("/dashboard");
     },
     onError: (ctx) => {
       toast.error(ctx.message);
