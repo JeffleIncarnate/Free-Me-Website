@@ -2,11 +2,13 @@
 
 .Navbar__Home {
   width: 100%;
-  height: 15lvh;
+  height: 20lvh;
 
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  position: absolute;
 
   // Links
   & > .Link {
@@ -17,7 +19,7 @@
 
     font-size: 1.2rem;
 
-    color: $text;
+    color: $background;
 
     transition: color 0.2s ease-in-out;
 
