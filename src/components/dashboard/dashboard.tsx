@@ -4,8 +4,12 @@ import axios from "axios";
 import { useAppDispatch, useAppSelector } from "../../core/state/hooks";
 import { selectAccessToken } from "../../core/state/reducers/authSlice";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setUserData } from "../../core/state/reducers/userDataSlice";
+
+import ClientDashboard from "./client/clientDashboard";
+import ConsultantDashboard from "./consultant/consultantDashboard";
+import FreeriderDashboard from "./freerider/freeriderDashboard";
 
 type SuccessType = {
   success: true;
@@ -37,6 +41,9 @@ export default function Dashboard() {
   const token = useAppSelector(selectAccessToken);
   const nav = useNavigate();
   const dispatch = useAppDispatch();
+  const [userType, setUserType] = useState<
+    "CONSULTANT" | "CLIENT" | "FREERIDER" | undefined
+  >(undefined);
 
   useEffect(() => {
     (async () => {
@@ -68,8 +75,20 @@ export default function Dashboard() {
           createdAt: data.profile.createdAt,
         })
       );
+
+      setUserType(data.profile.type);
     })();
   }, []);
 
-  return <main>e</main>;
+  return (
+    <main>
+      {userType && userType === "CLIENT" ? (
+        <ClientDashboard />
+      ) : userType === "CONSULTANT" ? (
+        <ConsultantDashboard />
+      ) : userType === "FREERIDER" ? (
+        <FreeriderDashboard />
+      ) : null}
+    </main>
+  );
 }
