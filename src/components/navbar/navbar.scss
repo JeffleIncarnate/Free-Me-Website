@@ -41,3 +41,37 @@
     }
   }
 }
+
+.Navbar__LoggedIn {
+  width: 100%;
+  height: 20lvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > .Dashboard {
+    width: clamp(100px, 50%, 200px);
+
+    margin-left: 2rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  & > .ProfilePicture {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: 0.2rem solid $secondary;
+
+    margin-right: 2rem;
+  }
+}
