@@ -73,10 +73,22 @@ export const userSlice = createSlice({
       state.following = action.payload.following;
       state.createdAt = action.payload.createdAt;
     },
+    clearUserData: (state) => {
+      state.userDataExists = false;
+      state.firstname = undefined;
+      state.lastname = undefined;
+      state.type = undefined;
+      state.profilePicture = undefined;
+      state.banner = undefined;
+      state.connections = undefined;
+      state.followers = undefined;
+      state.following = undefined;
+      state.createdAt = undefined;
+    },
   },
 });
 
-export const { setUserData } = userSlice.actions;
+export const { setUserData, clearUserData } = userSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectUserData = (state: RootState) =>

@@ -1,4 +1,5 @@
 @import "../../variable";
+@import "../../function";
 
 .Navbar__Home {
   width: 100%;
@@ -50,6 +51,34 @@
   align-items: center;
   justify-content: space-between;
 
+  & > .Settings {
+    position: absolute;
+    top: 13.2lvh;
+    right: 2rem;
+
+    width: 200px;
+
+    background-color: grey;
+
+    border-radius: 2rem;
+    box-shadow: 0px 1px 10px 0 rgb(0 0 0 / 70%), 0 6px 30px 0 rgb(0 0 0 / 19%);
+
+    button {
+      @include disableTextHighlight();
+
+      width: 100%;
+
+      padding: 1rem;
+
+      border: none;
+      background: none;
+
+      color: $background;
+
+      font-size: 1rem;
+    }
+  }
+
   & > .Dashboard {
     width: clamp(100px, 50%, 200px);
 
@@ -61,8 +90,10 @@
   }
 
   & > .ProfilePicture {
-    width: 70px;
-    height: 70px;
+    cursor: pointer;
+
+    width: 80px;
+    height: 80px;
 
     border-radius: 50%;
 
@@ -70,7 +101,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-    border: 0.2rem solid $secondary;
+    border: 0.4rem solid $secondary;
 
     margin-right: 2rem;
   }

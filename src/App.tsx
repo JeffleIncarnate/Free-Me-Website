@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useEffect, useRef } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { initialReducer } from "./core/state/initialReducer";
 import { useAppDispatch } from "./core/state/hooks";
 import { login } from "./core/state/reducers/authSlice";

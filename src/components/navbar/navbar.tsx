@@ -2,9 +2,15 @@ import "./navbar.scss";
 
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import {
+  faRightFromBracket,
+  faArrowRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { store } from "../../core/state/store";
+import { useAppDispatch } from "../../core/state/hooks";
+import { logout } from "../../core/state/reducers/authSlice";
+import { clearUserData } from "../../core/state/reducers/userDataSlice";
 
 const ROUTES = {
   INDEX: "/",
@@ -42,10 +48,13 @@ const NavbarHome = () => {
 
 const LoggedInNavbar = () => {
   const nav = useNavigate();
+  const dispatch = useAppDispatch();
 
   const [profilePicture, setProfilePicture] = useState<string | undefined>(
     undefined
   );
+
+  const [openSettings, setOpenSettings] = useState<boolean>(false);
 
   useEffect(() => {
     const unsubscribe = store.subscribe(() => {
@@ -57,6 +66,15 @@ const LoggedInNavbar = () => {
     };
   }, []);
 
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+
+    dispatch(logout());
+    dispatch(clearUserData());
+    nav("/");
+  };
+
   return (
     <nav className="Navbar__LoggedIn">
       <div className="Dashboard">
@@ -64,12 +82,25 @@ const LoggedInNavbar = () => {
       </div>
 
       {profilePicture && (
-        <div
-          className="ProfilePicture"
-          style={{
-            backgroundImage: `url("${"data:image/jpeg;base64,"}${profilePicture}")`,
-          }}
-        ></div>
+        <>
+          <div
+            className="ProfilePicture"
+            style={{
+              backgroundImage: `url("${"data:image/jpeg;base64,"}${profilePicture}")`,
+            }}
+            onClick={() => {
+              setOpenSettings((prev) => !prev);
+            }}
+          ></div>
+
+          {openSettings && (
+            <div className="Settings">
+              <button onClick={handleLogout}>
+                Log Out <FontAwesomeIcon icon={faArrowRightFromBracket} />
+              </button>
+            </div>
+          )}
+        </>
       )}
     </nav>
   );
