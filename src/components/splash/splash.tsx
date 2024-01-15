@@ -54,6 +54,8 @@ export default function Splash() {
           refreshToken: data.refreshToken,
         })
       );
+      localStorage.setItem("refreshToken", data.refreshToken);
+      sessionStorage.setItem("accessToken", data.accessToken);
 
       nav("/dashboard");
     },
