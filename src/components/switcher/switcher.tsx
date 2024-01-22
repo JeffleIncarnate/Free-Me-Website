@@ -7,20 +7,20 @@ interface IProps {}
 const Switcher: FC<IProps> = ({}) => {
   const [mode, setMode] = useState<string>("dark");
 
-  useEffect(() => {
-    const time = new Date().getHours();
+  // useEffect(() => {
+  //   const time = new Date().getHours();
 
-    // Just for me 😀😀😀😀
-    if (localStorage.getItem("among") === "us") {
-      return setMode("dark");
-    }
+  //   // Just for me 😀😀😀😀
+  //   if (localStorage.getItem("among") === "us") {
+  //     return setMode("dark");
+  //   }
 
-    if (time < 18 && time > 9) {
-      setMode("light");
-    } else {
-      setMode("dark");
-    }
-  }, []);
+  //   if (time < 18 && time > 9) {
+  //     setMode("light");
+  //   } else {
+  //     setMode("dark");
+  //   }
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem("mode", mode);
