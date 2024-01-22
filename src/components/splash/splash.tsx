@@ -1,16 +1,12 @@
 import "./splash.css";
 import { useNavigate } from "react-router-dom";
 
-import Navbar from "../navbar/navbar";
-
 export default function Splash() {
   let navigate = useNavigate();
 
   return (
     <>
       <header>
-        <Navbar />
-
         <div className="FRE__Splash">
           <h1>FreeMe</h1>
           <div className="FRE__Splash__Signup__Wrapper">

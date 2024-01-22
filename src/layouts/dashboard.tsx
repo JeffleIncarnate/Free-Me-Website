@@ -1,6 +1,4 @@
-import Navbar from "../components/navbar/navbar";
 import Dashboard from "../components/dashboard/dashboard";
-import Switcher from "../components/switcher/switcher";
 import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
@@ -15,8 +13,6 @@ export default function DashboardPage() {
 
   return (
     <AnimatedPage>
-      <Navbar />
-      <Switcher />
       <Dashboard />
     </AnimatedPage>
   );
