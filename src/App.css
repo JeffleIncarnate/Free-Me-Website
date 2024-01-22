@@ -7,14 +7,6 @@ body {
   padding: 0;
   color: var(--white);
   overflow-x: hidden;
-  background-image: linear-gradient(
-      rgba(var(--background), 0.5),
-      rgba(var(--background), 0.5)
-    ),
-    url("./assets/Splash.jpg");
-  background-position: center;
-  background-repeat: repeat;
-  background-size: cover;
 }
 
 body::-webkit-scrollbar {
