@@ -1,10 +1,18 @@
 import Balances from "../components/balances/balances";
-import AnimatedPage from "../components/animatedPage/animatedPage";
+
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BalancesPages() {
-  return (
-    <AnimatedPage>
-      <Balances />
-    </AnimatedPage>
-  );
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Balances | FreeMe";
+
+    if (sessionStorage.getItem("token") === null) {
+      navigate("/");
+    }
+  }, []);
+
+  return <Balances />;
 }

@@ -1,5 +1,4 @@
 import HardwareAndSoftwareGrid from "../components/hardwareAndSoftwareGrid/hardwareAndSoftwareGrid";
-import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 
@@ -8,9 +7,5 @@ export default function HardwareAndSoftwarePage() {
     document.title = "Community Hardware | FreeMe";
   }, []);
 
-  return (
-    <AnimatedPage>
-      <HardwareAndSoftwareGrid />
-    </AnimatedPage>
-  );
+  return <HardwareAndSoftwareGrid />;
 }

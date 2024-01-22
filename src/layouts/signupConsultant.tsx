@@ -1,5 +1,4 @@
 import SignupConsultantForm from "../components/signupConsultantForm/signupConsultantForm";
-import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 
@@ -8,9 +7,5 @@ export default function SignupConsultantPage() {
     document.title = "Sign Up Consultant | FreeMe";
   }, []);
 
-  return (
-    <AnimatedPage>
-      <SignupConsultantForm />
-    </AnimatedPage>
-  );
+  return <SignupConsultantForm />;
 }

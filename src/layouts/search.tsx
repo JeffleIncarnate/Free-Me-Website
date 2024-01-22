@@ -1,5 +1,4 @@
 import Search from "../tailwindComponents/search/search";
-import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 
@@ -8,9 +7,5 @@ export default function SearchPage() {
     document.title = "Search | FreeMe";
   }, []);
 
-  return (
-    <AnimatedPage>
-      <Search />
-    </AnimatedPage>
-  );
+  return <Search />;
 }

@@ -1,5 +1,4 @@
 import Chat from "../components/chat/chat";
-import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +14,5 @@ export default function ChatPage() {
     }
   }, []);
 
-  return (
-    <AnimatedPage>
-      <Chat />
-    </AnimatedPage>
-  );
+  return <Chat />;
 }

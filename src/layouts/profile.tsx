@@ -1,5 +1,4 @@
 import Profile from "../components/profile/profile";
-import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 
@@ -8,9 +7,5 @@ export default function ProfilePage() {
     document.title = `Profile | FreeMe`;
   }, []);
 
-  return (
-    <AnimatedPage>
-      <Profile />
-    </AnimatedPage>
-  );
+  return <Profile />;
 }

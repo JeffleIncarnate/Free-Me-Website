@@ -1,5 +1,4 @@
 import LoginForm from "../components/login/loginForm";
-import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 
@@ -8,9 +7,5 @@ export default function LoginPage() {
     document.title = "Login | FreeMe";
   }, []);
 
-  return (
-    <AnimatedPage>
-      <LoginForm />
-    </AnimatedPage>
-  );
+  return <LoginForm />;
 }

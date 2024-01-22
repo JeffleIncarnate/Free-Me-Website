@@ -1,6 +1,5 @@
 import { lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 
 import "./App.css";
 
@@ -22,7 +21,6 @@ const ProfilePage = lazy(() => import("./layouts/profile"));
 const ChatPage = lazy(() => import("./layouts/chat"));
 const StatementOfWorkPage = lazy(() => import("./layouts/statementOfWork"));
 const BalancesPages = lazy(() => import("./layouts/balances"));
-const NotificationsPage = lazy(() => import("./layouts/notifcations"));
 const WatchlistPage = lazy(() => import("./layouts/watchlist"));
 const SocialMediaPage = lazy(() => import("./layouts/socialMedia"));
 const SearchPage = lazy(() => import("./layouts/search"));
@@ -31,7 +29,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
+    <>
       <Navbar />
       <Switcher />
       <Routes key={location.pathname} location={location}>
@@ -46,7 +44,6 @@ function App() {
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/sow" element={<StatementOfWorkPage />} />
         <Route path="/balances" element={<BalancesPages />} />
-        <Route path="/notifications" element={<NotificationsPage />} />
         <Route
           path="/communityNetwork/hardware"
           element={<HardwareAndSoftwarePage />}
@@ -55,7 +52,7 @@ function App() {
         <Route path="/socialMedia" element={<SocialMediaPage />} />
         <Route path="/search" element={<SearchPage />} />
       </Routes>
-    </AnimatePresence>
+    </>
   );
 }
 

@@ -1,5 +1,4 @@
 import OAuth from "../components/oauth/oauth";
-import AnimatedPage from "../components/animatedPage/animatedPage";
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +14,5 @@ export default function OauthPage() {
     }
   }, []);
 
-  return (
-    <AnimatedPage>
-      <OAuth />
-    </AnimatedPage>
-  );
+  return <OAuth />;
 }
