@@ -14,11 +14,17 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@reduxjs/toolkit": "^2.0.1",
+    "@tanstack/react-query": "^5.17.19",
+    "axios": "^1.6.5",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.8.2",
-    "socket.io-client": "^4.6.1"
+    "react-toastify": "^10.0.4",
+    "socket.io-client": "^4.6.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
@@ -26,6 +32,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.30",
+    "sass": "^1.70.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"

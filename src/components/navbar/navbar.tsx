@@ -1,80 +1,100 @@
-import "./navbar.css";
+import "./navbar.scss";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import { store } from "../../core/state/store";
+import { useAppDispatch } from "../../core/state/hooks";
+import { logout } from "../../core/state/reducers/authSlice";
+import { clearUserData } from "../../core/state/reducers/userDataSlice";
 
-import { useState, useEffect, FC } from "react";
+const ROUTES = {
+  INDEX: "/",
+  OAUTH: "/oauth",
+};
 
-import { FreeMeLogo } from "../../assets/__img__";
+const isHomeOrOauth = (currlocation: string) =>
+  [ROUTES.INDEX, ROUTES.OAUTH].includes(currlocation);
 
 export default function Navbar() {
-  const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    sessionStorage.getItem("uuid") === null
-      ? setUserLoggedIn(false)
-      : setUserLoggedIn(true);
-  }, [userLoggedIn]);
+  const location = useLocation();
 
   return (
-    <nav className="FRE__Navbar">
-      {userLoggedIn ? <_NavbarLoggedIn /> : <_NavbarNotLoggedIn />}
-    </nav>
+    <>
+      {isHomeOrOauth(location.pathname) ? <NavbarHome /> : <LoggedInNavbar />}
+    </>
   );
 }
 
-interface _INavbarLoggedInProps {}
+const NavbarHome = () => {
+  const nav = useNavigate();
 
-const _NavbarLoggedIn: FC<_INavbarLoggedInProps> = ({}) => {
   return (
-    <div className="FRE__Navbar__LoggedIn">
-      <ul className="FRE__Navbar__LoggedIn__List">
-        <li>
-          <Link
-            onClick={() => {
-              sessionStorage.clear();
-            }}
-            to="/login"
-          >
-            About Us
-          </Link>
-        </li>
-
-        <Link to="/dashboard">
-          <img src={FreeMeLogo} alt="" />
-        </Link>
-
-        <li>
-          <Link
-            onClick={() => {
-              sessionStorage.clear();
-            }}
-            to="/login"
-          >
-            Logout
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <nav className="Navbar__Home">
+      <div>
+        <img onClick={() => nav("/")} src="/logo.png" alt="" />
+      </div>
+    </nav>
   );
 };
-interface _INavbarNotLoggedInProps {}
 
-const _NavbarNotLoggedIn: FC<_INavbarNotLoggedInProps> = ({}) => {
+const LoggedInNavbar = () => {
+  const nav = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const [profilePicture, setProfilePicture] = useState<string | undefined>(
+    undefined
+  );
+
+  const [openSettings, setOpenSettings] = useState<boolean>(false);
+
+  useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      setProfilePicture(store.getState().userData.profilePicture);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+
+    dispatch(logout());
+    dispatch(clearUserData());
+    nav("/");
+  };
+
   return (
-    <div className="FRE__Navbar__NotLoggedIn">
-      <Link to="/about">About FreeMe</Link>
-      <Link to="/">
-        <img src={FreeMeLogo} alt="" />
-      </Link>
-      <Link
-        onClick={() => {
-          sessionStorage.clear();
-        }}
-        to="/login"
-      >
-        Login <i className="fa-solid fa-right-from-bracket"></i>
-      </Link>
-    </div>
+    <nav className="Navbar__LoggedIn">
+      <div className="Dashboard">
+        <img onClick={() => nav("/dashboard")} src="/logo.png" alt="" />
+      </div>
+
+      {profilePicture && (
+        <>
+          <div
+            className="ProfilePicture"
+            style={{
+              backgroundImage: `url("${"data:image/jpeg;base64,"}${profilePicture}")`,
+            }}
+            onClick={() => {
+              setOpenSettings((prev) => !prev);
+            }}
+          ></div>
+
+          {openSettings && (
+            <div className="Settings">
+              <button onClick={handleLogout}>
+                Log Out <FontAwesomeIcon icon={faArrowRightFromBracket} />
+              </button>
+            </div>
+          )}
+        </>
+      )}
+    </nav>
   );
 };

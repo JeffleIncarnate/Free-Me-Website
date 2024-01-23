@@ -1,0 +1,63 @@
+@import "../../variable";
+
+.HomeMain {
+  width: 80%;
+
+  margin: 2.5rem 10%;
+
+  color: $text;
+
+  .JoinUs {
+    width: 100%;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .JoinUs__Wrapper {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 2rem;
+
+      .UserType {
+        flex: 33%;
+
+        padding: 2rem;
+
+        text-align: center;
+
+        border-radius: 2rem;
+
+        background-color: rgba($primary, 0.1);
+
+        transition: box-shadow 0.3s ease 0s;
+
+        &:hover {
+          box-shadow: 0px 0.5px 20px 0 rgb(25 25 25 / 5%),
+            0px 0.5px 20px 0 rgb(25 25 25 / 5%);
+        }
+
+        .UserType__Icon {
+          font-size: 3rem;
+
+          margin-bottom: 1rem;
+        }
+
+        .UserType__UserName {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

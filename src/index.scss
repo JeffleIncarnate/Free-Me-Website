@@ -1,3 +1,6 @@
+@import "./variable";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 @tailwind components;
 @tailwind utilities;
 
@@ -6,10 +9,6 @@ body {
   padding: 0;
   color: var(--white);
   overflow-x: hidden;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 :root {
@@ -21,14 +20,27 @@ body::-webkit-scrollbar {
   --blackRGB: 24, 24, 24;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: $background;
+  color: $text;
+
+  font-family: "Lato", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
 }
 
 button {
   cursor: pointer;
+
+  font-family: "Lato", sans-serif;
 }
 
 noscript {
@@ -48,16 +60,14 @@ noscript {
 }
 
 @layer utilities {
-  @variants responsive {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

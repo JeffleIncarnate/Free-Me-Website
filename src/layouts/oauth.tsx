@@ -8,10 +8,6 @@ export default function OauthPage() {
 
   useEffect(() => {
     document.title = "OAuth | FreeMe";
-
-    if (sessionStorage.getItem("token") === null) {
-      navigate("/");
-    }
   }, []);
 
   return <OAuth />;
