@@ -1,8 +1,5 @@
 import "./splash.scss";
 
-import SplashLogo from "../../assets/splashLogo.svg";
-
-import axios from "axios";
 import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,11 +14,6 @@ import { toast } from "react-toastify";
 import { loginRequest } from "../../core/requets/login";
 import { useAppDispatch } from "../../core/state/hooks";
 import { login } from "../../core/state/reducers/authSlice";
-
-type QueryVariables = {
-  email: string;
-  password: string;
-};
 
 type Success = {
   success: true;
@@ -43,9 +35,6 @@ export default function Splash() {
     mutationFn: loginRequest,
     onSuccess: (ctx) => {
       const data: Success = ctx.data;
-
-      console.log(data.accessToken);
-      console.log(data.refreshToken);
 
       dispatch(
         login({

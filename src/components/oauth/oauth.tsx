@@ -1,79 +1,127 @@
-import "./oauth.css";
+import { useMutation } from "@tanstack/react-query";
+import "./oauth.scss";
 
-import Loader from "../loader/loader";
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { fetchSelf } from "../../core/requets/fetchSelf";
+import { useAppDispatch, useAppSelector } from "../../core/state/hooks";
+import { selectAccessToken } from "../../core/state/reducers/authSlice";
+import { setUserData } from "../../core/state/reducers/userDataSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 
-import { useRef, useState } from "react";
-import { json, useNavigate } from "react-router-dom";
-import { apiURL } from "../../core/data";
+type SuccessType = {
+  success: true;
+  profile: {
+    id: string;
+    firstname: string;
+    lastname: string;
+    password: string;
+    email: string;
+    phonenumber: string;
+    type: "CONSULTANT" | "CLIENT" | "FREERIDER";
+    dateOfBirth: string;
+    address: string;
+    nzbn: string;
+    gst: string;
+    role: "ADMIN" | "GENERAL";
+    createdAt: Date;
+    profilePicture: string;
+    banner: string;
+    background: string;
+    followers: string[];
+    following: string[];
+    connections: string[];
+  };
+  status: 200;
+};
 
 export default function OAuth() {
-  const code = useRef(null);
+  const codeRef = useRef<HTMLInputElement | null>(null);
+  const accessToken = useAppSelector(selectAccessToken);
+  const nav = useNavigate();
+  const dispatch = useAppDispatch();
 
-  let [error, setError] = useState(true);
-  let [count, setCount] = useState(0);
+  const mutate = useMutation({
+    mutationFn: fetchSelf,
+    onSuccess: (ctx) => {
+      const data = ctx.data as SuccessType;
 
-  let navigate = useNavigate();
+      console.log(data.profile.profilePicture);
 
-  const onCodeEnter = async () => {
-    let codeVal: number = parseInt((code.current! as any).value);
+      dispatch(
+        setUserData({
+          firstname: data.profile.firstname,
+          lastname: data.profile.lastname,
+          type: data.profile.type,
+          profilePicture: data.profile.profilePicture,
+          banner: data.profile.banner,
+          connections: data.profile.connections,
+          following: data.profile.following,
+          followers: data.profile.followers,
+          createdAt: data.profile.createdAt,
+        })
+      );
 
-    if (codeVal !== 1) {
-      setError(false);
-      setCount((count += 1));
+      nav("/dashboard");
+    },
+    onError: (ctx) => {
+      toast.error("There was some error while authenticating your token");
+
+      setTimeout(() => {
+        nav("/");
+      }, 5000);
+    },
+  });
+
+  const handleCodeEnter = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (codeRef.current === null) {
+      toast.error("Please enter a code");
       return;
     }
 
-    var requestOptions: any = {
-      method: "GET",
-      redirect: "follow",
-    };
+    let code: number = parseInt(codeRef.current.value);
 
-    fetch(
-      `${apiURL}/freeme/getUser?email=${sessionStorage.getItem("email")}`,
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        sessionStorage.setItem("uuid", result.uuid);
-        sessionStorage.setItem("address", result.address);
-        sessionStorage.setItem("firstname", result.firstname);
-        sessionStorage.setItem("lastname", result.lastname);
-        sessionStorage.setItem("gst", result.gst);
-        sessionStorage.setItem("nzbn", result.nzbn);
-        sessionStorage.setItem("socials", JSON.stringify(result.socials));
-        sessionStorage.setItem("email", result.email);
-        sessionStorage.setItem("type", result.type);
-        sessionStorage.setItem("dateOfBirth", result.dateofbirth);
-        sessionStorage.setItem("profilePicture", result.profilepicture);
-        sessionStorage.setItem("banner", result.banner);
-        navigate("/dashboard");
-      })
-      .catch((error) => console.log("error", error));
+    if (code !== 1) {
+      toast.error("The code you've entered is incorrect");
+      return;
+    }
+
+    if (!accessToken) {
+      nav("/");
+      return;
+    }
+
+    mutate.mutate(accessToken);
   };
 
   return (
-    <main id="FRE__Main__OAuth">
-      <form
-        onSubmit={(e: any) => {
-          e.preventDefault();
-          onCodeEnter();
-        }}
-      >
+    <main className="OAuth">
+      <form onSubmit={handleCodeEnter}>
         <h2>2 Factor</h2>
         <div>
           <label>
             2 Factor Code<span>*</span>
           </label>
-          <input type="number" placeholder="Enter Code" required ref={code} />
+          <input
+            type="number"
+            placeholder="Enter Code"
+            required
+            ref={codeRef}
+          />
         </div>
-        <button type="submit" className="btn btn-success">
-          Submit <i className="fa-solid fa-right-to-bracket"></i>
+        <button disabled={mutate.isPending} type="submit">
+          {mutate.isPending ? (
+            <>
+              <FontAwesomeIcon icon={faCircleNotch} spin /> Loading...
+            </>
+          ) : (
+            "Sign In"
+          )}
         </button>
-
-        {error == false ? (
-          <p style={{ color: "red" }}>Incorrect code. (x{count})</p>
-        ) : null}
       </form>
     </main>
   );

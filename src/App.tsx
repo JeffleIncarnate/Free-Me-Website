@@ -6,21 +6,21 @@ import { ToastContainer } from "react-toastify";
 
 import Navbar from "./components/navbar/navbar";
 
-import HomePage from "./layouts";
-import SignupConsultantPage from "./layouts/signupConsultant";
-import SignupClientPage from "./layouts/signupClient";
-import LoginPage from "./layouts/login";
-import OauthPage from "./layouts/oauth";
-import DashboardPage from "./layouts/dashboard";
-import CommunityNetworkPage from "./layouts/communityNetwork";
-import HardwareAndSoftwarePage from "./layouts/hardwareAndSoftware";
-import ProfilePage from "./layouts/profile";
-import ChatPage from "./layouts/chat";
-import StatementOfWorkPage from "./layouts/statementOfWork";
-import BalancesPages from "./layouts/balances";
-import WatchlistPage from "./layouts/watchlist";
-import SocialMediaPage from "./layouts/socialMedia";
-import SearchPage from "./layouts/search";
+import HomePage from "./pages";
+import SignupConsultantPage from "./pages/signupConsultant";
+import SignupClientPage from "./pages/signupClient";
+import LoginPage from "./pages/login";
+import OauthPage from "./pages/oauth";
+import DashboardPage from "./pages/dashboard";
+import CommunityNetworkPage from "./pages/communityNetwork";
+import HardwareAndSoftwarePage from "./pages/hardwareAndSoftware";
+import ProfilePage from "./pages/profile";
+import ChatPage from "./pages/chat";
+import StatementOfWorkPage from "./pages/statementOfWork";
+import BalancesPages from "./pages/balances";
+import WatchlistPage from "./pages/watchlist";
+import SocialMediaPage from "./pages/socialMedia";
+import SearchPage from "./pages/search";
 
 function App() {
   const location = useLocation();
@@ -29,7 +29,7 @@ function App() {
     <>
       <Navbar />
       <ToastContainer pauseOnHover={false} position="top-right" theme="light" />
-      <Routes key={location.pathname} location={location}>
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signUpConsultant" element={<SignupConsultantPage />} />

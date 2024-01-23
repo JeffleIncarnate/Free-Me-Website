@@ -1,0 +1,103 @@
+@import "../../variable";
+
+.OAuth {
+  height: 100vh;
+  width: 100%;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/splash-cover.webp");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    background-color: $background;
+    color: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    width: 25%;
+    height: 50vh;
+
+    border-radius: 1rem;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 3.6rem;
+
+      color: $text;
+
+      display: flex;
+      flex-direction: column;
+
+      &::after {
+        content: "";
+
+        width: 100%;
+        height: 0.4rem;
+
+        background-color: $secondary;
+      }
+    }
+
+    label {
+      font-weight: bold;
+
+      span {
+        color: red;
+      }
+    }
+
+    input {
+      width: 80%;
+      margin-top: 0.5rem;
+
+      padding: 0.5rem;
+
+      background-color: rgba($secondary, 0.2);
+      padding: 1rem;
+
+      transition: all 0.3s ease-in-out;
+
+      border-radius: 2rem;
+      border: none;
+    }
+
+    button {
+      width: 80%;
+
+      padding: 1rem;
+
+      color: $background;
+
+      background-color: $secondary;
+
+      transition: all 0.3s ease-in-out;
+
+      border: none;
+      border-radius: 2rem;
+
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}

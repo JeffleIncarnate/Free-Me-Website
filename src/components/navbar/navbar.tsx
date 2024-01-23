@@ -29,11 +29,22 @@ export default function Navbar() {
 
 const NavbarHome = () => {
   const nav = useNavigate();
+  const dispatch = useAppDispatch();
 
   return (
     <nav className="Navbar__Home">
       <div>
-        <img onClick={() => nav("/")} src="/logo.png" alt="" />
+        <img
+          onClick={() => {
+            localStorage.clear();
+            sessionStorage.clear();
+
+            dispatch(logout());
+            nav("/");
+          }}
+          src="/logo.png"
+          alt=""
+        />
       </div>
     </nav>
   );
@@ -50,13 +61,7 @@ const LoggedInNavbar = () => {
   const [openSettings, setOpenSettings] = useState<boolean>(false);
 
   useEffect(() => {
-    const unsubscribe = store.subscribe(() => {
-      setProfilePicture(store.getState().userData.profilePicture);
-    });
-
-    return () => {
-      unsubscribe();
-    };
+    setProfilePicture(store.getState().userData.profilePicture);
   }, []);
 
   const handleLogout = () => {
@@ -74,7 +79,7 @@ const LoggedInNavbar = () => {
         <img onClick={() => nav("/dashboard")} src="/logo.png" alt="" />
       </div>
 
-      {profilePicture && (
+      {profilePicture ? (
         <>
           <div
             className="ProfilePicture"
@@ -94,6 +99,8 @@ const LoggedInNavbar = () => {
             </div>
           )}
         </>
+      ) : (
+        <h2>e</h2>
       )}
     </nav>
   );

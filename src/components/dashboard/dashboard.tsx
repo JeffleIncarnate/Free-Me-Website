@@ -11,14 +11,6 @@ import DashboardFreeRider from "./freerider/freerider";
 // import DashboardConsultant from "../../tailwindComponents/dashboard/consultant";
 
 export default function Dashboard() {
-  let navigate = useNavigate();
-
-  useEffect(() => {
-    if (sessionStorage.getItem("type") === null) {
-      navigate("/");
-    }
-  });
-
   return (
     <>
       {(() => {
@@ -30,6 +22,8 @@ export default function Dashboard() {
           return <DashboardClient />;
         } else if (type === "freerider") {
           return <DashboardFreeRider />;
+        } else {
+          return <h2>dunno what type you are hacker {">:O"}</h2>;
         }
       })()}
     </>
