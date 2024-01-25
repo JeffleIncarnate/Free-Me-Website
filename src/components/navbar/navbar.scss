@@ -56,11 +56,12 @@
     top: 13.2lvh;
     right: 2rem;
 
-    width: 200px;
+    width: 150px;
+    padding: 1rem;
 
     background-color: grey;
 
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: 0px 1px 10px 0 rgb(0 0 0 / 70%), 0 6px 30px 0 rgb(0 0 0 / 19%);
 
     button {
@@ -71,15 +72,23 @@
       padding: 1rem;
 
       border: none;
+      border-top: 0.1rem solid $background;
+      border-bottom: 0.1rem solid $background;
+
       background: none;
 
       color: $background;
 
       font-size: 1rem;
+
+      display: flex;
+      justify-content: space-between;
+
+      margin: 0.2rem 0;
     }
   }
 
-  & > .Dashboard {
+  & > .Navbar__LoggedIn__Image {
     width: clamp(100px, 50%, 200px);
 
     margin-left: 2rem;
