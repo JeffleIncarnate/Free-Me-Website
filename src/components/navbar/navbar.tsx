@@ -69,6 +69,16 @@ const LoggedInNavbar = () => {
     setProfilePicture(store.getState().userData.profilePicture);
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = store.subscribe(() => {
+      setProfilePicture(store.getState().userData.profilePicture);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   const handleLogout = () => {
     localStorage.clear();
     sessionStorage.clear();
