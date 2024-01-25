@@ -123,7 +123,14 @@ function App() {
         />
         <Route path="/communityNetwork" element={<CommunityNetworkPage />} />
         <Route path="/profile">
-          <Route path="self" element={<ProfileSelfPage />} />
+          <Route
+            path="self"
+            element={
+              <ProtectedPage>
+                <ProfileSelfPage />
+              </ProtectedPage>
+            }
+          />
           <Route path=":uuid" element={<ProfileOtherPage />} />
         </Route>
 

@@ -1,0 +1,67 @@
+@import "../../../variable";
+
+.Profile__Self {
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+
+  display: flex;
+  gap: 1rem;
+
+  & > .General {
+    width: 75%;
+
+    .Images {
+      width: 100%;
+      position: relative;
+
+      .Banner {
+        width: 100%;
+        height: 15rem;
+
+        border-radius: 1rem;
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .ProfilePicture {
+        width: 12rem;
+        height: 12rem;
+
+        border-radius: 50%;
+        border: 0.4rem solid $secondary;
+
+        position: absolute;
+        top: 8rem;
+        left: 2rem;
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .Info {
+      margin-top: 7rem;
+
+      h2 {
+        text-transform: capitalize;
+
+        font-size: 2rem;
+      }
+
+      .Info__Inner {
+        width: 100%;
+
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+
+  & > .TimeLine {
+    width: 25%;
+    height: 100px;
+  }
+}

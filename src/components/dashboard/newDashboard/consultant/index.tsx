@@ -2,7 +2,7 @@ import "./index.scss";
 
 import { useNavigate } from "react-router-dom";
 
-export default function Dashboard() {
+export default function DashboardConsultant() {
   const nav = useNavigate();
 
   return (
@@ -12,7 +12,7 @@ export default function Dashboard() {
       <div
         className="Profile"
         onClick={() => {
-          nav("/profile/asdfasdf");
+          nav("/profile/self");
         }}
       >
         Profile

@@ -80,7 +80,7 @@ export default function DashboardClient() {
       <div
         className="FRE__Dashboard-profile FRE__Dashboard__Hover"
         onClick={() => {
-          navigate("/profile");
+          navigate("/profile/self");
         }}
       >
         <div className="wrapper">

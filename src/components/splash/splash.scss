@@ -23,6 +23,10 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../assets/splash-cover.webp");
 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   & > .Left {
     width: 50%;
     margin-top: 7%;

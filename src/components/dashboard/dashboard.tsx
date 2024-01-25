@@ -3,9 +3,10 @@ import "./dashboard.css";
 import { CSSProperties } from "react";
 import { store } from "../../core/state/store";
 
-import Hash from "react-spinners/HashLoader";
+import { HashLoader } from "react-spinners";
 
-import DashboardConsultant from "./consultant/consultant";
+// import DashboardConsultant from "./consultant/consultant";
+import DashboardConsultant from "./newDashboard/consultant";
 import DashboardClient from "./client/client";
 import DashboardFreeRider from "./freerider/freerider";
 
@@ -35,6 +36,6 @@ const ReturnDashboard = ({
   } else if (type === "FREERIDER") {
     return <DashboardFreeRider />;
   } else {
-    return <Hash cssOverride={override} color="#d35f12" size={150} />;
+    return <HashLoader cssOverride={override} color="#d35f12" size={150} />;
   }
 };

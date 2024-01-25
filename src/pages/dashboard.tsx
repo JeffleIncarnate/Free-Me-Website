@@ -1,5 +1,4 @@
-// import Dashboard from "../components/dashboard/dashboard";
-import Dashboard from "../components/dashboard/newDashboard/consultant";
+import Dashboard from "../components/dashboard/dashboard";
 
 import { useEffect } from "react";
 
