@@ -5,6 +5,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import Navbar from "./components/navbar/navbar";
+import ProtectedPage from "./pages/protected";
 
 import HomePage from "./pages";
 import SignupConsultantPage from "./pages/signupConsultant";
@@ -23,8 +24,6 @@ import SocialMediaPage from "./pages/socialMedia";
 import SearchPage from "./pages/search";
 
 function App() {
-  const location = useLocation();
-
   return (
     <>
       <Navbar />
@@ -35,7 +34,14 @@ function App() {
         <Route path="/signUpConsultant" element={<SignupConsultantPage />} />
         <Route path="/signUpClient" element={<SignupClientPage />} />
         <Route path="/oauth" element={<OauthPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedPage>
+              <DashboardPage />
+            </ProtectedPage>
+          }
+        />
         <Route path="/communityNetwork" element={<CommunityNetworkPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/chat" element={<ChatPage />} />
