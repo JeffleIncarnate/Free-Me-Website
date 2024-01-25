@@ -1,7 +1,7 @@
-import Dashboard from "../components/dashboard/dashboard";
+// import Dashboard from "../components/dashboard/dashboard";
+import Dashboard from "../components/dashboard/newDashboard/consultant";
 
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function DashboardPage() {
   useEffect(() => {

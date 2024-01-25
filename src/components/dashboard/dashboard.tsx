@@ -1,7 +1,9 @@
 import "./dashboard.css";
 
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { CSSProperties } from "react";
+import { store } from "../../core/state/store";
+
+import Hash from "react-spinners/HashLoader";
 
 import DashboardConsultant from "./consultant/consultant";
 import DashboardClient from "./client/client";
@@ -10,24 +12,29 @@ import DashboardFreeRider from "./freerider/freerider";
 // import DashboardClient from "../../tailwindComponents/dashboard/client";
 // import DashboardConsultant from "../../tailwindComponents/dashboard/consultant";
 
-export default function Dashboard() {
-  return (
-    <>
-      {(() => {
-        let type = sessionStorage.getItem("type");
+const override: CSSProperties = {
+  display: "block",
+  margin: "12rem auto",
+};
 
-        if (type === "consultant") {
-          return <DashboardConsultant />;
-        } else if (type === "client") {
-          return <DashboardClient />;
-        } else if (type === "freerider") {
-          return <DashboardFreeRider />;
-        } else {
-          return <h2>dunno what type you are hacker {">:O"}</h2>;
-        }
-      })()}
-    </>
-  );
+export default function Dashboard() {
+  const userType = store.getState().userData.type;
+
+  return <ReturnDashboard type={userType} />;
 }
 
-//
+const ReturnDashboard = ({
+  type,
+}: {
+  type: "CLIENT" | "CONSULTANT" | "FREERIDER" | undefined;
+}) => {
+  if (type === "CLIENT") {
+    return <DashboardClient />;
+  } else if (type === "CONSULTANT") {
+    return <DashboardConsultant />;
+  } else if (type === "FREERIDER") {
+    return <DashboardFreeRider />;
+  } else {
+    return <Hash cssOverride={override} color="#d35f12" size={150} />;
+  }
+};

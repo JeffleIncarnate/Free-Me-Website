@@ -48,8 +48,6 @@ export default function OAuth() {
     onSuccess: (ctx) => {
       const data = ctx.data as SuccessType;
 
-      console.log(data.profile.profilePicture);
-
       dispatch(
         setUserData({
           firstname: data.profile.firstname,

@@ -5,7 +5,7 @@ type userDataExists = {
   userDataExists: true;
   firstname: string;
   lastname: string;
-  type: "FREERIDER" | "CLIENT" | "CONSULTANT";
+  type: "CLIENT" | "CONSULTANT" | "FREERIDER";
   profilePicture: string;
   banner: string;
   connections: string[];
