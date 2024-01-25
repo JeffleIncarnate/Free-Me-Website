@@ -12,7 +12,7 @@ export default function Dashboard() {
       <div
         className="Profile"
         onClick={() => {
-          nav("/profile");
+          nav("/profile/asdfasdf");
         }}
       >
         Profile

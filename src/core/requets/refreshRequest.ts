@@ -11,7 +11,7 @@ export const refreshToken = async (
   let res;
 
   try {
-    res = await instance.post("/v1/api/auth/refresh", {
+    res = await instance.post("/v2/api/auth/refresh", {
       refreshToken,
     });
   } catch (err) {
