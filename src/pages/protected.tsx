@@ -1,8 +1,8 @@
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import { store } from "../core/state/store";
 import { useNavigate } from "react-router-dom";
 
-export default function ProtectedPage({ children }: { children: ReactNode }) {
+export default function ProtectedPage({ children }: { children: JSX.Element }) {
   const isLoggedin = store.getState().auth.loggedIn;
   const nav = useNavigate();
 
