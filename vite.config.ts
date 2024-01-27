@@ -8,6 +8,6 @@ export default defineConfig({
     sourcemap: true,
   },
   server: {
-    port: 8080,
+    port: 3001,
   },
 });
