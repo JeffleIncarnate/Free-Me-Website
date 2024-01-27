@@ -1,8 +1,8 @@
 @import "./variable";
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
   margin: 0;
