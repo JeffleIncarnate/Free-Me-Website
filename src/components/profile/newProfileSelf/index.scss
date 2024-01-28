@@ -4,17 +4,17 @@
   width: calc(100% - 2rem);
   margin: 0 1rem;
 
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 75fr 25fr;
 
   & > .General {
-    width: 75%;
+    border-bottom: 0.2rem solid $text;
 
-    border-radius: 1rem;
-    background-color: rgba($secondary, 0.5);
     padding: 1rem;
 
     color: $text;
+
+    grid-column: 1/2;
 
     .Images {
       width: 100%;
@@ -66,6 +66,8 @@
 
         display: flex;
         gap: 1rem;
+
+        text-transform: capitalize;
       }
 
       .FollowersFollowingConnections {
@@ -73,12 +75,71 @@
 
         display: flex;
         gap: 1rem;
+
+        * {
+          color: $accent;
+        }
       }
     }
   }
 
+  & > .Data {
+    grid-column: 1/2;
+
+    padding: 1rem;
+
+    color: $text;
+
+    border-bottom: 0.2rem solid $text;
+
+    h2 {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .Data__Wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+
+      div {
+        height: 10rem;
+
+        padding: 1rem;
+
+        border-radius: 1rem;
+
+        background-color: rgba($secondary, 0.5);
+
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  & > .Posts {
+    grid-column: 1/2;
+
+    padding: 1rem;
+
+    color: $text;
+
+    h2 {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .Data__Wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+  }
+
   & > .TimeLine {
-    width: 25%;
+    grid-column: 2/3;
+    grid-row: 1;
 
     height: 100px;
 
