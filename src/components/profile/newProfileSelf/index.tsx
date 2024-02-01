@@ -5,7 +5,6 @@ import {
   faCalendarDays,
   faLink,
   faLocationDot,
-  faShield,
   faShieldAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { useQuery } from "@tanstack/react-query";
@@ -15,82 +14,17 @@ import { HashLoader } from "react-spinners";
 import { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { convertDateFromString } from "../../../core/utils/convertDate";
+import type {
+  Post,
+  SuccessTypeClient,
+  SuccessTypeConsultant,
+  User,
+} from "../../../core/types/fetchUserself";
+import { getPostAuthorData } from "../../../core/requets/getPost";
 
 const override: CSSProperties = {
   display: "block",
   margin: "12rem auto",
-};
-
-type SuccessTypeClient = {
-  id: string;
-  firstname: string;
-  lastname: string;
-  password: string;
-  email: string;
-  phonenumber: string;
-  type: "CONSULTANT" | "CLIENT" | "FREERIDER";
-  dateOfBirth: string;
-  address: string;
-  nzbn: string;
-  gst: string;
-  role: "ADMIN" | "GENERAL";
-  createdAt: Date;
-  profilePicture: string;
-  banner: string;
-  background: string;
-  followers: string[];
-  following: string[];
-  connections: string[];
-  consultantProfile: {
-    id: number;
-    description: string;
-    location: string;
-    tier: string;
-    values: string[];
-    skills: string[];
-    education: string[];
-    ambitions: string[];
-    awards: string[];
-    hobbies: string[];
-    timeline: object;
-    userId: string;
-  };
-};
-
-type SuccessTypeConsultant = {
-  id: string;
-  firstname: string;
-  lastname: string;
-  password: string;
-  email: string;
-  phonenumber: string;
-  type: "CONSULTANT" | "CLIENT" | "FREERIDER";
-  dateOfBirth: string;
-  address: string;
-  nzbn: string;
-  gst: string;
-  role: "ADMIN" | "GENERAL";
-  createdAt: Date;
-  profilePicture: string;
-  banner: string;
-  background: string;
-  followers: string[];
-  following: string[];
-  connections: string[];
-  consultantProfile: {
-    id: number;
-    description: string;
-    location: string;
-    tier: string;
-    values: string[];
-    skills: string[];
-    education: string[];
-    ambitions: string[];
-    awards: string[];
-    hobbies: string[];
-    timeline: object;
-    userId: string;
-  };
 };
 
 export default function ProfileSelf() {
@@ -114,13 +48,12 @@ export default function ProfileSelf() {
     );
   }
 
-  const userData = data.data.profile as
-    | SuccessTypeClient
-    | SuccessTypeConsultant;
+  const userData = data.data.profile as User;
 
   if (!userData.consultantProfile) {
     return <ClientProfile userData={userData} />;
   }
+
   return <ConsultantProfile userData={userData} />;
 }
 
@@ -168,7 +101,7 @@ function ConsultantProfile({ userData }: { userData: SuccessTypeConsultant }) {
       <div className="Posts">
         <h2>Posts</h2>
 
-        <div className="Posts__wrapper"></div>
+        <ProfilePosts posts={userData.post} />
       </div>
 
       <div className="TimeLine"></div>
@@ -326,7 +259,7 @@ function ProfileGrid({
         <h3>Values</h3>
 
         {values.map((value) => {
-          return <p>{value}</p>;
+          return <li>{value}</li>;
         })}
       </div>
 
@@ -334,7 +267,7 @@ function ProfileGrid({
         <h3>Skills</h3>
 
         {skills.map((skill) => {
-          return <p>{skill}</p>;
+          return <li>{skill}</li>;
         })}
       </div>
 
@@ -342,7 +275,7 @@ function ProfileGrid({
         <h3>Education</h3>
 
         {education.map((edu) => {
-          return <p>{edu}</p>;
+          return <li>{edu}</li>;
         })}
       </div>
 
@@ -350,7 +283,7 @@ function ProfileGrid({
         <h3>Ambitions</h3>
 
         {ambitions.map((ambition) => {
-          return <p>{ambition}</p>;
+          return <li>{ambition}</li>;
         })}
       </div>
 
@@ -358,7 +291,7 @@ function ProfileGrid({
         <h3>Hobbies</h3>
 
         {hobbies.map((hobby) => {
-          return <p>{hobby}</p>;
+          return <li>{hobby}</li>;
         })}
       </div>
 
@@ -366,9 +299,95 @@ function ProfileGrid({
         <h3>Awards</h3>
 
         {awards.map((award) => {
-          return <p>{award}</p>;
+          return <li>{award}</li>;
         })}
       </div>
     </>
+  );
+}
+
+function ProfilePosts({ posts }: { posts: Post[] | null }) {
+  if (posts === null) {
+    return <div>This user has no Posts</div>;
+  }
+
+  return (
+    <div className="Posts__Wrapper">
+      {posts.map((post) => (
+        <ProfilePost post={post} key={post.postId} />
+      ))}
+    </div>
+  );
+}
+
+interface PostAuthorData {
+  profilePicture: string;
+  firstname: string;
+  lastname: string;
+}
+
+function ProfilePost({ post }: { post: Post }) {
+  const token = store.getState().auth.accessToken || "";
+
+  const { isLoading, isError, data } = useQuery({
+    queryKey: ["posts", post.postId],
+    queryFn: () => getPostAuthorData(post.userId, token),
+  });
+
+  if (isLoading) {
+    return (
+      <HashLoader
+        cssOverride={{ display: "block", margin: "1rem auto" }}
+        color="#d35f12"
+        size={150}
+      />
+    );
+  }
+
+  if (isError || data === undefined) {
+    return (
+      <h2>
+        Some Unknown Error has occoured{" "}
+        <Link to={"/dashboard"}>return to dashboard</Link>
+      </h2>
+    );
+  }
+
+  const authorData = data.data.user as PostAuthorData;
+
+  return (
+    <div className="Post">
+      <div className="Post__Top">
+        <div
+          style={{
+            backgroundImage: `url("${"data:image/jpeg;base64,"}${
+              authorData.profilePicture
+            }")`,
+          }}
+        ></div>
+        <span>⋅</span>
+        <h3>
+          {authorData.firstname} {authorData.lastname}
+        </h3>
+        <span>⋅</span>
+        <p>{convertDateFromString(post.postTime)}</p>
+      </div>
+
+      <div className="Post__Data">
+        <p>{post.postText}</p>
+
+        <div className="Post__Data__Images">
+          {post.postImages.map((image) => {
+            if (image !== "") {
+              return (
+                <img src={`data:image/jpeg;base64,${image}`} alt="Some Image" />
+              );
+            }
+
+            return null;
+          })}
+        </div>
+      </div>
+    </div>
   );
 }

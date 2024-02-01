@@ -4,6 +4,7 @@ export type Post = {
   postImages: string[];
   likes: string[];
   userId: string;
+  postTime: Date;
 };
 
 export type SuccessTypeClient = {
